@@ -121,9 +121,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 
 async function getRandomIcon() {
   const urls = [
-    'https://files.catbox.moe/ceotf9.jpg',
-    'https://files.catbox.moe/fft2hr.jpg',
-    'https://files.catbox.moe/i97oje.jpg',
+    'https://i.postimg.cc/Y2JJXwyb/1754525693627.jpg',
+    'https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg',
+    'https://i.postimg.cc/0NxWTkp0/1754525596737.jpg',
     'https://files.catbox.moe/js2plu.jpg',
     'https://d.uguu.se/GmSLPtrU.png',
     'https://h.uguu.se/kbNQSQxM.jpg',
