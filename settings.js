@@ -76,7 +76,7 @@ global.gp1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
 global.comunidad1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
 global.channel = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
 global.channel2 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
-global.md = 'https://github.com/carlos13ra/SANTAFLOW-BOT'
+global.md = 'https://github.com/carlos13ra/SANTAFLOW-BOT2'
 global.correo = 'carlosramirezvillanueva30@gmail.com'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
@@ -84,9 +84,9 @@ global.correo = 'carlosramirezvillanueva30@gmail.com'
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 global.ch = {
-ch1: '120363401008003732@newsletter',
-ch2: "120363401008003732@newsletter",
-ch3: "120363401008003732@newsletter"
+ch1: "120363402079893698@newsletter",
+ch2: "120363402079893698@newsletter",
+ch3: "120363402079893698@newsletter"
 }
 global.multiplier = 60
 
