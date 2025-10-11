@@ -1,75 +1,135 @@
-import moment from 'moment-timezone';
-import PhoneNumber from 'awesome-phonenumber';
-import fetch from 'node-fetch';
+import { xpRange } from '../lib/levelling.js'
+import moment from 'moment-timezone'
+import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    let userId;
-    if (m.quoted && m.quoted.sender) {
-        userId = m.quoted.sender;
-    } else if (m.mentionedJid && m.mentionedJid.length > 0) {
-        userId = m.mentionedJid[0];
-    } else {
-        userId = m.sender;
-    }
+try {
+if (!global.db.data.users) global.db.data.users = {}
+if (!global.db.data.characters) global.db.data.characters = {}
 
-    let user = global.db.data.users[userId];
+let mentioned = m.mentionedJid && m.mentionedJid[0]
+let userId = mentioned || (m.quoted ? m.quoted.sender : m.sender)
+let user = global.db.data.users[userId] || {}
+let name
 
-    let name = await conn.getName(userId);
-    let cumpleanos = user.birth || 'No especificado';
-    let genero = user.genre || 'No especificado';
-    let pareja = user.marry || 'Nadie';
-    let description = user.description || 'Sin Descripción';
-    let exp = user.exp || 0;
-    let nivel = user.level || 0;
-    let role = user.role || 'Sin Rango';
-    let coins = user.coin || 0;
-    let bankCoins = user.bank || 0;
+try {
+  name = (await conn.getName(userId)) || userId.split('@')[0]
+} catch {
+  name = userId.split('@')[0]
+}
 
-    let perfil = await conn.profilePictureUrl(userId, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg');
+const cumpleanos = user.birth || 'Sin especificar :< (#setbirth)'
+const genero = user.genre || 'Sin especificar'
+const pareja = user.marry
+const casado = pareja
+  ? (global.db.data.users[pareja]?.name?.trim() ||
+      (await conn.getName(pareja).catch(() => pareja.split('@')[0])))
+  : 'Nadie'
+const description = user.description || 'Sin descripción :v'
 
-    let profileText = `      🔮 𝐏𝐄𝐑𝐅𝐈𝐋 𝐂𝐎𝐒𝐌𝐈𝐂𝐎 🔮
-   ✧ ˚₊ ⊹ Rin Itoshi Bot ⊹ ₊˚ ✧
+const exp = user.exp || 0
+const nivel = user.level || 0
+const coin = user.coin || 0
+const bank = user.bank || 0
+const total = coin + bank
+const currency = 'coins'
 
-☄️︙ *🪪 Identidad Estelar:* @${userId.split('@')[0]}
-☄️︙ *🌙 Nombre Arcano:* *${name}*
-☄️︙ *🌀 Esencia Vital:* _${description}_
+const sorted = Object.entries(global.db.data.users)
+  .map(([k, v]) => ({ ...v, jid: k }))
+  .sort((a, b) => (b.level || 0) - (a.level || 0))
+const rank = sorted.findIndex(u => u.jid === userId) + 1
+
+const datos = xpRange(nivel, global.multiplier)
+const progreso = `${exp - datos.min} / ${datos.xp} _(${Math.floor(((exp - datos.min) / datos.xp) * 100)}%)_`
+
+const premium = user.premium || global.prems?.map(v => v.replace(/\D+/g, '') + '@s.whatsapp.net').includes(userId)
+const tiempoPremium = premium
+  ? user.premiumTime
+    ? await formatTime(user.premiumTime - Date.now())
+    : 'Permanente'
+  : '—'
+
+const favId = user.favorite
+const favLine = favId && global.db.data.characters?.[favId]
+  ? `\n๑ Claim favorito » *${global.db.data.characters[favId].name || '???'}*`
+  : ''
+
+const ownedIDs = Object.entries(global.db.data.characters)
+  .filter(([, c]) => c.user === userId)
+  .map(([id]) => id)
+const haremCount = ownedIDs.length
+const haremValue = ownedIDs.reduce((acc, id) => {
+  const char = global.db.data.characters[id] || {}
+  return acc + (typeof char.value === 'number' ? char.value : 0)
+}, 0)
+
+const pp = await conn.profilePictureUrl(userId, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
+
+const text = `
+╭━━━〔 *💫 PERFIL DE ${name.toUpperCase()}* 〕━━⬣
+┃
+┃ 🪷 *Descripción:* ${description}
+┃ 🎂 *Cumpleaños:* ${cumpleanos}
+┃ ⚥ *Género:* ${genero}
+┃ 💍 *Casado con:* ${casado}
+┃
+┃ 💢 *Nivel:* ${nivel}
+┃ 🧭 *Experiencia:* ${exp.toLocaleString()}
+┃ 🧱 *Progreso:* ${progreso}
+┃ 🏆 *Puesto global:* #${rank}
+┃
+┃ 💎 *Premium:* ${premium ? `✔️ (${tiempoPremium})` : '✖️'}
+┃ 💰 *Coins:* ${coin.toLocaleString()} + Banco ${bank.toLocaleString()}
+┃ 🏦 *Total:* ${total.toLocaleString()} ${currency}
+┃
+┃ 💞 *Harem:* ${haremCount} personajes
+┃ 💎 *Valor total:* ${haremValue.toLocaleString()}
+${favLine}
+┃
+┃ 📊 *Comandos usados:* ${user.commands || 0}
+╰━━━━━━━━━━━━━━━━━━━━━━⬣
+`
 
 
-   ⚙️ 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎𝐍 𝐄𝐒𝐏𝐈𝐑𝐈𝐓𝐔𝐀𝐋
-➺ 🎂 *Edad Estelar:* ${user.age || 'Incierta'}
-➺ 📆 *Ciclo Cósmico:* ${cumpleanos}
-➺ ⚧️ *Polaridad:* ${genero}
-➺ 💖 *Vínculo Álmico:* ${pareja}
+await conn.sendMessage(
+  m.chat,
+  { image: { url: pp }, caption: text.trim(), mentions: [userId] },
+  { quoted: fkontak }
+)
 
-      ✦ 𝐑𝐄𝐂𝐔𝐑𝐒𝐎𝐒 ✦
-⋄ 🪙 *${moneda}:* ${coins.toLocaleString()} ${moneda}
-⋄ 🍂 *Nivel Dimensional:* ${nivel}
-⋄ 🌷 *Exp Cósmica:* ${exp.toLocaleString()}
-⋄ 🌿 *Rango:* ${role}
+} catch (error) {
+console.error(error)
+await m.reply(`⚠️ *Ocurrió un error inesperado.*\n> Usa *${usedPrefix}report ${command}* para informarlo.\n\n🧩 ${error.message}`)
+}
+}
 
-✦ 🏦 *Banco ${moneda}:* ${bankCoins.toLocaleString()} ${moneda}
-✦ 🔮 *Premium Cósmico:* ${user.premium ? '🟢 Activo' : '🔴 Inactivo'}
+handler.help = ['profile', 'perfil']
+handler.tags = ['rg']
+handler.command = ['profile', 'perfil', 'perfíl']
+handler.group = true
 
-☾ 🌌 𝐑𝐞𝐬𝐨𝐧𝐚𝐧𝐜𝐢𝐚 𝐅𝐢𝐧𝐚𝐥 ☽`.trim();
+export default handler
 
-    await conn.sendMessage(m.chat, { 
-        text: profileText,
-        contextInfo: {
-            mentionedJid: [userId],
-            externalAdReply: {
-                title: '✧ Perfil de Usuario ✧',
-                body: dev,
-                thumbnailUrl: perfil,
-                mediaType: 1,
-                showAdAttribution: true,
-                renderLargerThumbnail: true
-            }
-        }
-    }, { quoted: m });
-};
-
-handler.help = ['profile'];
-handler.tags = ['rg'];
-handler.command = ['profile', 'perfil'];
-
-export default handler;
+async function formatTime(ms) {
+let s = Math.floor(ms / 1000),
+  m = Math.floor(s / 60),
+  h = Math.floor(m / 60),
+  d = Math.floor(h / 24)
+let months = Math.floor(d / 30),
+  weeks = Math.floor((d % 30) / 7)
+s %= 60
+m %= 60
+h %= 24
+d %= 7
+let t = months
+  ? [`${months} mes${months > 1 ? 'es' : ''}`]
+  : weeks
+  ? [`${weeks} semana${weeks > 1 ? 's' : ''}`]
+  : d
+  ? [`${d} día${d > 1 ? 's' : ''}`]
+  : []
+if (h) t.push(`${h} hora${h > 1 ? 's' : ''}`)
+if (m) t.push(`${m} minuto${m > 1 ? 's' : ''}`)
+if (s) t.push(`${s} segundo${s > 1 ? 's' : ''}`)
+return t.length > 1 ? t.slice(0, -1).join(' ') + ' y ' + t.slice(-1) : t[0]
+}
