@@ -124,14 +124,14 @@ async function getRandomIcon() {
     'https://i.postimg.cc/Y2JJXwyb/1754525693627.jpg',
     'https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg',
     'https://i.postimg.cc/0NxWTkp0/1754525596737.jpg',
-    'https://files.catbox.moe/js2plu.jpg',
-    'https://d.uguu.se/GmSLPtrU.png',
-    'https://h.uguu.se/kbNQSQxM.jpg',
-    'https://h.uguu.se/wzOFAoph.png',
-    'https://h.uguu.se/UGUwjmCs.jpg',
-    'https://n.uguu.se/vqJnHBPm.jpg',
-    'https://n.uguu.se/DlsupQkP.jpg',
-    'https://i.pinimg.com/originals/e0/98/ba/e098bac73c8ae72243f66c7bf712045a.jpg'
+    'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg',
+    'https://i.postimg.cc/Kj3wjKzP/1760212149948.jpg',
+    'https://i.postimg.cc/FHxrN6wr/1760212177470.jpg',
+    'https://i.postimg.cc/4N6ZQMfc/1760212222052.jpg',
+    'https://i.postimg.cc/NF1hb9ct/1760212236093.jpg',
+    'https://i.postimg.cc/HLhV1K75/1760212892451.jpg',
+    'https://i.postimg.cc/vZPm5jhv/1760212906099.jpg',
+    'https://i.postimg.cc/J0cr0dtv/1760212895713.jpg'
   ]
   
   let url
