@@ -80,10 +80,10 @@ global.waitt = '🎧 Espera un momento, soy lento...';
 global.waittt = '🍐 Espera un momento, soy lento...';
 global.waitttt = '💥 Espera un momento, soy lento...';
 
-var canal = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'  
-var comunidad = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-var git = 'https://github.com/Yuji-XDev'
-var github = 'https://github.com/Yuji-XDev/Rin-Itoshi-Bot'
+var canal = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'  
+var comunidad = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
+var git = 'https://github.com/Carlos13ra'
+var github = 'https://github.com/Carlos13ra/Santaflow-Bot2'
 let correo = 'blackoficial2025@gmail.com'
 global.redes = [canal, comunidad, git, github, correo].getRandom()
 
