@@ -37,10 +37,10 @@ global.listo = '🥭 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
 global.canalIdM = [
-  "120363401008003732@newsletter",
-  "120363401008003732@newsletter",
-  "120363401008003732@newsletter",
-  "120363401008003732@newsletter"
+  "120363402079893698@newsletter",
+  "120363402079893698@newsletter",
+  "120363402079893698@newsletter",
+  "120363402079893698@newsletter"
 ]
 global.canalNombreM = [
   "ˢᴬᴺᵀᴬᶠᴸᴼᵂ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙",
