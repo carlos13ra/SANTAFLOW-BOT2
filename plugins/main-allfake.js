@@ -27,13 +27,13 @@ return res.data
 console.log(`Error : ${e}`)
 }}
   
-global.creador = 'wa.me/51919199620'
+global.creador = 'wa.me/51984169553'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.namechannel = '𓇟 ︶𓇟 ✦💖 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 • 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 🌷✦ ︶𓇟 ︶𓇟'
-global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌ🌾 𝓡𝓲𝓷 𝓘𝓽𝓸𝓼𝓱𝓲 🎋ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
-global.namegrupo = '✾࣭࣭࣪࣪ 🍂 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 • 𝑮𝒓𝒖𝒑𝒐  ࣭࣭࣪࣪✾'
-global.namecomu = '⏝🌷 𝑹𝒊𝒏-𝑰𝒕𝒐𝒔𝒉𝒊-𝑩𝒐𝒕-𝑴𝑫 • 𝑪𝒐𝒎𝒖𝒏𝒊𝒕𝒚 🌷⏝'
-global.listo = '🎋 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
+global.namechannel = '𓇟 ︶𓇟 ✦🥭 𝑺𝑨𝑵𝑻𝑨𝑭𝑳𝑶𝑾 𝑩𝑶𝑻 • 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 🔥✦ ︶𓇟 ︶𓇟'
+global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌsᴀɴᴛᴀғʟᴏᴡ ʙᴏᴛ 💥ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
+global.namegrupo = '✾࣭࣭࣪࣪ 🎧 𝐒𝐚𝐧𝐭𝐚𝐟𝐥𝐨𝐰 • 𝑮𝒓𝒖𝒑𝒐  ࣭࣭࣪࣪✾'
+global.namecomu = '⏝💫 𝐒𝐚𝐧𝐭𝐚𝐟𝐥𝐨𝐰-𝑩𝒐𝒕- • 𝑪𝒐𝒎𝒖𝒏𝒊𝒕𝒚 🍐⏝'
+global.listo = '🥭 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
 global.canalIdM = [
@@ -43,10 +43,10 @@ global.canalIdM = [
   "120363401008003732@newsletter"
 ]
 global.canalNombreM = [
-  "⸸ ⚡︎「 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 ✦ 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 」⚡︎ ⸸",
-  "✦͙͙͙*ೃ༄ 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 | 𝑺𝒉𝒂𝒅𝒐𝒘`𝑪𝒐𝒓𝒆 ༄*ೃ✦",
-  "⋆｡ﾟ☁︎｡⋆ 𝚁 𝙸 𝙽 • 𝙸 𝚃 𝙾 𝚂 𝙷 𝙸 ⋆｡ﾟ☁︎｡⋆",
-  "⏤͟͟͞͞☆ ⃟🎋 ᪲ୂ: яιи ιтσѕнι ¢нαииєℓ  ᪲•˙ꨂ ֢✧:"
+  "ˢᴬᴺᵀᴬᶠᴸᴼᵂ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙",
+  "✦͙͙͙*ೃ༄ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 𝗕𝗢𝗧 | 𝐂𝐚𝐫𝐥𝐨𝐬.𝐑.𝐕 ༄*ೃ✦",
+  "⋆｡ﾟ☁︎｡⋆ sᴀɴᴛᴀғʟᴏᴡ 𝙱𝙾𝚃  ⋆｡ﾟ☁︎｡⋆",
+  "⏤͟͟͞͞☆ ⃟🎧 𝚂𝙰𝙽𝚃𝙰𝙵𝙻𝙾𝚆 𝙱𝙾𝚃 ¢нαииєℓ  ᪲•˙ꨂ ֢✧:"
 ]
 global.channelRD = await getRandomChannel()
 
@@ -75,10 +75,10 @@ global.edadaleatoria = ['10', '28', '20', '40', '18', '21', '15', '11', '9', '17
 global.user2 = m.pushName || 'Anónimo';
 global.verifyaleatorio = ['registrar', 'reg', 'verificar', 'verify', 'register'].getRandom();
 
-global.wait = '🎋 Espera un momento, soy lento...';
-global.waitt = '🍧 Espera un momento, soy lento...';
-global.waittt = '🌷 Espera un momento, soy lento...';
-global.waitttt = '🌿 Espera un momento, soy lento...';
+global.wait = '💫 Espera un momento, soy lento...';
+global.waitt = '🎧 Espera un momento, soy lento...';
+global.waittt = '🍐 Espera un momento, soy lento...';
+global.waitttt = '💥 Espera un momento, soy lento...';
 
 var canal = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'  
 var comunidad = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
@@ -105,7 +105,7 @@ var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
 
 global.packsticker = `༺══•◈•══༻
-🍓.ೃ࿔*:･༓☾
+🥭.ೃ࿔*:･༓☾
 ✿ Usuario: ${nombre}
 ✿ Bot: ${botname}
 ✿ Fecha: ${fecha}
