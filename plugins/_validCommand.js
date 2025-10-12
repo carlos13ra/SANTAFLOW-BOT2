@@ -6,7 +6,7 @@ export async function before(m, { conn }) {
   const usedPrefix = global.prefix.exec(m.text)[0];
   const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
   
-  const thumbRes = await fetch("https://files.catbox.moe/xydiwe.jpg");
+  const thumbRes = await fetch("https://i.postimg.cc/mZqG44Dy/1760212243057.jpg");
   const thumbBuffer = await thumbRes.buffer();
   const fkontak = {
         key: {
@@ -99,7 +99,7 @@ export async function before(m, { conn }) {
   ];
 
   const texto = mensajesNoEncontrado[Math.floor(Math.random() * mensajesNoEncontrado.length)];
-  const thumb = 'https://files.catbox.moe/6fj9u7.jpg';
+  const thumb = 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg';
 
   
   await conn.sendMessage(m.chat, {
@@ -113,7 +113,7 @@ export async function before(m, { conn }) {
         newsletterName: channelRD.name
       },
       externalAdReply: {
-        title: ' 🎃 𝗦𝗮𝗻𝘁𝗮𝗳𝗹𝗼𝘄𝘽𝙤𝙩🔥',
+        title: ' 🎵 𝗦𝗮𝗻𝘁𝗮𝗳𝗹𝗼𝘄𝘽𝙤𝙩🔥',
         body: '',
         thumbnailUrl: thumb,
         sourceUrl: '',
