@@ -48,7 +48,7 @@ font: 'simple',
 align: 'left',
 gradient: ['green', 'white']
 })
-say('Made with By shadow', {
+say('Made with By Carlos', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
