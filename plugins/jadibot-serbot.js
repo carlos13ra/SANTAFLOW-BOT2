@@ -126,7 +126,7 @@ secret = secret.match(/.{1,4}/g)?.join("-")
 
 //txtCode = await conn.sendMessage(m.chat, {text : rtx2}, { quoted: m })
     let txtCode = await conn.sendMessage(m.chat, {
-      image: { url: 'https://files.catbox.moe/e0lxcl.jpg' },
+      image: { url: 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg' },
       caption: rtx2,
       contextInfo: {
         mentionedJid: [m.sender],
