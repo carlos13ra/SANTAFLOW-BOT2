@@ -79,9 +79,9 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
         contextInfo: {
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363401008003732@newsletter',
+            newsletterJid: '120363402079893698@newsletter',
             serverMessageId: '',
-            newsletterName: '囹🎋𑜞 ᪲•˙ꨂ ֢✧: яιи ιтσѕнι - ¢нαииєℓ σffι¢ιαℓ ੈ♡‧₊˚'
+            newsletterName: '囹🎵𑜞 ᪲•˙ˢᴬᴺᵀᴬᶠᴸᴼᵂ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙ ੈ♡‧₊˚'
           },
           externalAdReply: {
             title: "𐔌 . ⋮ 𝗕 𝗨 𝗦 𝗖 𝗔 𝗡 𝗗 𝗢 .ᐟ ֹ ₊ ꒱",
@@ -89,7 +89,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
             mediaUrl: null,
             description: null,
             previewType: "PHOTO",
-            thumbnail: await (await fetch('https://i.pinimg.com/originals/e0/98/ba/e098bac73c8ae72243f66c7bf712045a.jpg')).buffer(),
+            thumbnail: await (await fetch('https://i.postimg.cc/mZqG44Dy/1760212243057.jpg')).buffer(),
             sourceUrl: redes,
             mediaType: 1,
             renderLargerThumbnail: false
@@ -250,7 +250,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
         contextInfo: {
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363401008003732@newsletter',
+            newsletterJid: '120363402079893698@newsletter',
             serverMessageId: '',
             newsletterName: '囹🥭𑜞 ᪲•˙ꨂ ֢✧: sᴀɴᴛᴀғʟᴏᴡ - ¢нαииєℓ σffι¢ιαℓ ੈ♡‧₊˚'
           },
@@ -260,7 +260,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
             mediaUrl: null,
             description: null,
             previewType: "PHOTO",
-            thumbnail: await (await fetch('https://i.pinimg.com/originals/e0/98/ba/e098bac73c8ae72243f66c7bf712045a.jpg')).buffer(),
+            thumbnail: await (await fetch('https://i.postimg.cc/mZqG44Dy/1760212243057.jpg')).buffer(),
             sourceUrl: redes,
             mediaType: 1,
             renderLargerThumbnail: false
