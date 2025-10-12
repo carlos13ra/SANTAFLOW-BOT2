@@ -8,7 +8,7 @@ let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 
 let handler = async function (m, { conn, text, usedPrefix, command }) {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  let pp = await conn.profilePictureUrl(who, 'image').catch((_) => 'https://files.catbox.moe/xr2m6u.jpg')
+  let pp = await conn.profilePictureUrl(who, 'image').catch((_) => 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg')
   let user = global.db.data.users[m.sender]
   let name2 = conn.getName(m.sender)
 
@@ -27,20 +27,20 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
     ];
 
     return await conn.sendMessage(m.chat, {
-      image: { url: 'https://files.catbox.moe/eml66k.jpg' },
-      caption: '   ꒰🍓⚠️ `ＡＶＩＳＯ` ⚠️🍓꒱ ',
+      image: { url: 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg' },
+      caption: '   ꒰🥭⚠️ `ＡＶＩＳＯ` ⚠️🎵꒱ ',
       mentions: [m.sender],
       footer: `┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 
 (｡>﹏<｡) 💦  
 *Ya cuentas con un registro activo...*  
 
-🌸 ¿𝒒𝒖𝒊𝒆𝒓𝒆𝒔 𝒓𝒆𝒈𝒊𝒔𝒕𝒓𝒂𝒓𝒕𝒆 𝒏𝒖𝒆𝒗𝒂𝒎𝒆𝒏𝒕𝒆?  
+🔥 ¿𝒒𝒖𝒊𝒆𝒓𝒆𝒔 𝒓𝒆𝒈𝒊𝒔𝒕𝒓𝒂𝒓𝒕𝒆 𝒏𝒖𝒆𝒗𝒂𝒎𝒆𝒏𝒕𝒆?  
 
-💌 Usa *#unreg* para borrar tu registro y comenzar otra vez.  
+🥭 Usa *#unreg* para borrar tu registro y comenzar otra vez.  
 
 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-૮₍´｡• ᵕ •｡\`₎ა 🌷 𝒕𝒆 𝒆𝒔𝒑𝒆𝒓𝒂𝒓𝒆𝒎𝒐𝒔 ~`,
+૮₍´｡• ᵕ •｡\`₎ა 👻 𝒕𝒆 𝒆𝒔𝒑𝒆𝒓𝒂𝒓𝒆𝒎𝒐𝒔 ~`,
       buttons: botones,
       headerType: 4,
       contextInfo: {
@@ -62,7 +62,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
      ];
 
     return await conn.sendMessage(m.chat, {
-      image: { url: 'https://files.catbox.moe/eml66k.jpg' },
+      image: { url: 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg' },
       caption: '    `ＡＶＩＳＯ:`',
       mentions: [m.sender],
       footer: `｡☆✼★━━━━━━━━━━━━★✼☆｡  
@@ -74,7 +74,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 🐰 𝑬𝒋𝒆𝒎𝒑𝒍𝒐:  
 > ${usedPrefix + command} ${name2}.18  
 ┈┈┈┈┈┈┈┈┈┈  
-🌸 𝒏𝒐 𝒕𝒓𝒊𝒔𝒕𝒆~ 𝒗𝒖𝒆𝒍𝒗𝒆 𝒂 𝒊𝒏𝒕𝒆𝒏𝒕𝒂𝒓 ꒰ᐢ. .ᐢ꒱
+☘️ 𝒏𝒐 𝒕𝒓𝒊𝒔𝒕𝒆~ 𝒗𝒖𝒆𝒍𝒗𝒆 𝒂 𝒊𝒏𝒕𝒆𝒏𝒕𝒂𝒓 ꒰ᐢ. .ᐢ꒱
 ｡☆✼★━━━━━━━━━━━━★✼☆｡`,
       buttons: botones,
       headerType: 4,
@@ -131,7 +131,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 > *ꛊֵ໋𝅭࣫𝂺ֺׅ🌙̶ᮢ〪〫ꨩ֔ᦡ࣫꒱ֵ֔*  ᴅɪᴀ » ${dia}
 
 \`\`\`    ּ͜⌒໊݂݁͜    ݊ ּ͜⌒໊݂݁͜⏜݄݊͜ ͜⏜݆ׄ͜⌒໊݂͜.    ּ͜⌒໊݂݁͜\`\`
-\`\`\`   ͜છֶ̤͝🍰 𝐑𝐄𝐂𝐎𝐌𝐏𝐄𝐍𝐒𝐀𝐒 🍏ֶ͝છ̤͜  \`\`\`
+\`\`\`   ͜છֶ̤͝🥭 𝐑𝐄𝐂𝐎𝐌𝐏𝐄𝐍𝐒𝐀𝐒 🥭છ̤͜  \`\`\`
 \`\`\`︶ִֶָ⏝︶ִֶָ⏝˖ ࣪ ୨✧୧ ࣪ ˖⏝ִֶָ︶⏝ִֶָ︶\`\`\`
 ✧ 💰 +40 → ${moneda}
 ✧ 🔮 +300 → ᴇxᴘ
@@ -154,10 +154,10 @@ await conn.sendMessage(
         newsletterName: channelRD.name
       },
       externalAdReply: {
-        title: '❁︩︪•°ֺ໋۪݊🌱 ʀᴇɢɪsᴛʀᴏ - ʀɪɴ ɪᴛᴏsʜɪ ᴜʟᴛʀᴀ ☁️°໋•︪︩❁',
-        body: '꒰🍃꒱ ᴛᴜ ᴄᴜᴇɴᴛᴀ ʜᴀ ꜱɪᴅᴏ ᴀᴄᴛɪᴠᴀᴅᴀ ᴄᴏɴ ᴇxɪᴛᴏ `☯︎ ʙʏ: 𝑺𝒉𝒂𝑫𝒐𝒘•𝑪𝒐𝒓𝒆`',
+        title: '❁︩︪•°ֺ໋۪݊🎵 ʀᴇɢɪsᴛʀᴏ - sᴀɴᴛᴀғʟᴏᴡ - ʙᴏᴛ ☁️°໋•︪︩❁',
+        body: '꒰🥭꒱ ᴛᴜ ᴄᴜᴇɴᴛᴀ ʜᴀ ꜱɪᴅᴏ ᴀᴄᴛɪᴠᴀᴅᴀ ᴄᴏɴ ᴇxɪᴛᴏ `☯︎ sᴀɴᴛᴀғʟᴏᴡ • ʙʏ: ℂ𝕒𝕣𝕝𝕠𝕤.ℝ.𝕍`',
         mediaType: 1,
-        thumbnailUrl: 'https://files.catbox.moe/1npzmw.jpg',
+        thumbnailUrl: 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg',
         mediaUrl: redes,
         sourceUrl: redes,
         renderLargerThumbnail: false
