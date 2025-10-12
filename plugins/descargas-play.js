@@ -6,8 +6,8 @@ const youtubeRegexID = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-z
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
-    if (!text?.trim()) 
-      return conn.reply(m.chat, `*🎵 Por favor, ingresa el nombre o enlace del video.*`, m, fake)
+    if (!text?.trim())
+      return conn.reply(m.chat, `*⚽ Por favor, ingresa el nombre o enlace del video.*`, m, fake)
 
     let videoIdMatch = text.match(youtubeRegexID)
     let search = await yts(videoIdMatch ? 'https://youtu.be/' + videoIdMatch[1] : text)
@@ -20,33 +20,32 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const { title, thumbnail, timestamp, views, ago, url, author } = video
     const vistas = formatViews(views)
     const canal = author?.name || 'Desconocido'
-    
-    await m.react('⏱️');
+
+    await m.react('⏱️')
     const info = `🌷 \`Titulo:\`  *<${title || 'Desconocido'}>*\n\n> 📺 \`Canal\` » *${canal}*\n> 👁️ \`Vistas\` » *${vistas || 'Desconocido'}*\n> ⏱ \`Duración\` » *${timestamp || 'Desconocido'}*\n> 📆 \`Publicado\` » *${ago || 'Desconocido'}*\n> 🔗 \`Link\` » ${url}`
 
     const thumb = (await conn.getFile(thumbnail)).data
     await conn.sendMessage(m.chat, { image: thumb, caption: info, ...rcanal }, { quoted: fkontak })
-
     if (['play', 'playaudio'].includes(command)) {
       try {
-        const apiUrl = `https://api.nekolabs.my.id/downloader/youtube/v1?url=${encodeURIComponent(url)}&format=mp3`
+        const apiUrl = `https://api.zenzxz.my.id/downloader/ytmp3v2?url=${encodeURIComponent(url)}`
         const res = await fetch(apiUrl)
         const json = await res.json()
 
-        if (!json.status || !json.result?.downloadUrl)
+        if (!json.status || !json.download_url)
           throw '*⚠ No se obtuvo un enlace válido desde la API.*'
 
-        const { title: songTitle, downloadUrl, duration, cover, format, quality } = json.result
+        const { title: songTitle, download_url, duration, thumbnail: cover, format, type } = json
 
         await m.react('✅')
         await conn.sendMessage(m.chat, {
-          audio: { url: downloadUrl },
+          audio: { url: download_url },
           mimetype: 'audio/mpeg',
           fileName: `${songTitle || title}.mp3`,
           contextInfo: {
             externalAdReply: {
               title: songTitle || title,
-              body: `🎧 ${format.toUpperCase()} • ${quality}kbps • ${duration}`,
+              body: `🎧 ${format?.toUpperCase() || 'MP3'} • Duración: ${duration || 'Desconocido'}s`,
               mediaType: 1,
               thumbnail: await (await fetch(cover || thumbnail)).buffer(),
               mediaUrl: url,
@@ -92,7 +91,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           contextInfo: {
             externalAdReply: {
               title: videoTitle,
-              body: '🔥 SANTAFLOW - IA 🌀',
+              body: '🔥 Rin Itoshi - Bot 🌀',
               mediaType: 1,
               thumbnail: thumb,
               mediaUrl: url,
