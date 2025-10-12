@@ -28,7 +28,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     await conn.sendMessage(m.chat, { image: thumb, caption: info, ...rcanal }, { quoted: fkontak })
     if (['play', 'playaudio'].includes(command)) {
       try {
-        const apiUrl = `https://api.vreden.my.id/api/v1/download/youtube/audio?url=${url}&quality=128}`
+        const apiUrl = `https://api.vreden.my.id/api/v1/download/youtube/audio?url=${url}&quality=128`)
         const res = await fetch(apiUrl)
         const json = await res.json()
 
