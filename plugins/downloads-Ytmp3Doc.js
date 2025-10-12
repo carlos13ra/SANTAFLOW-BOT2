@@ -138,7 +138,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 > ✅ єѕρєяє υи мσмєитσ, єѕтσ ρυє∂є тαя∂αя ∂єρє∂ιєи∂σ ∂єℓ ρєѕσ ∂єℓ αυ∂ισ 🎵
 
-˚₊· ͟͟͞͞➳❥ 📊 Progresito:  
+˚₊·📽️ Progresito:  
 [▓▓▓▓▓░░░░░] 50%`
   }, { quoted: fkontak })
 */
@@ -147,7 +147,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 > ▶️ єѕρєяє υи мσмєитσ, єѕтσ ρυє∂є тαя∂αя ∂єρє∂ιєи∂σ ∂єℓ ρєѕσ ∂єℓ αυ∂ισ χ∂
 
-˚₊· ͟͟͞͞➳❥ 📊 Progresito:  
+˚₊·📽️ Progresito:  
 [▓▓▓▓▓░░░░░] 50%` ,
     mentions: [m.sender],
     contextInfo: {
@@ -182,7 +182,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     // 📥 Descargar con SAVETUBE
     let info = await savetube.download(vid.url)
     if (!info.status) {
-      return conn.sendMessage(m.chat, { text: `🌿 No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: `❉ No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
     }
 
     let { result } = info
@@ -199,7 +199,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 > │ °  🏔️ *Link:* ${vid.url}
 > └──
 
-> ☁️ яιи ιтσαнι вσт | 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝚂𝙷𝙰𝙳𝙾𝚆-𝚇𝚈𝚉`.trim()
+> ✿𝕊𝔸ℕ𝕋𝔸𝔽𝕃𝕆𝕎 𝔹𝕆𝕋 | ᴘᴏᴡᴇʀᴇᴅ ᴄᴀʀʟᴏs.ʀ.ᴠ`.trim()
 
     let thumb = null
     try {
