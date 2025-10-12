@@ -89,15 +89,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
       const info = `🎶 *ＹＯＵＴＵＢＥ • ＭＰ4*  🕸️
 ────────────────────
-🎋ᮬᩬִּ〫᪲۟. 𝐓𝐢𝐭𝐮𝐥𝐨: ${meta.title}
-🌿ᮬᩬִּ〫᪲۟. 𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${meta.duration?.timestamp || meta.timestamp}
-🍏ᮬᩬִּ〫᪲۟. 𝐂𝐚𝐧𝐚𝐥: ${meta.author?.name || "-"}
-🍄ᮬᩬִּ〫᪲۟. 𝐕𝐢𝐬𝐭𝐚𝐬: ${meta.views?.toLocaleString() || "-"}
-⚽ᮬᩬִּ〫᪲۟. 𝐓𝐚𝐦𝐚𝐧̃𝐨: ${fileSize}
-☁️ᮬᩬִּ〫᪲۟. 𝐂𝐚𝐥𝐢𝐝𝐚𝐝: ${dl.quality}
-🌷ᮬᩬִּ〫᪲۟. 𝐏𝐮𝐛𝐥𝐢𝐜𝐚𝐝𝐨: ${meta.ago}
-🕸️ᮬᩬִּ〫᪲۟. 𝐋𝐢𝐧𝐤: ${meta.url}
-⚙️ᮬᩬִּ〫᪲۟. 𝐒𝐞𝐫𝐯𝐢𝐝𝐨𝐫: ${apiUsada}
+🎧 𝐓𝐢𝐭𝐮𝐥𝐨: ${meta.title}
+⏰ 𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${meta.duration?.timestamp || meta.timestamp}
+📌 𝐂𝐚𝐧𝐚𝐥: ${meta.author?.name || "-"}
+📈 𝐕𝐢𝐬𝐭𝐚𝐬: ${meta.views?.toLocaleString() || "-"}
+🗃️ 𝐓𝐚𝐦𝐚𝐧̃𝐨: ${fileSize}
+📀 𝐂𝐚𝐥𝐢𝐝𝐚𝐝: ${dl.quality}
+📆 𝐏𝐮𝐛𝐥𝐢𝐜𝐚𝐝𝐨: ${meta.ago}
+🔗 𝐋𝐢𝐧𝐤: ${meta.url}
+⚙️ 𝐒𝐞𝐫𝐯𝐢𝐝𝐨𝐫: ${apiUsada}
 ────────────────────
 > /setquality`
 
@@ -112,7 +112,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         newsletterName: channelRD.name
       },
       externalAdReply: {
-        title: '🍉 𝗬𝗢𝗨𝗧𝗨𝗕𝗘 - 𝗦𝗘𝗔𝗥𝗖𝗛 🏔️',
+        title: 'sᴀɴᴛᴀғʟᴏᴡ ɪᴀ🎧',
         body: '',
         thumbnailUrl: meta.thumbnail,
         sourceUrl: meta.url,
@@ -131,7 +131,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             document: { url: dl.url },
             mimetype: "video/mp4",
             fileName: dl.filename,
-            caption: `> *${meta.title}*\n> *📌 Tamaño:* ${fileSize}\n> *🍉 Calidad: ${dl.quality}\n> *♻️ Servidor:* ${apiUsada}\n> 🚨  Enviado como documento (más de 100 MB).`,
+            caption: `> *${meta.title}*\n> *📌 Tamaño:* ${fileSize}\n> *🔥 Calidad: ${dl.quality}\n> *♻️ Servidor:* ${apiUsada}\n> 🚨  Enviado como documento (más de 100 MB).`,
           },
           { quoted: m }
         )
@@ -142,7 +142,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             video: { url: dl.url },
             mimetype: "video/mp4",
             fileName: dl.filename,
-            caption: `> 🎋 *${meta.title}*\n> *🍧 Tamaño:* ${fileSize}\n> ⚙️ *Calidad:* ${dl.quality}\n> ☁️ *Servidor:* ${apiUsada}`,
+            caption: `> 🎋 *${meta.title}*\n> *☘️ Tamaño:* ${fileSize}\n> ⚙️ *Calidad:* ${dl.quality}\n> ☁️ *Servidor:* ${apiUsada}`,
           },
           { quoted: m }
         )
