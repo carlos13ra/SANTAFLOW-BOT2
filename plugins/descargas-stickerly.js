@@ -70,5 +70,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ["stickerlydl <url>"]
 handler.tags = ["sticker"]
 handler.command = ["stickerlydl", "stickerpack", "dls"]
+handler.premium = true;
 
 export default handler
