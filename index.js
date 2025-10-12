@@ -43,7 +43,7 @@ console.log(chalk.bold.redBright(`\n▨─────────────�
 console.log(chalk.magentaBright('\n🌱 Iniciando bot...'))
 console.log(chalk.bold.redBright(`\n▨────────────────────────▨`))
 
-say('RIN ITOSHI', {
+say('SANTAFLOW', {
 font: 'simple',
 align: 'left',
 gradient: ['green', 'white']
@@ -74,7 +74,7 @@ async function showBanner() {
     `.split('\n').map(line => chalk.hex('#00f7ff').bold(line)).join('\n')
 
     const subtitle = chalk.hex('#ff3366').bold('✦ SANTAFLOW BOT ✦').padStart(50)
-    const poweredMsg = chalk.hex('#ffcc00').italic('🌷 powered by Carlos.R.V')
+    const poweredMsg = chalk.hex('#ffcc00').italic('🥭 powered by Carlos.R.V')
     const aiMsg = chalk.hex('#00f7ff').bold('──────────────────────────────────────────────────────')
     const tips = [
         chalk.hex('#ffcc00')('⌬ Tip: Usa /menu para ver todas las funciones.'),
