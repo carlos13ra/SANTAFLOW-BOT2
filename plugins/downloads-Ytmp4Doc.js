@@ -1,5 +1,5 @@
-// - 𝙲𝙾𝙳𝙸𝙶𝙾 𝙲𝚁𝙴𝙰𝙳𝙾 𝚇 𝚂𝙷𝙰𝙳𝙾𝚆-𝙽𝙴𝚇 𝚇𝙳 👑
-// - https://github.com/Shadow-nex/
+// - CÓDIGO CREADO X CARLOS.R.V
+// - https://github.com/Carlos13ra/
 // - 𝙽𝙾 𝙴𝙳𝙸𝚃𝙰𝚁 𝙴𝙻 𝙲𝙾𝙳𝙸𝙶𝙾 
 
 import fetch from 'node-fetch'
