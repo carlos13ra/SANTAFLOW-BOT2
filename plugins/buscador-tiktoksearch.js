@@ -65,7 +65,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({ text: info }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
-          text: "🌸 Fuente: 𝚂𝙷𝙰𝙳𝙾𝚆-𝙽𝙴𝚇",
+          text: "🎧Fuente: ᴄᴀʀʟᴏs.ʀ.ᴠ",
         }),
         header: proto.Message.InteractiveMessage.Header.fromObject({
           title: v.title || "Video TikTok",
@@ -78,14 +78,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
               {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                  display_text: "🍉 𝘝𝘌𝘙 𝘌𝘕 𝘛𝘐𝘒𝘛𝘖𝘒",
+                  display_text: "💫 𝘝𝘌𝘙 𝘌𝘕 𝘛𝘐𝘒𝘛𝘖𝘒",
                   url: v.url || v.nowm,
                 }),
               },
               {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                  display_text: "🕸️ 𝘊𝘏𝘈𝘕𝘕𝘌𝘓 - 𝘖𝘍𝘊",
+                  display_text: "🥭 𝘊𝘏𝘈𝘕𝘕𝘌𝘓 - 𝘖𝘍𝘊",
                   url: 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39',
                 }),
               },
