@@ -136,9 +136,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 /*  await conn.sendMessage(m.chat, {
     text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🎶 *¡𝙳𝙴𝚂𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾 𝚃𝚄 𝚅𝙸𝙳𝙴𝙾!*
 
-> ✅ єѕρєяє υи мσмєитσ, єѕтσ ρυє∂є тαя∂αя ∂єρє∂ιєи∂σ ∂єℓ ρєѕσ ∂єℓ νι∂єσ χ∂
+> ✅ єѕρєяє υи мσмєитσ, єѕтσ ρυє∂є тαя∂αя ∂єρє∂ιєи∂σ ∂єℓ ρєѕσ ∂єℓ νι∂єσ ❉
 
-˚₊· ͟͟͞͞➳❥ 📊 Progresito:  
+˚₊·⍟🥭 Progresito:  
 [▓▓▓▓▓░░░░░] 50% `
   }, { quoted: fkontak })*/
 
@@ -198,7 +198,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 > │ °  🏔️ *Link:* ${vid.url}
 > └──
 
-> ☁️ яιи ιтσαнι вσт | 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝚂𝙷𝙰𝙳𝙾𝚆-𝚇𝚈𝚉`.trim()
+> ✿𝕊𝔸ℕ𝕋𝔸𝔽𝕃𝕆𝕎 𝔹𝕆𝕋 | ᴘᴏᴡᴇʀᴇᴅ ᴄᴀʀʟᴏs.ʀ.ᴠ`.trim()
 
     let thumb = null
     try {
