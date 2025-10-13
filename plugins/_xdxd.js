@@ -1,16 +1,27 @@
 let handler = async (m, { conn }) => {
   try {
-    let imageUrl = "https://shadow-xyz.vercel.app/img/shadow2.jpg";
-    let caption = `> ${club}`.trim();
+    // Lista de videos
+    let videos = [
+      "https://shadow-xyz.vercel.app/videos/shadow1.mp4",
+      "https://shadow-xyz.vercel.app/videos/shadow2.mp4"
+    ];
 
+    // Escoge uno aleatorio
+    let videoUrl = videos[Math.floor(Math.random() * videos.length)];
+
+    // Texto del mensaje
+    let caption = `> ${club || "🔥 Shadow_Xyz 🔥"}`.trim();
+
+    // Envía el video
     await conn.sendMessage(m.chat, {
-      image: { url: imageUrl },
-      caption: caption
+      video: { url: videoUrl },
+      caption: caption,
+      gifPlayback: false // opcional, puedes poner true si quieres que parezca GIF
     }, { quoted: m });
 
   } catch (e) {
     console.error(e);
-    m.reply("Error al enviar la imagen.");
+    m.reply("❌ Error al enviar el video.");
   }
 };
 
