@@ -16,7 +16,7 @@ let handler = async (m, { conn }) => {
     await conn.sendMessage(m.chat, {
       video: { url: videoUrl },
       caption: caption,
-      gifPlayback: false // opcional, puedes poner true si quieres que parezca GIF
+      gifPlayback: false // true para GIF
     }, { quoted: m });
 
   } catch (e) {
