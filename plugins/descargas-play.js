@@ -62,7 +62,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           contextInfo: {
             externalAdReply: {
               title: `🎧 ${titulo}`,
-              body: 'Descarga Completa ♻️',
+              body: 'Santaflow - IA ♻️',
               mediaType: 1,
               thumbnailUrl: thumbnail,
               sourceUrl: url,
@@ -102,7 +102,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           contextInfo: {
             externalAdReply: {
               title: titulo,
-              body: '📽️ Descarga Completa',
+              body: '📽️ SANTAFLOW - IA',
               thumbnailUrl: thumbnail,
               sourceUrl: url,
               mediaType: 1,
