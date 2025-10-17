@@ -1,5 +1,5 @@
 const handler = async (m, { conn }) => {
-  const ownerNumber = '51906825481'; // gay si editas esta parte att: Shadow_xyz
+  const ownerNumber = '51919199620'; // gay si editas esta parte att: Shadow_xyz
   const senderNumber = m.sender.split('@')[0];
 
   if (senderNumber !== ownerNumber) {
@@ -16,9 +16,9 @@ const handler = async (m, { conn }) => {
   if (!user.exp) user.exp = 0;
   if (!user.joincount) user.joincount = 0;
 
-  const tenDaysInMillis = 864000000; // 10 días
+  const oneMinuteInMillis = 60_000; // 1 minuto
   const now = Date.now();
-  const timeRemaining = user.lastclaim + tenDaysInMillis - now;
+  const timeRemaining = user.lastclaim + oneMinuteInMillis - now;
 
   if (timeRemaining > 0) {
     return conn.reply(
@@ -37,7 +37,7 @@ const handler = async (m, { conn }) => {
   const senderName = await conn.getName(m.sender);
 
   const texto = `
-╭━━━〔 🎁 𝐑𝐄𝐂𝐎𝐌𝐏𝐄𝐍𝐒𝐀 𝐃𝐈𝐀𝐑𝐈𝐀 🎋 〕━━⬣
+╭━━━〔 🎁 𝐑𝐄𝐂𝐎𝐌𝐏𝐄𝐍𝐒𝐀 🎋 〕━━⬣
 │
 │ 💎 *Usuario:* @${senderNumber}
 │ 🧸 *Nombre:* ${senderName}
@@ -47,7 +47,7 @@ const handler = async (m, { conn }) => {
 │ 🧠 *${recompensa.toLocaleString()} XP*
 │ 🪙 *${recompensa.toLocaleString()} tokens*
 │
-│ 🕒 Próximo reclamo en 10 días.
+│ 🕒 Próximo reclamo en 1 minuto.
 │
 ╰━━━〔 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 🌷 〕━━⬣
 `;
@@ -61,7 +61,7 @@ const handler = async (m, { conn }) => {
         externalAdReply: {
           title: '🎁 Recompensa de Rin Itoshi 🌸',
           body: 'Has sido recompensado generosamente!',
-          thumbnailUrl: 'https://qu.ax/ALOZa.jpg', // puedes cambiar esta imagen
+          thumbnailUrl: 'https://qu.ax/ALOZa.jpg',
           sourceUrl: 'https://github.com/Shadow-nex',
           mediaType: 1,
           renderLargerThumbnail: true
@@ -80,9 +80,12 @@ handler.premium = false;
 export default handler;
 
 function msToTime(duration) {
+  let seconds = Math.floor((duration / 1000) % 60);
+  let minutes = Math.floor((duration / (1000 * 60)) % 60);
+  let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
   let days = Math.floor(duration / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((duration % (1000 * 60)) / 1000);
-  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+  return `${days > 0 ? days + 'd ' : ''}${hours > 0 ? hours + 'h ' : ''}${
+    minutes > 0 ? minutes + 'm ' : ''
+  }${seconds}s`;
 }
