@@ -1,13 +1,12 @@
 import fetch from "node-fetch"
 import yts from "yt-search"
-import axios from "axios"
 
 const youtubeRegexID = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text?.trim())
-      return conn.reply(m.chat, `*🎵 Por favor, ingresa el nombre o enlace del video.*`, m, fake)
+      return conn.reply(m.chat, `🔥 *Por favor, ingresa el nombre o enlace del video.*`, m)
 
     let videoIdMatch = text.match(youtubeRegexID)
     let search = await yts(videoIdMatch ? 'https://youtu.be/' + videoIdMatch[1] : text)
@@ -21,106 +20,115 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const vistas = formatViews(views)
     const canal = author?.name || 'Desconocido'
 
-    await m.react('⏱️')
-    const info = `🌷 \`Titulo:\`  *<${title || 'Desconocido'}>*\n\n> 📺 \`Canal\` » *${canal}*\n> 👁️ \`Vistas\` » *${vistas || 'Desconocido'}*\n> ⏱ \`Duración\` » *${timestamp || 'Desconocido'}*\n> 📆 \`Publicado\` » *${ago || 'Desconocido'}*\n> 🔗 \`Link\` » ${url}`
+    const infoMessage = ` *${title}*
 
-    const thumb = (await conn.getFile(thumbnail)).data
-    await conn.sendMessage(m.chat, { image: thumb, caption: info, ...rcanal }, { quoted: fkontak })
-    if (['play', 'playaudio'].includes(command)) {
+> 📺 *Canal:* ${canal}
+> 👁️ *Vistas:* ${vistas}
+> ⏱ *Duración:* ${timestamp || 'Desconocido'}
+> 📆 *Publicado:* ${ago || 'Desconocido'}
+> 🔗 *Enlace:* ${url}`.trim()
+
+    await conn.sendMessage(m.chat, {
+      image: { url: thumbnail },
+      caption: infoMessage,
+      contextInfo: {
+        externalAdReply: {
+          title: title,
+          body: "🎶 Reproducir contenido multimedia",
+          thumbnailUrl: thumbnail,
+          sourceUrl: url,
+          mediaType: 1,
+          renderLargerThumbnail: true
+        }
+      }
+    }, { quoted: m })
+
+    if (command === 'playaudio') {
       try {
-        const apiUrl = `https://api.vreden.my.id/api/v1/download/youtube/audio?url=${url}&quality=128`)
+        const apiUrl = `https://api-nv.ultraplus.click/api/youtube/v2?url=${encodeURIComponent(url)}&format=audio&key=hYSK8YrJpKRc9jSE`
         const res = await fetch(apiUrl)
         const json = await res.json()
 
-        if (!json.status || !json.download_url)
-          throw '*⚠ No se obtuvo un enlace válido desde la API.*'
+        if (!json.status || !json.result?.dl)
+          throw '*⚠ No se obtuvo un enlace de audio válido.*'
 
-        const { title: songTitle, download_url, duration, thumbnail: cover, format, type } = json
+        const audioUrl = json.result.dl
+        const titulo = json.result.title || title
 
-        await m.react('✅')
         await conn.sendMessage(m.chat, {
-          audio: { url: download_url },
+          audio: { url: audioUrl },
           mimetype: 'audio/mpeg',
-          fileName: `${songTitle || title}.mp3`,
+          fileName: `${titulo}.mp3`,
           contextInfo: {
             externalAdReply: {
-              title: songTitle || title,
-              body: `🎧 ${format?.toUpperCase() || 'MP3'} • Duración: ${duration || 'Desconocido'}s`,
+              title: `🎧 ${titulo}`,
+              body: 'Descarga Completa ♻️',
               mediaType: 1,
-              thumbnail: await (await fetch(cover || thumbnail)).buffer(),
-              mediaUrl: url,
+              thumbnailUrl: thumbnail,
               sourceUrl: url,
-              renderLargerThumbnail: false
+              renderLargerThumbnail: true
             }
           }
         }, { quoted: m })
 
+        await m.react('✅')
       } catch (e) {
         console.error(e)
-        return conn.reply(m.chat, '*⚠︎ No se pudo enviar el audio. El archivo podría ser demasiado pesado o hubo un error en la API.*', m)
+        return conn.reply(m.chat, '*⚠ No se pudo enviar el audio. Puede ser muy pesado o hubo un error en la API.*', m)
       }
     }
 
-    else if (['play2', 'playvideo'].includes(command)) {
+    else if (command === 'playvideo') {
       try {
-        const apiUrl = `https://api.zenzxz.my.id/downloader/ytmp4v2?url=${encodeURIComponent(url)}`
+        const apiUrl = `https://api.stellarwa.xyz/dow/ytmp4?url=${encodeURIComponent(url)}&apikey=Shadow_Core`
         const res = await fetch(apiUrl)
         const json = await res.json()
 
-        if (!json.status || !json.download_url)
-          throw '*⚠ No se pudo obtener el enlace de descarga de video.*'
+        if (!json.status || !json.data?.dl)
+          throw '⚠ No se obtuvo enlace de video válido.'
 
-        const dlUrl = json.download_url
-        const videoTitle = json.title || title
-        const videoDesc = `Duración: ${json.duration || 'Desconocido'}s\nFormato: ${json.format || 'Desconocido'}`
-        const thumbUrl = json.thumbnail || thumbnail
-        const thumb = (await conn.getFile(thumbUrl)).data
+        const videoUrl = json.data.dl
+        const titulo = json.data.title || title
+        const autor = json.data.author || canal
 
-        const size = await getSize(dlUrl)
-        const sizeStr = size ? await formatSize(size) : 'Desconocido'
-
-        await m.react('✅')
-
-        const caption = `🎬 *${videoTitle}*\n\n🧾 ${videoDesc}\n📏 Tamaño: *${sizeStr}*\n\n> ⚡ *Descarga completa*`
+        const caption = `> ♻️ *Titulo:* ${titulo}
+> 🎋 *Duración:* ${timestamp || 'Desconocido'}`.trim()
 
         await conn.sendMessage(m.chat, {
-          video: { url: dlUrl },
+          video: { url: videoUrl },
           caption,
           mimetype: 'video/mp4',
-          fileName: `${videoTitle}.mp4`,
+          fileName: `${titulo}.mp4`,
           contextInfo: {
             externalAdReply: {
-              title: videoTitle,
-              body: '🔥 Santaflow - Bot 🌀',
-              mediaType: 1,
-              thumbnail: thumb,
-              mediaUrl: url,
+              title: titulo,
+              body: '📽️ Descarga Completa',
+              thumbnailUrl: thumbnail,
               sourceUrl: url,
-              renderLargerThumbnail: false
+              mediaType: 1,
+              renderLargerThumbnail: true
             }
           }
         }, { quoted: m })
+
+        await m.react('✅')
       } catch (e) {
         console.error(e)
-        return conn.reply(m.chat, '⚠︎ No se pudo enviar el video. El archivo podría ser muy pesado o hubo un error en el enlace.', m)
+        return conn.reply(m.chat, '⚠ No se pudo enviar el video. Puede ser muy pesado o hubo un error en la API.', m)
       }
-    }
-
-    else {
-      return conn.reply(m.chat, '✧︎ Comando no reconocido.', m)
+    } else {
+      return conn.reply(m.chat, '✧ Comando no reconocido.', m)
     }
 
   } catch (err) {
     console.error(err)
-    return m.reply(`⚠︎ Ocurrió un error:\n${err}`)
+    return m.reply(`⚠ Ocurrió un error:\n${err}`)
   }
 }
 
-handler.command = handler.help = ['playaudio', 'play', 'playvideo', 'play2']
+handler.command = handler.help = ['playaudio', 'playvideo']
 handler.tags = ['descargas']
-
 export default handler
-
 
 function formatViews(views) {
   if (views === undefined) return "No disponible"
@@ -128,25 +136,4 @@ function formatViews(views) {
   if (views >= 1e6) return `${(views / 1e6).toFixed(1)}M (${views.toLocaleString()})`
   if (views >= 1e3) return `${(views / 1e3).toFixed(1)}K (${views.toLocaleString()})`
   return views.toString()
-}
-
-async function getSize(downloadUrl) {
-  try {
-    const response = await axios.head(downloadUrl, { maxRedirects: 5 })
-    const length = response.headers['content-length']
-    return length ? parseInt(length, 10) : null
-  } catch {
-    return null
-  }
-}
-
-async function formatSize(bytes) {
-  const units = ['B', 'KB', 'MB', 'GB']
-  let i = 0
-  if (!bytes || isNaN(bytes)) return 'Desconocido'
-  while (bytes >= 1024 && i < units.length - 1) {
-    bytes /= 1024
-    i++
-  }
-  return `${bytes.toFixed(2)} ${units[i]}`
 }
