@@ -1,5 +1,5 @@
 const handler = async (m, { conn }) => {
-  const ownerNumber = '51919199620'; // gay si editas esta parte att: Shadow_xyz
+  const ownerNumber = '51906825481'; // gay si editas esta parte att: Shadow_xyz
   const senderNumber = m.sender.split('@')[0];
 
   if (senderNumber !== ownerNumber) {
