@@ -5,7 +5,6 @@ const handler = async (m, { conn, args, command, usedPrefix }) => {
   const user = global.db.data.users[sender]
   global.shadowGifts = global.shadowGifts || {}
 
-  // ======================== 🎁 CREAR REGALO =========================
   if (command === 'shadowregalo') {
     if (!user.coin || user.coin < 1)
       return m.reply('🚫 *No tienes suficientes monedas para crear un regalo.*')
@@ -28,7 +27,6 @@ const handler = async (m, { conn, args, command, usedPrefix }) => {
     if (user.coin < costoTotal)
       return m.reply(`💸 *No tienes suficientes monedas.*\nRequieres ${costoTotal.toLocaleString()} 💰`)
 
-    // Descuento del creador
     user.coin -= costoTotal
 
     // Crear token único
@@ -61,7 +59,6 @@ const handler = async (m, { conn, args, command, usedPrefix }) => {
     return
   }
 
-  // ======================== ☃️ CANJEAR REGALO =========================
   if (command === 'shadowcanje') {
     const token = args[0]?.toUpperCase()
     if (!token) return m.reply(`❄️ *Uso:* ${usedPrefix + command} <token>\nEjemplo: ${usedPrefix + command} ABC12345`)
@@ -77,7 +74,6 @@ const handler = async (m, { conn, args, command, usedPrefix }) => {
       return m.reply('☃️ *Todas las copias de este regalo ya fueron reclamadas.*')
     }
 
-    // Aumentar recompensas del usuario
     const receptor = global.db.data.users[sender]
     if (!receptor.coin) receptor.coin = 0
     if (!receptor.exp) receptor.exp = 0
