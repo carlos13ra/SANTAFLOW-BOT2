@@ -6,7 +6,7 @@ const youtubeRegexID = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-z
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text?.trim())
-      return conn.reply(m.chat, `🔥 *Por favor, ingresa el nombre o enlace del video.*`, m)
+      return conn.reply(m.chat, `⚽ *Por favor, ingresa el nombre o enlace del video.*`, m)
 
     let videoIdMatch = text.match(youtubeRegexID)
     let search = await yts(videoIdMatch ? 'https://youtu.be/' + videoIdMatch[1] : text)
@@ -34,26 +34,27 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       contextInfo: {
         externalAdReply: {
           title: title,
-          body: "🎶 Reproducir contenido multimedia",
+          body: "",
           thumbnailUrl: thumbnail,
           sourceUrl: url,
           mediaType: 1,
-          renderLargerThumbnail: true
+          renderLargerThumbnail: false
         }
       }
     }, { quoted: m })
 
     if (command === 'playaudio') {
       try {
-        const apiUrl = `https://api-nv.ultraplus.click/api/youtube/v2?url=${encodeURIComponent(url)}&format=audio&key=hYSK8YrJpKRc9jSE`
+        const apiUrl = `https://api.nekolabs.my.id/downloader/youtube/v1?url=${encodeURIComponent(url)}&format=mp3`
         const res = await fetch(apiUrl)
         const json = await res.json()
 
-        if (!json.status || !json.result?.dl)
+        if (!json.success || !json.result?.downloadUrl)
           throw '*⚠ No se obtuvo un enlace de audio válido.*'
 
-        const audioUrl = json.result.dl
+        const audioUrl = json.result.downloadUrl
         const titulo = json.result.title || title
+        const cover = json.result.cover || thumbnail
 
         await conn.sendMessage(m.chat, {
           audio: { url: audioUrl },
@@ -62,11 +63,11 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           contextInfo: {
             externalAdReply: {
               title: `🎧 ${titulo}`,
-              body: 'Santaflow - IA ♻️',
+              body: 'Descarga Completa ♻️',
               mediaType: 1,
-              thumbnailUrl: thumbnail,
+              thumbnailUrl: cover,
               sourceUrl: url,
-              renderLargerThumbnail: true
+              renderLargerThumbnail: false
             }
           }
         }, { quoted: m })
@@ -102,7 +103,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           contextInfo: {
             externalAdReply: {
               title: titulo,
-              body: '📽️ SANTAFLOW - IA',
+              body: '📽️ Descarga Completa',
               thumbnailUrl: thumbnail,
               sourceUrl: url,
               mediaType: 1,
