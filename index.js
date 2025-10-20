@@ -1,7 +1,5 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
 import './settings.js'
-import { setupMaster, fork } from 'cluster'
-import { watchFile, unwatchFile } from 'fs'
 import cfonts from 'cfonts'
 import { createRequire } from 'module'
 import { fileURLToPath, pathToFileURL } from 'url'
@@ -11,13 +9,11 @@ import fs, { readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileS
 import yargs from 'yargs'
 import { spawn, execSync } from 'child_process'
 import lodash from 'lodash'
-import { shadowJadiBot } from './plugins/jadibot-serbot.js'
 import chalk from 'chalk'
 import syntaxerror from 'syntax-error'
 import { tmpdir } from 'os'
 import { format } from 'util'
 import boxen from 'boxen'
-import P from 'pino'
 import pino from 'pino'
 import Pino from 'pino'
 import path, { join, dirname } from 'path'
@@ -30,7 +26,7 @@ const { proto } = (await import('@whiskeysockets/baileys')).default
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
-const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, Browsers } = await import('@whiskeysockets/baileys')
+const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser } = await import('@whiskeysockets/baileys')
 import readline, { createInterface } from 'readline'
 import NodeCache from 'node-cache'
 const { CONNECTING } = ws
@@ -38,130 +34,17 @@ const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
-/*
-console.log(chalk.bold.redBright(`\n▨────────────────────────▨`))
-console.log(chalk.magentaBright('\n🌱 Iniciando bot...'))
-console.log(chalk.bold.redBright(`\n▨────────────────────────▨`))
-
-say('SANTAFLOW', {
-font: 'simple',
-align: 'left',
+console.log(chalk.cyan('BOT LISTO ESPERE...🌿\n'))
+say('RIN ITOSHI BOT', {
+font: 'block',
+align: 'center',
 gradient: ['green', 'white']
 })
-say('Made with By Carlos', {
+say('Shadow_Core xD', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
-})*/
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-async function showBanner() {
-    const title = `
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░
-░░░░░░░░▄▀░░░░░░░░░░░░▄░░░░░░░▀▄░░░░░░░
-░░░░░░░░█░░▄░░░░▄░░░░░░░░░░░░░░█░░░░░░░
-░░░░░░░░█░░░░░░░░░░░░▄█▄▄░░▄░░░█░▄▄▄░░░
-░▄▄▄▄▄░░█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██░░
-░██▄▀██▄█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██░░
-░░▀██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██░
-░░░░▀████░▀░░░░▄░░░██░░░▄█░░░░▄░▄█░░██░
-░░░░░░░▀█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██░
-░░░░░░░▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀░░
-░░░░░░█▀▀█████████▀▀▀▀████████████▀░░░░
-░░░░░░████▀░░███▀░░░░░░▀███░░▀██▀░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    `.split('\n').map(line => chalk.hex('#00f7ff').bold(line)).join('\n')
-
-    const subtitle = chalk.hex('#ff3366').bold('✦ SANTAFLOW BOT ✦').padStart(50)
-    const poweredMsg = chalk.hex('#ffcc00').italic('🥭 powered by Carlos.R.V')
-    const aiMsg = chalk.hex('#00f7ff').bold('──────────────────────────────────────────────────────')
-    const tips = [
-        chalk.hex('#ffcc00')('⌬ Tip: Usa /menu para ver todas las funciones.'),
-        chalk.hex('#00f7ff')('✧ Sígueme en GitHub para ver updates.'),
-        chalk.hex('#ff3366')('⬡ Disfruta del poder de Santaflow Bot.')
-    ]
-    const loadingFrames = [
-        chalk.cyanBright('⠋ Inicializando módulos...'),
-        chalk.cyanBright('⠙ Inicializando módulos...'),
-        chalk.cyanBright('⠹ Inicializando módulos...'),
-        chalk.cyanBright('⠸ Inicializando módulos...'),
-        chalk.cyanBright('⠼ Inicializando módulos...'),
-        chalk.cyanBright('⠴ Inicializando módulos...'),
-        chalk.cyanBright('⠦ Inicializando módulos...'),
-        chalk.cyanBright('⠧ Inicializando módulos...'),
-        chalk.cyanBright('⠇ Inicializando módulos...'),
-        chalk.cyanBright('⠏ Inicializando módulos...')
-    ]
-
-    console.clear()
-   
-    console.log(
-        boxen(
-            title + '\n' + subtitle,
-            {
-                padding: 1,
-                margin: 1,
-                borderStyle: 'classic',
-                borderColor: 'cyanBright',
-                backgroundColor: 'black',
-                title: 'Rin Itoshi Bot',
-                titleAlignment: 'center'
-            }
-        )
-    )
-
-    say('Santaflow', {
-        font: 'block',
-        align: 'center',
-        colors: ['cyan', 'blue'],
-        background: 'transparent',
-        letterSpacing: 1,
-        lineHeight: 1
-    })
-    say('🍁 by Carlos', {
-        font: 'console',
-        align: 'center',
-        colors: ['yellow'],
-        background: 'transparent'
-    })
-    console.log('\n' + aiMsg + '\n')
-
-    for (let i = 0; i < 20; i++) {
-        process.stdout.write('\r' + loadingFrames[i % loadingFrames.length])
-        await sleep(80)
-    }
-    process.stdout.write('\r' + ' '.repeat(40) + '\r') 
-
-    console.log(
-        chalk.bold.blueBright(
-            boxen(
-                chalk.bold('¡Bienvenido a Santaflow Bot!\n') +
-                chalk.hex('#00f7ff')('El bot está arrancando, espera un momento...') +
-                '\n\n' +
-                tips.join('\n'),
-                {
-                    padding: 1,
-                    margin: 1,
-                    borderStyle: 'round',
-                    borderColor: 'magenta'
-                }
-            )
-        )
-    )
-
-    const symbols = [
-        chalk.hex('#ff3366')('✧'), chalk.hex('#00f7ff')('⌬'), chalk.hex('#ffcc00')('⬡'),
-        chalk.hex('#00f7ff')('✧'), chalk.hex('#ff3366')('⌬'), chalk.hex('#ffcc00')('⬡')
-    ]
-    let line = ''
-    for (let i = 0; i < 40; i++) {
-        line += symbols[i % symbols.length]
-    }
-    console.log('\n' + line + '\n')
-}
-await showBanner()
-
+})
 protoType()
 serialize()
 
@@ -231,24 +114,13 @@ console.log(chalk.bold.redBright(`No se permiten numeros que no sean 1 o 2, tamp
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
 } 
 
-const filterStrings = [
-"Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
-"Q2xvc2luZyBvcGVuIHNlc3Npb24=", // "Closing open session"
-"RmFpbGVkIHRvIGRlY3J5cHQ=", // "Failed to decrypt"
-"U2Vzc2lvbiBlcnJvcg==", // "Session error"
-"RXJyb3I6IEJhZCBNQUM=", // "Error: Bad MAC" 
-"RGVjcnlwdGVkIG1lc3NhZ2U=" // "Decrypted message" 
-]
-
 console.info = () => { }
-console.debug = () => { }
-['log', 'warn', 'error'].forEach(methodName => redefineConsoleMethod(methodName, filterStrings))
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? Browsers.macOS("Desktop") : methodCodeQR ? Browsers.macOS("Desktop") : Browsers.macOS("Chrome"), 
+browser: ["MacOs", "Safari"],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -293,105 +165,18 @@ addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
 let codeBot = await conn.requestPairingCode(addNumber)
 codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(`[ ✿ ]  Código:`)), chalk.bold.white(chalk.white(codeBot)))
+console.log(chalk.bold.white(chalk.bgMagenta(`[ ✨️ ]  Código:`)), chalk.bold.white(chalk.white(codeBot)))
 }, 3000)
 }}}}
 conn.isInit = false
 conn.well = false
-conn.logger.info(`[ ✿ ]  H E C H O\n`)
+conn.logger.info(`LISTO 🤖\n`)
 if (!opts['test']) {
 if (global.db) setInterval(async () => {
 if (global.db.data) await global.db.write()
 if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp', `${jadi}`], tmp.forEach((filename) => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
 }, 30 * 1000)
 }
-
-async function resolveLidToRealJid(lidJid, groupJid, maxRetries = 3, retryDelay = 1000) {
-if (!lidJid?.endsWith("@lid") || !groupJid?.endsWith("@g.us")) return lidJid?.includes("@") ? lidJid : `${lidJid}@s.whatsapp.net`
-const cached = lidCache.get(lidJid);
-if (cached) return cached;
-const lidToFind = lidJid.split("@")[0];
-let attempts = 0
-while (attempts < maxRetries) {
-try {
-const metadata = await conn.groupMetadata(groupJid)
-if (!metadata?.participants) throw new Error("No se obtuvieron participantes")
-for (const participant of metadata.participants) {
-try {
-if (!participant?.jid) continue
-const contactDetails = await conn.onWhatsApp(participant.jid)
-if (!contactDetails?.[0]?.lid) continue
-const possibleLid = contactDetails[0].lid.split("@")[0]
-if (possibleLid === lidToFind) {
-lidCache.set(lidJid, participant.jid)
-return participant.jid
-}} catch (e) {
-continue
-}}
-lidCache.set(lidJid, lidJid)
-return lidJid
-} catch (e) {
-attempts++
-if (attempts >= maxRetries) {
-lidCache.set(lidJid, lidJid)
-return lidJid
-}
-await new Promise(resolve => setTimeout(resolve, retryDelay))
-}}
-return lidJid
-}
-
-async function extractAndProcessLids(text, groupJid) {
-if (!text) return text
-const lidMatches = text.match(/\d+@lid/g) || []
-let processedText = text
-for (const lid of lidMatches) {
-try {
-const realJid = await resolveLidToRealJid(lid, groupJid);
-processedText = processedText.replace(new RegExp(lid, 'g'), realJid)
-} catch (e) {
-console.error(`Error procesando LID ${lid}:`, e)
-}}
-return processedText
-}
-
-async function processLidsInMessage(message, groupJid) {
-if (!message || !message.key) return message
-try {
-const messageCopy = {
-key: {...message.key},
-message: message.message ? {...message.message} : undefined,
-...(message.quoted && {quoted: {...message.quoted}}),
-...(message.mentionedJid && {mentionedJid: [...message.mentionedJid]})
-}
-const remoteJid = messageCopy.key.remoteJid || groupJid
-if (messageCopy.key?.participant?.endsWith('@lid')) { messageCopy.key.participant = await resolveLidToRealJid(messageCopy.key.participant, remoteJid) }
-if (messageCopy.message?.extendedTextMessage?.contextInfo?.participant?.endsWith('@lid')) { messageCopy.message.extendedTextMessage.contextInfo.participant = await resolveLidToRealJid( messageCopy.message.extendedTextMessage.contextInfo.participant, remoteJid ) }
-if (messageCopy.message?.extendedTextMessage?.contextInfo?.mentionedJid) {
-const mentionedJid = messageCopy.message.extendedTextMessage.contextInfo.mentionedJid
-if (Array.isArray(mentionedJid)) {
-for (let i = 0; i < mentionedJid.length; i++) {
-if (mentionedJid[i]?.endsWith('@lid')) {
-mentionedJid[i] = await resolveLidToRealJid(mentionedJid[i], remoteJid)
-}}}}
-if (messageCopy.message?.extendedTextMessage?.contextInfo?.quotedMessage?.extendedTextMessage?.contextInfo?.mentionedJid) {
-const quotedMentionedJid = messageCopy.message.extendedTextMessage.contextInfo.quotedMessage.extendedTextMessage.contextInfo.mentionedJid;
-if (Array.isArray(quotedMentionedJid)) {
-for (let i = 0; i < quotedMentionedJid.length; i++) {
-if (quotedMentionedJid[i]?.endsWith('@lid')) {
-quotedMentionedJid[i] = await resolveLidToRealJid(quotedMentionedJid[i], remoteJid)
-}}}}
-if (messageCopy.message?.conversation) { messageCopy.message.conversation = await extractAndProcessLids(messageCopy.message.conversation, remoteJid) }
-if (messageCopy.message?.extendedTextMessage?.text) { messageCopy.message.extendedTextMessage.text = await extractAndProcessLids(messageCopy.message.extendedTextMessage.text, remoteJid) }
-if (messageCopy.message?.extendedTextMessage?.contextInfo?.participant && !messageCopy.quoted) {
-const quotedSender = await resolveLidToRealJid( messageCopy.message.extendedTextMessage.contextInfo.participant, remoteJid );
-messageCopy.quoted = { sender: quotedSender, message: messageCopy.message.extendedTextMessage.contextInfo.quotedMessage }
-}
-return messageCopy
-} catch (e) {
-console.error('Error en processLidsInMessage:', e)
-return message
-}}
 
 async function connectionUpdate(update) {
 const {connection, lastDisconnect, isNewLogin} = update
@@ -411,7 +196,7 @@ if (connection === "open") {
 const userJid = jidNormalizedUser(conn.user.id)
 const userName = conn.user.name || conn.user.verifiedName || "Desconocido"
 await joinChannels(conn)
-console.log(chalk.green.bold(`[ ✿ ]  Conectado a: ${userName}`))
+console.log(chalk.green.bold(`╭───────────────────────────◉\n│\n│🌺◌*̥₊ 𝙲𝚘𝚗𝚎𝚌𝚝𝚊𝚍𝚘 𝙲𝚘𝚛𝚛𝚎𝚌𝚝𝚊𝚖𝚎𝚗𝚝𝚎.\n│\n╰───────────────────────────◉`))
 }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
@@ -477,17 +262,12 @@ conn.ev.on('creds.update', conn.credsUpdate)
 isInit = false
 return true
 }
-setInterval(() => {
-console.log('[ ✿ ]  Reiniciando...');
-process.exit(0)
-}, 10800000)
-let rtU = join(__dirname, `./${jadi}`)
-if (!existsSync(rtU)) {
-mkdirSync(rtU, { recursive: true }) 
-}
+process.on('unhandledRejection', (reason, promise) => {
+console.error("Rechazo no manejado detectado:", reason)
+})
 
 global.rutaJadiBot = join(__dirname, `./${jadi}`)
-if (global.shadowJadibts) {
+if (global.yukiJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
 console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} se creó correctamente.`))
@@ -501,7 +281,7 @@ for (const gjbts of readRutaJadiBot) {
 const botPath = join(rutaJadiBot, gjbts)
 const readBotPath = readdirSync(botPath)
 if (readBotPath.includes(creds)) {
-shadowJadiBot({pathshadowJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
+yukiJadiBot({pathYukiJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
 }}}}
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
@@ -569,88 +349,18 @@ const [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test;
 const s = global.support = {ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find};
 Object.freeze(global.support);
 }
-function clearTmp() {
+// Tmp
+setInterval(async () => {
 const tmpDir = join(__dirname, 'tmp')
+try {
 const filenames = readdirSync(tmpDir)
 filenames.forEach(file => {
 const filePath = join(tmpDir, file)
 unlinkSync(filePath)})
-}
-
-function purgeSession() {
-let prekey = []
-let directorio = readdirSync(`./${sessions}`)
-let filesFolderPreKeys = directorio.filter(file => {
-return file.startsWith('pre-key-')
-})
-prekey = [...prekey, ...filesFolderPreKeys]
-filesFolderPreKeys.forEach(files => {
-unlinkSync(`./${sessions}/${files}`)
-})
-} 
-
-function purgeSessionSB() {
-try {
-const listaDirectorios = readdirSync(`./${jadi}/`);
-let SBprekey = [];
-listaDirectorios.forEach(directorio => {
-if (statSync(`./${jadi}/${directorio}`).isDirectory()) {
-const DSBPreKeys = readdirSync(`./${jadi}/${directorio}`).filter(fileInDir => {
-return fileInDir.startsWith('pre-key-')
-})
-SBprekey = [...SBprekey, ...DSBPreKeys];
-DSBPreKeys.forEach(fileInDir => {
-if (fileInDir !== 'creds.json') {
-unlinkSync(`./${jadi}/${directorio}/${fileInDir}`)
-}})
-}})
-if (SBprekey.length === 0) {
-console.log(chalk.bold.green(`\nꕥ No hay archivos en ${jadi} para eliminar.`))
-} else {
-console.log(chalk.bold.cyanBright(`\n⌦ Archivos de la carpeta ${jadi} han sido eliminados correctamente.`))
-}} catch (err) {
-console.log(chalk.bold.red(`\n⚠︎ Error para eliminar archivos de la carpeta ${jadi}.\n` + err))
-}}
-
-function purgeOldFiles() {
-const directories = [`./${sessions}/`, `./${jadi}/`]
-directories.forEach(dir => {
-readdirSync(dir, (err, files) => {
-if (err) throw err
-files.forEach(file => {
-if (file !== 'creds.json') {
-const filePath = path.join(dir, file);
-unlinkSync(filePath, err => {
-if (err) {
-console.log(chalk.bold.red(`\n⚠︎ El archivo ${file} no se logró borrar.\n` + err))
-} else {
-console.log(chalk.bold.green(`\n⌦ El archivo ${file} se ha borrado correctamente.`))
-} }) }
-}) }) }) }
-function redefineConsoleMethod(methodName, filterStrings) {
-const originalConsoleMethod = console[methodName]
-console[methodName] = function() {
-const message = arguments[0]
-if (typeof message === 'string' && filterStrings.some(filterString => message.includes(atob(filterString)))) {
-arguments[0] = ""
-}
-originalConsoleMethod.apply(console, arguments)
-}}
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await clearTmp()
-console.log(chalk.bold.cyanBright(`\n⌦ Archivos de la carpeta TMP no necesarios han sido eliminados del servidor.`))}, 1000 * 60 * 4)
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await purgeSession()
-console.log(chalk.bold.cyanBright(`\n⌦ Archivos de la carpeta ${global.sessions} no necesario han sido eliminados del servidor.`))}, 1000 * 60 * 10)
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await purgeSessionSB()}, 1000 * 60 * 10) 
-setInterval(async () => {
-if (stopped === 'close' || !conn || !conn.user) return
-await purgeOldFiles()
-console.log(chalk.bold.cyanBright(`\n⌦ Archivos no necesario han sido eliminados del servidor.`))}, 1000 * 60 * 10)
+console.log(chalk.gray(`→ Archivos de la carpeta TMP eliminados`))
+} catch {
+console.log(chalk.gray(`→ Los archivos de la carpeta TMP no se pudieron eliminar`));
+}}, 30 * 1000)
 _quickTest().catch(console.error)
 async function isValidPhoneNumber(number) {
 try {
@@ -666,7 +376,8 @@ return phoneUtil.isValidNumber(parsedNumber)
 return false
 }}
 
-async function joinChannels(conn) {
-for (const channelId of Object.values(global.ch)) {
-await conn.newsletterFollow(channelId).catch(() => {})
-}}
+async function joinChannels(sock) {
+for (const value of Object.values(global.ch)) {
+if (typeof value === 'string' && value.endsWith('@newsletter')) {
+await sock.newsletterFollow(value).catch(() => {})
+}}}
