@@ -15,69 +15,67 @@ global.botNumber = ''
 
 global.owner = [
 // <-- Número @s.whatsapp.net -->
-  ['51984169553', '🜲 Propietario 🎃', true],
-  ['51946200884', 'carlos', true],
-  ['59898719147', 'feli', true],
-  ['51934053286', ':v', true ],
-  ['51965763942', 'Shadow-xyz ⚡', true],
-  ['51946200884'],
-  ['59892681750'],
-  ['51927303598'],
+  ['51984169553', '🜲 Propietario 🜲', true],
+  ['51984169553', 'Carlos.rv', true],
+  ['51946200884', ':v', true],
+  ['51919199620', ':v', true ],
+  ['51965763942', 'ShadowCore 🌿', true],
   
 // <-- Número @lid -->
 
-  //['41885158654125, 'Propietario', true],
-  ['49285437599822', 'carlos', true],
-  ['119069730668723', 'feli', true ],
-  ['102680420733070', ':v', true ],
-  ['106820853043217', 'shadow-xyz ⭐', true]
+  ['41885158654125', 'Propietario', true],
+  ['102680420733070', 'carlos.rv', true],
+  ['49285437599822', ':v', true ],
+  ['80754461647013', ':v', true ],
+  ['106820853043217', 'Shadow`Core', true]
 ];  
-
+  
+  
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.mods = ['51984169553', '51984169553']
+global.mods = ['51984169553']
 global.suittag = ['51984169553'] 
-global.prems = ['51984169553', '51934053286']
+global.prems = ['51984169553']
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.17' 
-global.vs = '3.0.0'
-global.nameqr = '⋆｡°✩🍂 Santaflow•Bot ⚡✩°｡⋆'
-global.namebot = '✿⋆｡° Santaflow•Bot °｡⋆✿'
+global.vs = '2.2.5'
+global.nameqr = '✦⃟⚡ GOJO•Bot⚡⃟✦'
+global.namebot = '⸸ 𝐆𝐎𝐉𝐎•𝐁𝐎𝐓 ⸸'
 global.sessions = 'Sessions'
 global.jadi = 'JadiBots' 
 global.shadowJadibts = true
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.packname = '⸙͎۪۫ ࣭࿐ ✿ ˚.🔥𝑺𝑨𝑵𝑻𝑨𝑭𝑳𝑶𝑾 ⌗ 𝐁𝐨𝐭 ♡⚡ ࿐ ۪۫⸙͎'
-global.botname = '⋆ ˚｡⋆୨୧˚ 𝑺𝑨𝑵𝑻𝑨𝑭𝑳𝑶𝑾 𝐁𝐨𝐭 ⚽ ˚୨୧⋆｡˚ ⋆'
-global.wm = '◈ 𝑺𝑨𝑵𝑻𝑨𝑭𝑳𝑶𝑾 𝑩𝒐𝒕 ◈'
-global.author = '⩇⃟🔋 𝑴𝒂𝒅𝒆 𝒃𝒚 𝑪𝒂𝒓𝒍𝒐𝒔.𝑹.𝑽 ⩇⃟⚡'
-global.dev = '✧ 𖦹 𝚃𝙷𝙴 𝙲𝙰𝚁𝙻𝙾𝚂 ⊹꙰ ꔛ 𝚁.𝚅 ✧'
-global.bot = '𝑺𝒂𝒏𝒕𝒂𝒇𝒍𝒐𝒘 𝑩𝒐𝒕'
-global.club = '𓏲⍣⃝🌙꙰꙳ 𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝑪𝒂𝒓𝒍𝒐𝒔 ꙳⍣⃝ ☻⋆͙̈✫.💫'
-global.textbot = '𓏲⍣⃝🔥꙳✦ 𝕊𝔸ℕ𝕋𝔸𝔽𝕃𝕆𝕎 𝔹𝕆𝕋꙳⍣⃝☻⋆͙̈✫.👻'
-global.etiqueta = '@ᴄᴀʀʟᴏs.ʀ.ᴠ°ᴍᴀɴɢᴜɪᴛᴏ🥭'
+global.packname = '🏆 ⌬ 𝐆𝐨𝐣𝐨 𝑩𝒐𝒕 ⌬ 💥'
+global.botname = '☘️ 𝐆𝐎𝐉𝐎 𝐁𝐎𝐓'
+global.wm = '◈𝐆𝐎𝐉𝐎 𝐁𝐎𝐓◈'
+global.author = '⩇⃟🔋 𝑴𝒂𝒅𝒆 𝒃𝒚 𝐜𝐚𝐫𝐥𝐨𝐬.𝐫𝐯 ⩇⃟⚡'
+global.dev = '☘️ ミ💨 》𝑪𝑨𝑹𝑳𝑶𝑺.𝑹𝑽《 💥ミ 🌀'
+global.bot = '𝑺𝒂𝒏𝒕𝒂𝒇𝒍𝒐𝒘 𝒃𝒐𝒕'
+global.club = '🌱 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 carlos•Core 𝖢𝗅𝗎𝖻 ⚡'
+global.textbot = 'ɢᴏᴊᴏ ʙᴏᴛ✦ 𝕊ℍ𝔸𝔻𝕆𝕎•ℂ𝕆ℝ𝔼'
+global.etiqueta = '@sʜᴀᴅᴏᴡ°ᴄᴏʀᴇ'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.moneda = 'Euros💶'
-global.welcom1 = '🌿 𝐄ძі𝗍ᥲ ᥱᥣ ᥕᥱᥣᥴ᥆mᥱ ᥴ᥆ᥒ #sᥱ𝗍ᥕᥱᥣᥴ᥆mᥱ'
-global.welcom2 = '🌷 𝐄ძі𝗍ᥲ ᥱᥣ ᥕᥱᥣᥴ᥆mᥱ ᥴ᥆ᥒ #sᥱ𝗍ᑲᥡᥱ'
-global.banner = 'https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg'
-global.avatar = 'https://i.postimg.cc/Y2JJXwyb/1754525693627.jpg'
-global.logo = 'https://i.postimg.cc/0NxWTkp0/1754525596737.jpg'
+global.moneda = 'ᴇᴜʀᴏs💶'
+global.welcom1 = '💤 Bienvenido/a al grupo⚡\n❍ Edita con el comando *setwelcome*'
+global.welcom2 = '🔥 un miembro ha salido del partido🔥\n❍ Edita con el comando *setbye*'
+global.banner = 'https://i.postimg.cc/fbgJW3ND/93f25ee53428103d24f795274ad12ab3.jpg'
+global.avatar = 'https://i.postimg.cc/xjMhMVbG/personaje-satoru-gojo-jujutsu-kaisen-7799.jpg'
+global.logo = 'https://i.postimg.cc/Gpry5rSz/0x1900-000000-80-0-0.jpg'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
 global.gp1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
 global.comunidad1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
 global.channel = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
-global.channel2 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
-global.md = 'https://github.com/carlos13ra/SANTAFLOW-BOT2'
+global.channel2 = 'httpom/channel/0029VbAtbPA84OmJSLiHis2U'
+global.md = 'https://github.com/carlos13ra/GOJO-BOT'
 global.correo = 'carlosramirezvillanueva30@gmail.com'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
@@ -85,9 +83,9 @@ global.correo = 'carlosramirezvillanueva30@gmail.com'
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 global.ch = {
-ch1: "120363402079893698@newsletter",
-ch2: "120363402079893698@newsletter",
-ch3: "120363402079893698@newsletter"
+ch1: '120363401008003732@newsletter',
+ch2: "120363401008003732@newsletter",
+ch3: "120363401008003732@newsletter"
 }
 global.multiplier = 60
 
