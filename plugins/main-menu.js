@@ -22,14 +22,17 @@ let handler = async (m, { conn, usedPrefix }) => {
     let dia = fechaObj.toLocaleDateString('es-PE', { weekday: 'long', timeZone: 'America/Lima' })
     
     let videos = [
-        'https://files.catbox.moe/jgfdmn.mp4',
-        'https://files.catbox.moe/wc8wcz.mp4',
-        'https://files.catbox.moe/t9frnr.mp4',
-        'https://files.catbox.moe/j4aew2.mp4',
-        'https://files.catbox.moe/1b5zis.mp4',
-        'https://files.catbox.moe/leq8g0.mp4',
-        'https://files.catbox.moe/hvfmay.mp4',
-        'https://files.catbox.moe/x2tt5r.mp4'
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0388.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0387.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0386.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0384.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0378.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0319.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0317.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0316.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0315.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0177.mp4',
+        'https://spacny.wuaze.com//uploads/VID-20251019-WA0314.mp4'
     ]
     let video = videos[Math.floor(Math.random() * videos.length)]
 
@@ -62,7 +65,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     }).join('\n\n')
 
     let menuText = `
-🌷｡･:*˚:✧｡  sᴀɴᴛᴀғʟᴏᴡ - ʙᴏᴛ ｡✧:˚*:･｡🌱
+❉｡･:*˚:✧｡  𝙶𝙾𝙹𝙾 - ʙᴏᴛ ｡✧:˚*:･｡❉
 ⊱ ────── {.⋅ ✯ ⋅.} ────── ⊰
 
 ☁️ ${ucapan()} @${userId.split('@')[0]} ⚡
@@ -127,4 +130,4 @@ function ucapan() {
   else if (time >= 12 && time < 18) res = "ʙᴜᴇɴᴀs ᴛᴀʀᴅᴇs 🌤️"
   else if (time >= 18) res = "ʙᴜᴇɴᴀs ɴᴏᴄʜᴇs 🌙"
   return res
-}
+   }
