@@ -22,17 +22,11 @@ let handler = async (m, { conn, usedPrefix }) => {
     let dia = fechaObj.toLocaleDateString('es-PE', { weekday: 'long', timeZone: 'America/Lima' })
     
     let videos = [
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0388.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0387.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0386.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0384.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0378.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0319.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0317.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0316.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0315.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0177.mp4',
-        'https://spacny.wuaze.com//uploads/VID-20251019-WA0314.mp4'
+        'https://files.catbox.moe/a8d9w0.mp4',
+        'https://files.catbox.moe/od1vna.mp4',
+        'https://files.catbox.moe/tglv3f.mp4',
+        'https://files.catbox.moe/f24xii.mp4',
+        'https://files.catbox.moe/hwphsn.mp4'
     ]
     let video = videos[Math.floor(Math.random() * videos.length)]
 
