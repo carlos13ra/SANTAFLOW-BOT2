@@ -803,7 +803,7 @@ global.dfail = (type, m, conn) => {
     
     restrict: ' ׄ 🍃 ׅ  ʀᴇsᴛʀɪɴɢɪᴅᴏ • ʟᴀs ʀᴇsᴛʀɪᴄᴄɪᴏɴᴇs ɴᴏ ᴇsᴛᴀ́ɴ ᴀᴄᴛɪᴠᴀᴅᴀs ᴇɴ ᴇsᴛᴇ ᴄʜᴀᴛ.'
 }[type];
-if (msg) return conn.reply(m.chat, msg, m, rcanalx).then(_ => m.react('✖️'))}
+if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}
 let file = global.__filename(import.meta.url, true)
 
 // NO TOCAR
