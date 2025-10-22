@@ -117,11 +117,9 @@ global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJ
 global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1 }
 }}, { quoted: m }
 
-global.icono = [
-'https://i.postimg.cc/TYH80qC5/86b21044fa7c743a9816b39ad251582f.jpg',
-'https://i.postimg.cc/qMWbgm1M/HD-wallpaper-satoru-gojo-gojo-gojo-satoru-jujutsu-kaisen-satoru-satoru-gojo-yuji-itadori.jpg,
-'https://i.postimg.cc/Gpry5rSz/0x1900-000000-80-0-0.jpg'
-  ]
+global.icono = ['https://files.catbox.moe/svaupe.jpg',
+'https://files.catbox.moe/2vwn2d.jpg',
+'https://files.catbox.moe/e6br3k.jpg']
 ].getRandom()
 
 
