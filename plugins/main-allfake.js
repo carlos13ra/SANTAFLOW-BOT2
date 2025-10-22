@@ -27,12 +27,12 @@ return res.data
 console.log(`Error : ${e}`)
 }}
   
-global.creador = 'wa.me/51919199620'
+global.creador = 'wa.me/51900922660'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.namechannel = '𓇟 ︶𓇟 ✦💖 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 • 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 🌷✦ ︶𓇟 ︶𓇟'
-global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌ🌾 𝓡𝓲𝓷 𝓘𝓽𝓸𝓼𝓱𝓲 🎋ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
-global.namegrupo = '✾࣭࣭࣪࣪ 🍂 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 • 𝑮𝒓𝒖𝒑𝒐  ࣭࣭࣪࣪✾'
-global.namecomu = '⏝🌷 𝑹𝒊𝒏-𝑰𝒕𝒐𝒔𝒉𝒊-𝑩𝒐𝒕-𝑴𝑫 • 𝑪𝒐𝒎𝒖𝒏𝒊𝒕𝒚 🌷⏝'
+global.namechannel = '𓇟 ︶𓇟 ✦▐▐ ✦ 𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐ ✦ ︶𓇟 ︶𓇟'
+global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌ ɢᴏᴊᴏʙᴏᴛ-ᴍᴅ | ᴄʜᴀɴɴᴇʟ ᴏғғᴄɪᴀʟ ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
+global.namegrupo = '✾࣭࣭࣪࣪ ɢᴏᴊᴏʙᴏᴛ | ɢʀᴏᴜᴘ ᴏғғɪᴄɪᴀʟ ࣭࣭࣪࣪✾'
+global.namecomu = '⏝𝑮𝑶𝑱𝑶𝑩𝑶𝑻-𝑴𝑫 • 𝑪𝒐𝒎𝒖𝒏𝒊𝒕𝒚⏝'
 global.listo = '🎋 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
@@ -41,8 +41,7 @@ global.canalIdM = [
   "120363422142340004@newsletter"
 ]
 global.canalNombreM = [
-  "Bot de mrd",
-  " ᪲ୂ: Bot de mierda 🌿:"
+  "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ᴳᴼᴶᴼ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
 ]
 global.channelRD = await getRandomChannel()
 
@@ -76,11 +75,11 @@ global.waitt = '🍧 Espera un momento, soy lento...';
 global.waittt = '🌷 Espera un momento, soy lento...';
 global.waitttt = '🌿 Espera un momento, soy lento...';
 
-var canal = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'  
-var comunidad = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-var git = 'https://github.com/Yuji-XDev'
-var github = 'https://github.com/Yuji-XDev/Rin-Itoshi-Bot'
-let correo = 'blackoficial2025@gmail.com'
+var canal = 'https://whatsapp.com/channel/0029VbBGlokA89MliWWv1x16'  
+var comunidad = 'https://chat.whatsapp.com/Bix9s3erWITAUZuiqMJez0?mode=ems_copy_c'
+var git = 'https://github.com/Carlos13ra'
+var github = 'https://github.com/Carlos13ra/SANTAFLOW-BOT2'
+let correo = 'carlosramirezvillanueva30@gmail.com'
 global.redes = [canal, comunidad, git, github, correo].getRandom()
 
 let category = "imagen"
@@ -101,7 +100,7 @@ var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
 
 global.packsticker = `༺══•◈•══༻
-🍓.ೃ࿔*:･༓☾
+🥭.ೃ࿔*:･༓☾
 ✿ Usuario: ${nombre}
 ✿ Bot: ${botname}
 ✿ Fecha: ${fecha}
