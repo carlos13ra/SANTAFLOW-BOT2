@@ -116,14 +116,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 
 async function getRandomIcon() {
   const urls = [
-    'https://files.catbox.moe/ceotf9.jpg',
-    'https://files.catbox.moe/fft2hr.jpg',
-    'https://files.catbox.moe/i97oje.jpg',
-    'https://files.catbox.moe/js2plu.jpg',
-    'https://shadow-xyz.vercel.app/img/shadow.jpg',
-    'https://shadow-xyz.vercel.app/img/shadow1.jpg',
-    'https://shadow-xyz.vercel.app/img/shadow10.jpg',
-    'https://i.pinimg.com/originals/e0/98/ba/e098bac73c8ae72243f66c7bf712045a.jpg',
+    'https://i.postimg.cc/TYH80qC5/86b21044fa7c743a9816b39ad251582f.jpg',
+'https://i.postimg.cc/qMWbgm1M/HD-wallpaper-satoru-gojo-gojo-gojo-satoru-jujutsu-kaisen-satoru-satoru-gojo-yuji-itadori.jpg,
+'https://i.postimg.cc/Gpry5rSz/0x1900-000000-80-0-0.jpg'
   ]
   
   let url
