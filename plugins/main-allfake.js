@@ -27,21 +27,17 @@ return res.data
 console.log(`Error : ${e}`)
 }}
   
-global.creador = 'wa.me/51900922660'
+global.creador = 'wa.me/51946200884'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.namechannel = '𓇟 ︶𓇟 ✦▐▐ ✦ 𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐ ✦ ︶𓇟 ︶𓇟'
-global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌ ɢᴏᴊᴏʙᴏᴛ-ᴍᴅ | ᴄʜᴀɴɴᴇʟ ᴏғғᴄɪᴀʟ ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
-global.namegrupo = '✾࣭࣭࣪࣪ ɢᴏᴊᴏʙᴏᴛ | ɢʀᴏᴜᴘ ᴏғғɪᴄɪᴀʟ ࣭࣭࣪࣪✾'
-global.namecomu = '⏝𝑮𝑶𝑱𝑶𝑩𝑶𝑻-𝑴𝑫 • 𝑪𝒐𝒎𝒖𝒏𝒊𝒕𝒚⏝'
-global.listo = '🎋 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
+global.namechannel = '▐▐ ✦ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐'
+global.namechannel2 = '▐▐ ✦ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐'
+global.namegrupo = '▐▐ ⚡ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 • 𝗢𝗳𝗶𝗰𝗶𝗮𝗹 ⚡ ▐▐'
+global.namecomu = '▐▐ ⚡ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪-𝗕𝗼𝘁-𝗠𝗗 • 𝗖𝗼𝗺𝘂𝗻𝗶𝘁𝘆 ⚡ ▐▐'
+global.listo = '✦❀ *Aquí tienes, capitán ฅ^•ﻌ•^ฅ* ❀✦'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
-global.canalIdM = [
-  "120363421367237421@newsletter", "120363421367237421@newsletter", "120363421367237421@newsletter"
-]
-global.canalNombreM = [
-  "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ᴳᴼᴶᴼ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
-]
+global.canalIdM = ["120363402079893698@newsletter", "120363402079893698@newsletter", "120363402079893698@newsletter"]
+global.canalNombreM = ["𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ˢᴬᴺᵀᴬᶠᴸᴼᵂ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
@@ -57,7 +53,7 @@ global.done = '✅'
 global.error = '✖️'
 global.msm = '⚠︎'
 
-global.emoji = '🎋'
+global.emoji = '🍀'
 global.emoji2 = '☆⌒(ゝ。∂)'
 global.emoji3 = '(✧ω✧)'
 global.emoji4 = '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧'
@@ -65,21 +61,26 @@ global.emoji5 = '(づ｡◕‿‿◕｡)づ'
 global.emoji6 = '★~(◠‿◕✿)'
 global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5, emoji6].getRandom()
 
-//global.edadaleatoria = ['10', '28', '20', '40', '18', '21', '15', '11', '9', '17', '25'].getRandom();
-//global.user2 = m.pushName || 'Anónimo';
-//global.verifyaleatorio = ['registrar', 'reg', 'verificar', 'verify', 'register'].getRandom();
+global.wait = '⚽️ 𝙀𝙣𝙫𝙞𝙖𝙣𝙙𝙤 𝙩𝙚𝙣 𝙥𝙖𝙘𝙞𝙚𝙣𝙘𝙞𝙖...';
+global.waitt = '⚽️ 𝙀𝙣𝙫𝙞𝙖𝙣𝙙𝙤 𝙩𝙚𝙣 𝙥𝙖𝙘𝙞𝙚𝙣𝙘𝙞𝙖...';
+global.waittt = '⚽️ 𝙀𝙣𝙫𝙞𝙖𝙣𝙙𝙤 𝙩𝙚𝙣 𝙥𝙖𝙘𝙞𝙚𝙣𝙘𝙞𝙖...';
+global.waitttt = '⚽️ 𝙀𝙣𝙫𝙞𝙖𝙣𝙙𝙤 𝙩𝙚𝙣 𝙥𝙖𝙘𝙞𝙚𝙣𝙘𝙞𝙖...';
 
-global.wait = '🎋 Espera un momento, soy lento...';
-global.waitt = '🍧 Espera un momento, soy lento...';
-global.waittt = '🌷 Espera un momento, soy lento...';
-global.waitttt = '🌿 Espera un momento, soy lento...';
 
-var canal = 'https://whatsapp.com/channel/0029VbBGlokA89MliWWv1x16'  
-var comunidad = 'https://chat.whatsapp.com/Bix9s3erWITAUZuiqMJez0?mode=ems_copy_c'
-var git = 'https://github.com/Carlos13ra'
-var github = 'https://github.com/Carlos13ra/SANTAFLOW-BOT2'
-let correo = 'carlosramirezvillanueva30@gmail.com'
-global.redes = [canal, comunidad, git, github, correo].getRandom()
+global.hotw = '*🐭 El contenido `NSFW` está desactivado en este grupo.*\n> Un administrador puede activarlo con el comando » *`#nsfw on`*';
+
+
+global.edadaleatoria = ['10', '28', '20', '40', '18', '21', '15', '11', '9', '17', '25'].getRandom();
+global.user2 = m.pushName || 'Anónimo';
+global.verifyaleatorio = ['registrar', 'reg', 'verificar', 'verify', 'register'].getRandom();
+
+var canal = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'  
+var comunidad = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
+var git = 'https://github.com/Yuji-XDev'
+var github = 'https://github.com/Yuji-XDev/Rin-Itoshi-Bot'
+var tiktok = 'https://tiktok.com/@the.black.xz'
+let correo = 'blackoficial2025@gmail.com'
+global.redes = [canal, comunidad, git, github, tiktok, correo].getRandom()
 
 let category = "imagen"
 const db = './src/database/db.json'
@@ -98,112 +99,42 @@ global.taguser = '@' + m.sender.split("@s.whatsapp.net")
 var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
 
-global.packsticker = `༺══•◈•══༻
-🥭.ೃ࿔*:･༓☾
-✿ Usuario: ${nombre}
-✿ Bot: ${botname}
-✿ Fecha: ${fecha}
-✿ Hora: ${tiempo}
-☽༓･*:࿔ೃ.🎋
-༺══•◈•══༻`;
-global.packsticker2 = `${dev}`
+global.packsticker = `
+🌸🍒✩₊˚.⋆☾⋆⁺₊✧
+✦ 𝕌𝕤𝕦𝕒𝕣𝕚𝕠: ${nombre}
+✦ 𝔹𝕠𝕥: ${botname}
+✦ 𝔽𝕖𝕔𝕙𝕒: ${fecha}
+✦ ℍ𝕠𝕣𝕒: ${tiempo}
+✧⁺₊⋆☾⋆.˚₊✩🍒🌸
+`;
+global.packsticker2 = `╭࣭࣭࣭࣭࣭࣭ٜ۫┄☪︎⃘✦ SANTAFLOW ✦☪︎┄࣭࣭࣭࣭࣭࣭۫╮
+     ${dev}
+╰࣭࣭࣭࣭࣭࣭ٜ۫┄☪︎⃘✦ ⌬ ✦☪︎┄࣭࣭࣭࣭࣭࣭۫╯`
   
 global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `6285600793871-1614953337@g.us` } : {}) }, message: { 'contactMessage': { 'displayName': `${nombre}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${nombre},;;;\nFN:${nombre},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': null, thumbnail: null,sendEphemeral: true}}}
 
 global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1 }
 }}, { quoted: m }
 
-async function getRandomIcon() {
-  const urls = [
-    'https://i.postimg.cc/TYH80qC5/86b21044fa7c743a9816b39ad251582f.jpg',
-'https://i.postimg.cc/qMWbgm1M/HD-wallpaper-satoru-gojo-gojo-gojo-satoru-jujutsu-kaisen-satoru-satoru-gojo-yuji-itadori.jpg,
-'https://i.postimg.cc/Gpry5rSz/0x1900-000000-80-0-0.jpg'
-  ]
-  
-  let url
-  for (let i = 0; i < urls.length; i++) {
-    url = urls[Math.floor(Math.random() * urls.length)]
-    try {
-      let res = await fetch(url, { method: "HEAD" })
-      if (res.ok) return url
-    } catch (e) {}
-  }
-  return 'https://files.catbox.moe/ceotf9.jpg'
+global.icono = [
+'https://i.postimg.cc/0NxWTkp0/1754525596737.jpg',
+'https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg',
+'https://i.postimg.cc/Y2JJXwyb/1754525693627.jpg'
+].getRandom()
+
+
+global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: '', newsletterName: channelRD.name }, externalAdReply: { title: botname, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnail: await (await fetch(icono)).buffer(), sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, mentionedJid: null }}
 }
 
-global.icono = await getRandomIcon()
-
-global.rcanal = {
-  contextInfo: {
-    isForwarded: true,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: channelRD.id,
-      serverMessageId: 100,
-      newsletterName: channelRD.name,
-    },
-    externalAdReply: {
-      title: botname,
-      body: '',
-      mediaUrl: null,
-      description: null,
-      previewType: "PHOTO",
-      thumbnailUrl: icono,
-      mediaType: 1,
-      renderLargerThumbnail: false
-    },
-  },
-}
-
-global.rcanalx = {
-  contextInfo: {
-    isForwarded: true,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: channelRD.id,
-      serverMessageId: 101,
-      newsletterName: channelRD.name,
-    },
-    externalAdReply: {
-      title: botname,
-      body: '',
-      mediaUrl: null,
-      description: null,
-      previewType: "PHOTO",
-      thumbnailUrl: icono,
-      mediaType: 1,
-      renderLargerThumbnail: false
-    },
-  },
-}
-
-global.rcanalw = {
-  contextInfo: {
-    isForwarded: true,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: channelRD.id,
-      serverMessageId: 102,
-      newsletterName: channelRD.name,
-    },
-    externalAdReply: {
-      title: club,
-      body: '',
-      mediaUrl: null,
-      description: null,
-      previewType: "PHOTO",
-      thumbnailUrl: icono,
-      mediaType: 1,
-      renderLargerThumbnail: false
-    },
-  },
-}
-
-}
 export default handler
 
-
+function pickRandom(list) {
+return list[Math.floor(Math.random() * list.length)]
+}
 
 async function getRandomChannel() {
 let randomIndex = Math.floor(Math.random() * canalIdM.length)
 let id = canalIdM[randomIndex]
 let name = canalNombreM[randomIndex]
 return { id, name }
-}
+  }
