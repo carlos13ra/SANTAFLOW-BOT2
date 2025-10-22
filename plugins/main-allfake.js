@@ -29,16 +29,15 @@ console.log(`Error : ${e}`)
   
 global.creador = 'wa.me/51946200884'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.namechannel = '𓇟 ︶𓇟 ✦▐▐ ✦ 𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐ ✦ ︶𓇟 ︶𓇟'
-global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌ ɢᴏᴊᴏʙᴏᴛ-ᴍᴅ | ᴄʜᴀɴɴᴇʟ ᴏғғᴄɪᴀʟ ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
-global.namegrupo = '▐✾࣭࣭࣪࣪ ɢᴏᴊᴏʙᴏᴛ | ɢʀᴏᴜᴘ ᴏғғɪᴄɪᴀʟ ࣭࣭࣪࣪✾'
-global.namecomu = '⏝𝑮𝑶𝑱𝑶𝑩𝑶𝑻-𝑴𝑫 • 𝑪𝒐𝒎𝒖𝒏𝒊𝒕𝒚⏝'
+global.namechannel = '▐▐ ✦ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐'
+global.namechannel2 = '▐▐ ✦ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐'
+global.namegrupo = '▐▐ ⚡ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪 • 𝗢𝗳𝗶𝗰𝗶𝗮𝗹 ⚡ ▐▐'
+global.namecomu = '▐▐ ⚡ 𝗦𝗔𝗡𝗧𝗔𝗙𝗟𝗢𝗪-𝗕𝗼𝘁-𝗠𝗗 • 𝗖𝗼𝗺𝘂𝗻𝗶𝘁𝘆 ⚡ ▐▐'
 global.listo = '✦❀ *Aquí tienes, capitán ฅ^•ﻌ•^ฅ* ❀✦'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
-global.canalIdM = ["120363421367237421@newsletter", "120363421367237421@newsletter", "120363421367237421@newsletter"
-]
-global.canalNombreM = ["𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ᴳᴼᴶᴼ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
+global.canalIdM = ["120363402079893698@newsletter", "120363402079893698@newsletter", "120363402079893698@newsletter"]
+global.canalNombreM = ["𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ˢᴬᴺᵀᴬᶠᴸᴼᵂ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
@@ -117,9 +116,10 @@ global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJ
 global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1 }
 }}, { quoted: m }
 
-global.icono = ['https://files.catbox.moe/svaupe.jpg',
-'https://files.catbox.moe/2vwn2d.jpg',
-'https://files.catbox.moe/e6br3k.jpg']
+global.icono = [
+'https://i.postimg.cc/0NxWTkp0/1754525596737.jpg',
+'https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg',
+'https://i.postimg.cc/Y2JJXwyb/1754525693627.jpg'
 ].getRandom()
 
 
@@ -137,4 +137,4 @@ let randomIndex = Math.floor(Math.random() * canalIdM.length)
 let id = canalIdM[randomIndex]
 let name = canalNombreM[randomIndex]
 return { id, name }
-  }
+}
