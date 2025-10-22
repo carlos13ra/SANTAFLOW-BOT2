@@ -22,11 +22,14 @@ let handler = async (m, { conn, usedPrefix }) => {
     let dia = fechaObj.toLocaleDateString('es-PE', { weekday: 'long', timeZone: 'America/Lima' })
     
     let videos = [
-        'https://files.catbox.moe/a8d9w0.mp4',
-        'https://files.catbox.moe/od1vna.mp4',
-        'https://files.catbox.moe/tglv3f.mp4',
-        'https://files.catbox.moe/f24xii.mp4',
-        'https://files.catbox.moe/hwphsn.mp4'
+        'https://files.catbox.moe/jgfdmn.mp4',
+        'https://files.catbox.moe/wc8wcz.mp4',
+        'https://files.catbox.moe/t9frnr.mp4',
+        'https://files.catbox.moe/j4aew2.mp4',
+        'https://files.catbox.moe/1b5zis.mp4',
+        'https://files.catbox.moe/leq8g0.mp4',
+        'https://files.catbox.moe/hvfmay.mp4',
+        'https://files.catbox.moe/x2tt5r.mp4'
     ]
     let video = videos[Math.floor(Math.random() * videos.length)]
 
@@ -59,7 +62,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     }).join('\n\n')
 
     let menuText = `
-❉｡･:*˚:✧｡  𝙶𝙾𝙹𝙾 - ʙᴏᴛ ｡✧:˚*:･｡❉
+❉｡･:*˚:✧｡ 🎧 sᴀɴᴛᴀғʟᴏᴡ - ʙᴏᴛ 💫 ｡✧:˚*:･｡❉
 ⊱ ────── {.⋅ ✯ ⋅.} ────── ⊰
 
 ☁️ ${ucapan()} @${userId.split('@')[0]} ⚡
