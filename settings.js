@@ -65,9 +65,9 @@ global.etiqueta = '@sʜᴀᴅᴏᴡ°ᴄᴏʀᴇ'
 global.moneda = 'ᴇᴜʀᴏs💶'
 global.welcom1 = '💤 Bienvenido/a al grupo⚡\n❍ Edita con el comando *setwelcome*'
 global.welcom2 = '🔥 un miembro ha salido del partido🔥\n❍ Edita con el comando *setbye*'
-global.banner = 'https://i.postimg.cc/fbgJW3ND/93f25ee53428103d24f795274ad12ab3.jpg'
-global.avatar = 'https://i.postimg.cc/xjMhMVbG/personaje-satoru-gojo-jujutsu-kaisen-7799.jpg'
-global.logo = 'https://i.postimg.cc/Gpry5rSz/0x1900-000000-80-0-0.jpg'
+global.banner = 'https://files.catbox.moe/e6br3k.jpg'
+global.avatar = 'https://files.catbox.moe/2vwn2d.jpg'
+global.logo = 'https://files.catbox.moe/svaupe.jpg'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
