@@ -37,8 +37,7 @@ global.listo = '🎋 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
 global.canalIdM = [
-  "120363422142340004@newsletter",
-  "120363422142340004@newsletter"
+  "120363421367237421@newsletter", "120363421367237421@newsletter", "120363421367237421@newsletter"
 ]
 global.canalNombreM = [
   "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ᴳᴼᴶᴼ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
