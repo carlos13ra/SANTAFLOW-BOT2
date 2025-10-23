@@ -1,48 +1,36 @@
-import { igdl } from 'ruhend-scraper';
+const handler = async (m, { args, conn, usedPrefix }) => {
+try {
+if (!args[0]) return conn.reply(m.chat, `❀ Por favor, ingresa un enlace de Instagram/Facebook.`, m)
+let data = []
+try {
+await m.react('🕒')
+const api = `${global.APIs.vreden.url}/api/igdownload?url=${encodeURIComponent(args[0])}`
+const res = await fetch(api)
+const json = await res.json()
+if (json.resultado?.respuesta?.datos?.length) {
+data = json.resultado.respuesta.datos.map(v => v.url)
+}} catch {}
+if (!data.length) {
+try {
+const api = `${global.APIs.delirius.url}/download/instagram?url=${encodeURIComponent(args[0])}`
+const res = await fetch(api)
+const json = await res.json()
+if (json.status && json.data?.length) {
+data = json.data.map(v => v.url)
+}} catch {}
+}
+if (!data.length) return conn.reply(m.chat, `ꕥ No se pudo obtener el contenido.`, m)
+for (let media of data) {
+await conn.sendFile(m.chat, media, 'instagram.mp4', `❀ Aquí tienes ฅ^•ﻌ•^ฅ.`, m)
+await m.react('✔️')
+}} catch (error) {
+await m.react('✖️')
+await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
+}}
 
-const handler = async (m, { text, conn, args, usedPrefix, command }) => {
-  if (!args[0]) {
-    return conn.reply(m.chat, '*\`Ingresa El link Del vídeo a descargar ❤️‍🔥\`*', m, fake);
-  }
+handler.command = ['instagram', 'ig', 'facebook', 'fb']
+handler.tags = ['download']
+handler.help = ['instagram', 'ig', 'facebook', 'fb']
+handler.group = true
 
-  await m.react('🕒');
-  let res;
-  try {
-    res = await igdl(args[0]);
-  } catch (error) {
-    return conn.reply(m.chat, '*`Error al obtener datos. Verifica el enlace.`*', m);
-  }
-
-  let result = res.data;
-  if (!result || result.length === 0) {
-    return conn.reply(m.chat, '*`No se encontraron resultados.`*', m);
-  }
-
-  let data;
-  try {
-    data = result.find(i => i.resolution === "720p (HD)") || result.find(i => i.resolution === "360p (SD)");
-  } catch (error) {
-    return conn.reply(m.chat, '*`Error al procesar los datos.`*', m);
-  }
-
-  if (!data) {
-    return conn.reply(m.chat, '*`No se encontró una resolución adecuada.`*', m);
-  }
-
-  await m.react('✅');
-  let video = data.url;
-
-  try {
-    await conn.sendMessage(m.chat, { video: { url: video }, caption: club , fileName: 'fb.mp4', mimetype: 'video/mp4' }, { quoted: m });
-  } catch (error) {
-    return conn.reply(m.chat, '*`Error al enviar el video.`*', m);
-  await m.react('❌');
-  }
-};
-
-handler.help = ['facebook'];
-handler.tags = ['descargas'];
-handler.command = ['facebook', 'fb'];
-handler.register = true;
-
-export default handler;                                                                                                                                                                                                                                          
+export default handler
