@@ -27,7 +27,7 @@ return res.data
 console.log(`Error : ${e}`)
 }}
   
-global.creador = 'wa.me/51984169553'
+global.creador = 'wa.me/51900922660'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.namechannel = '▐▐ ✦ 𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐'
 global.namechannel2 = '▐▐ ✦ 𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 - 𝐁𝐎𝐓 - 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✦ ▐▐'
@@ -37,7 +37,7 @@ global.listo = '✦❀ *Aquí tienes, capitán ฅ^•ﻌ•^ฅ* ❀✦'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
 global.canalIdM = ["120363402079893698@newsletter", "120363402079893698@newsletter", "120363402079893698@newsletter"]
-global.canalNombreM = ["𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "ᴳᴼᴶᴼ Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
+global.canalNombreM = ["𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "𝐆𝐎𝐉𝐎 𝐁𝐎𝐓 | ° 𝘊𝘏𝘈𝘕𝘕𝘌𝘓- 𝗢𝗙𝗜𝗖𝗜𝗔𝗟🧪꙰⃟⸙", "Santaflow Bot | ° ᴄʜᴀɴɴᴇʟ - Official 🧪꙰⃟⸙"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
@@ -117,10 +117,11 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 }}, { quoted: m }
 
 global.icono = [
-'https://i.postimg.cc/TYH80qC5/86b21044fa7c743a9816b39ad251582f.jpg',
-'https://i.postimg.cc/qMWbgm1M/HD-wallpaper-satoru-gojo-gojo-gojo-satoru-jujutsu-kaisen-satoru-satoru-gojo-yuji-itadori.jpg,
-'https://i.postimg.cc/Gpry5rSz/0x1900-000000-80-0-0.jpg'
-].getRandom()
+'https://files.catbox.moe/iokrvl.jpg',
+'https://files.catbox.moe/e4f34u.jpg',
+'https://files.catbox.moe/0w0wmc.jpg',
+'https://files.catbox.moe/i2klfl.jpg',
+'https://files.catbox.moe/ixknbf.jpg'].getRandom()
 
 
 global.rcanal = {contextInfo: {forwardingScore: 2025, isForwarded: true, externalAdReply: {title: packname, body: author, sourceUrl: redes, thumbnailUrl: icono}}}
