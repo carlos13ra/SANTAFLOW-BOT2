@@ -6,7 +6,7 @@ export async function before(m, { conn }) {
   const usedPrefix = global.prefix.exec(m.text)[0];
   const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
   
-  const thumbRes = await fetch("https://files.catbox.moe/xydiwe.jpg");
+  const thumbRes = await fetch("https://i.postimg.cc/mZqG44Dy/1760212243057.jpg");
   const thumbBuffer = await thumbRes.buffer();
   const fkontak = {
         key: {
@@ -17,15 +17,11 @@ export async function before(m, { conn }) {
         },
         message: {
             locationMessage: {
-                name: `*̥₊🍄 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐔𝐥𝐭𝐫𝐚 | © 𝘣𝘺 𝘚𝘩𝘢𝘥𝘰𝘸--𝘯𝘦𝘹 ◌🚨`,
+                name: `*̥₊💫𝑺𝑨𝑵𝑻𝑨𝑭𝑳𝑶𝑾 | © 𝘣𝘺 Carlos--𝘯𝘦𝘹 ◌🚨`,
                 jpegThumbnail: thumbBuffer
             }
         },
         participant: "0@s.whatsapp.net"
-  };
-  const channelRD = { 
-    id: '120363401008003732@newsletter', 
-    name: '👑 𝗥𝗶𝗻 𝗜𝘁𝗼𝘀𝗵𝗶 𝗨𝗹𝘁𝗿𝗮 𝗕𝗼𝘁 🎋'
   };
 
   if (!command || command === 'bot') return;
@@ -63,9 +59,9 @@ export async function before(m, { conn }) {
           newsletterName: channelRD.name
         },
         externalAdReply: {
-          title: '◌*̥₊ 𝗥𝗶𝗻 𝗜𝘁𝗼𝘀𝗵𝗶 𝗕𝗼𝘁 𝗠𝗗 ◌🍧༉',
+          title: '◌*̥₊ 𝗦𝗮𝗻𝘁𝗮𝗳𝗹𝗼𝘄 𝗕𝗼𝘁  ◌💥༉',
           body: '',
-          thumbnailUrl: 'https://files.catbox.moe/6fj9u7.jpg',
+          thumbnailUrl: 'https://i.postimg.cc/0NxWTkp0/1754525596737.jpg',
           sourceUrl: '',
           mediaType: 1,
           renderLargerThumbnail: true
@@ -92,18 +88,18 @@ export async function before(m, { conn }) {
     `❐ *"${command}"* no está registrado.
 ❐ Usa *${usedPrefix}menu* para ver opciones.`,
 
-    `🍧 El comando *"${command}"* no existe.
+    `👻 El comando *"${command}"* no existe.
 🌤️ Consulta el menú: *${usedPrefix}menu*`,
 
-    `🍏 *"${command}"* no está disponible.
-🌿 Menú: *${usedPrefix}menu*`,
+    `☘️ *"${command}"* no está disponible.
+🥭 Menú: *${usedPrefix}menu*`,
 
     `🎊 Comando: *"${command}"* inválido.
 🎋 Usa: *${usedPrefix}menu* para ver todos los comandos disponibles.`
   ];
 
   const texto = mensajesNoEncontrado[Math.floor(Math.random() * mensajesNoEncontrado.length)];
-  const thumb = 'https://files.catbox.moe/6fj9u7.jpg';
+  const thumb = 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg';
 
   
   await conn.sendMessage(m.chat, {
@@ -117,7 +113,7 @@ export async function before(m, { conn }) {
         newsletterName: channelRD.name
       },
       externalAdReply: {
-        title: ' 🎃 𝙍𝙞𝙣 𝙄𝙩𝙤𝙨𝙝𝙞 𝘽𝙤𝙩 𝙐𝙡𝙩𝙧𝙖 🍧',
+        title: ' 🎵 𝗦𝗮𝗻𝘁𝗮𝗳𝗹𝗼𝘄𝘽𝙤𝙩🔥',
         body: '',
         thumbnailUrl: thumb,
         sourceUrl: '',
