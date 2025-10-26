@@ -4,14 +4,14 @@ import { proto } from '@whiskeysockets/baileys';
 import PhoneNumber from 'awesome-phonenumber';
 
 const handler = async (m, { conn }) => {
-  const name = 'sһᥲძ᥆ᥕ-᥊ᥡz | ᥆𝖿𝖿іᥴіᥲᥣ';
-  const numCreador = '51919199620';
-  const empresa = 'Rin Itoshi Bot Inc.';
-  const about = '💖 Desarrollador de Rin itoshi Ultra - MD';
-  const correo = 'blackoficial2025@gmail.com';
+  const name = 'Carlos | Oficial';
+  const numCreador = '51984169553';
+  const empresa = 'santaflow Bot Inc.';
+  const about = '🥭Desarrollador de Santaflow Bot';
+  const correo = 'carlosramirezvillanueva30@gmail.com';
   const web = 'https://shadow-xyz.vercel.app/';
   const direccion = 'Tokyo, Japón 🇯🇵';
-  const fotoPerfil = 'https://qu.ax/ALOZa.jpg';
+  const fotoPerfil = 'https://i.postimg.cc/HLhV1K75/1760212892451.jpg';
 
   const vcard = `
 BEGIN:VCARD
@@ -34,7 +34,7 @@ END:VCARD`.trim();
     displayName: name,
     vcard
   };
-  m.react('☃️');
+  m.react('🍂');
   await conn.sendMessage(m.chat, {
     contacts: {
       displayName: name,
@@ -43,8 +43,8 @@ END:VCARD`.trim();
     contextInfo: {
     mentionedJid: [m.sender],
       externalAdReply: {
-        title: '✦ ᴄᴏɴᴛᴀᴄᴛᴏ ᴅᴇ ᴍɪ ᴄʀᴇᴀᴅᴏʀ ᴜᴡᴜ ☆',
-        body: '',
+        title: '⚡ Contacto del Creador Carlos',
+        body: 'Toca aquí para guardar el contacto o hablar con él',
         mediaType: 1,
         thumbnailUrl: fotoPerfil,
         renderLargerThumbnail: true,
