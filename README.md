@@ -1,25 +1,25 @@
 <p align="center">
   <a href="#">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=FF00FF,00FFFF,FFFF00,FF0000,00FF00&center=true&vCenter=true&width=700&lines=🍂+RIN+ITOSHI+%7C+BY+SHADOW+⚽" alt="RIN ITOSHI • BY SHADOW 🍂"/>
+    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=FF00FF,00FFFF,FFFF00,FF0000,00FF00&center=true&vCenter=true&width=700&lines=🍂+RIN+ITOSHI+%7C+BY+SHADOW+⚽" alt="sᴀɴᴛᴀғʟᴏᴡ • ʙʏ ᴄᴀʀʟᴏs ʀᴀᴍɪʀᴇᴢ 🍂"/>
   </a>
 </p>
 
 <p align="center">
-  <img src="https://shadow-xyz.vercel.app/img/shadow13.jpg" width="300">
+  <img src="https://files.catbox.moe/0w0wmc.jpg" width="300">
 </p>
 
 <p align="center">
-  <a href="https://wa.me/51919199620">
+  <a href="https://wa.me/51900922660">
     <img 
       title="WhatsApp" 
       src="https://img.shields.io/badge/WhatsApp-Shadow_Core-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
   </a>
-  <a href="https://github.com/Yuji-XDev">
+  <a href="https://github.com/Carlos13ra">
     <img 
       title="GitHub" 
-      src="https://img.shields.io/badge/GitHub-Shadow_Core-181717?style=for-the-badge&logo=github&logoColor=white">
+      src="https://img.shields.io/badge/GitHub-Carlos13ra-181717?style=for-the-badge&logo=github&logoColor=white">
   </a>
-  <a href="https://youtube.com/@florencioacaro?si=GHARsWmASsGNu8Vz">
+  <a href="https://youtube.com/@santaflowbotoficial13?si=Zddso-Cc0UzLn5n8">
     <img 
       title="YouTube" 
       src="https://img.shields.io/badge/YouTube-Shadow_Core-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
