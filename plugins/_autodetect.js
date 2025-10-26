@@ -37,7 +37,7 @@ const rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInf
             mimetype: "image/jpeg",
             jpegThumbnail: thumbnail
           },
-          title: "🎋 ʀɪɴ ɪᴛᴏsʜɪ 🍏 ",
+          title: "🎋 SANTAFLOW BOT 🤖 ",
           description: dev,
           currencyCode: "USD",
           priceAmount1000: 5000,
