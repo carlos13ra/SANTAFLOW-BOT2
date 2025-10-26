@@ -25,7 +25,7 @@ await conn.sendFile(m.chat, media, 'instagram.mp4', `🍃 Aquí tienes ฅ^•�
 await m.react('✔️')
 }} catch (error) {
 await m.react('✖️')
-await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
+//await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
 }}
 
 handler.command = ['instagram', 'ig', 'facebook', 'fb']
