@@ -36,12 +36,12 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
 console.log(chalk.cyan('BOT LISTO ESPERE...🌿\n'))
-say('RIN ITOSHI BOT', {
+say('Santaflow BOT', {
 font: 'block',
 align: 'center',
 gradient: ['green', 'white']
 })
-say('Shadow_Core xD', {
+say(' xD', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
