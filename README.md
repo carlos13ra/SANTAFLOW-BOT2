@@ -22,17 +22,17 @@
   <a href="https://youtube.com/@santaflowbotoficial13?si=Zddso-Cc0UzLn5n8">
     <img 
       title="YouTube" 
-      src="https://img.shields.io/badge/YouTube-Shadow_Core-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
+      src="https://img.shields.io/badge/YouTube-SANTAFLOW_BOT_OFICIAL-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
   </a>
-  <a href="https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U">
+  <a href="https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39">
     <img 
       title="WhatsApp Channel" 
-      src="https://img.shields.io/badge/WhatsApp%20Channel-Shadow_Core-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
+      src="https://img.shields.io/badge/WhatsApp%20Channel-SANTAFLOW_BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
   </a>
-  <a href="https://github.com/Yuji-XDev/Rin-Itoshi-Bot/stargazers">
+  <a href="https://github.com/Carlos13ra-SANTAFLOW-BOT2/stargazers">
     <img 
       title="GitHub Stars" 
-      src="https://img.shields.io/github/stars/Yuji-XDev/Rin-Itoshi-Bot?style=for-the-badge&logo=github&color=FDD835&logoColor=white">
+      src="https://img.shields.io/github/stars/Carlos13ra/SANTAFLOW-BOT2?style=for-the-badge&logo=github&color=FDD835&logoColor=white">
   </a>
 </p>
 
@@ -40,8 +40,8 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=750&lines=✨+Funciones+de+Rin+Itoshi&color=FF0000&color=FF7F00&color=FFFF00&color=00FF00&color=00FFFF&color=0000FF&color=8B00FF"
-    alt="✨ Funciones de Rin Itoshi"
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=750&lines=✨+Funciones+de+Santaflow&color=FF0000&color=FF7F00&color=FFFF00&color=00FF00&color=00FFFF&color=0000FF&color=8B00FF"
+    alt="✨ Funciones de Santaflow"
   />
 </p>
 
@@ -103,7 +103,7 @@ pkg install git nodejs ffmpeg imagemagick yarn -y
 ```
 
 ```bash
-git clone https://github.com/Shadow-nex/Rin-Itoshi-Bot && cd Rin-Itoshi-Bot
+git clone https://github.com/Carlos13ra/SANTAFLOW-BOT2 && cd SANTAFLOW-BOT2
 ```
 
 ```bash
@@ -122,7 +122,7 @@ npm start
 
 </details>
 
-![line](https://github.com/Yuji-XDev/Yuji-XDev/blob/main/shadow'core/line.gif)
+![line](https://github.com/Carlos13ra/blob/main/Carlos13ra/line.gif)
 
 <details>
  <summary><b>🫛 Activar en caso de detenerse el Termux </b></summary>
@@ -132,7 +132,7 @@ npm start
 ❒ Abre Termux y navega al directorio del bot:
    
 ```bash
-cd Rin-Itoshi-Bot
+cd SANTAFLOW-BOT2
 ```
 
 ❒ Inicia el bot nuevamente:
@@ -152,7 +152,7 @@ npm start
 1. Abre Termux y navega al directorio del bot:
 
 ```bash
-cd Rin-Itoshi-Bot
+cd SANTAFLOW-BOT2
 ```
 
 2. Elimina la carpeta MiniSession:
@@ -176,7 +176,7 @@ npm start
 > Si después de instalar el bot en Termux y iniciar la session del bot (deseas poner tu número es la lista de owner pon este comando:
 
 ```bash
-cd Rin-Itoshi-Bot && nano config.js
+cd SANTAFLOW-BOT2 && nano config.js
 ```
 </details>
 
