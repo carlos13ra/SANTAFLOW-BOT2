@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
     const totalCommands = Object.values(global.plugins).filter(v => v.help && v.tags).length;
 
     const text = `
-🛸 𝙍𝙄𝙉 𝙄𝙏𝙊𝙎𝙃𝙄 𝘽𝙊𝙏 - 𝘾𝙊𝙉𝙎𝙊𝙇𝘼 𝘿𝙀 𝘼𝙐𝘿𝙄𝙊𝙎  ⚽
+🤖 SANTAFLOW - BOT | CONSOLA DE AUDIOS🎵
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
 ⚡ *Usuario:* ${name}  
 🍂 *Registrados:* ${totalreg}  
