@@ -9,7 +9,6 @@ import fs, { readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileS
 import yargs from 'yargs'
 import { spawn, execSync } from 'child_process'
 import lodash from 'lodash'
-import { shadowJadiBot } from './plugins/jadibot-serbot.js'
 import chalk from 'chalk'
 import syntaxerror from 'syntax-error'
 import { tmpdir } from 'os'
@@ -36,12 +35,12 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
 console.log(chalk.cyan('BOT LISTO ESPERE...🌿\n'))
-say('BOT', {
+say('RIN ITOSHI BOT', {
 font: 'block',
 align: 'center',
 gradient: ['green', 'white']
 })
-say('xD', {
+say('Shadow_Core xD', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
@@ -268,7 +267,7 @@ console.error("Rechazo no manejado detectado:", reason)
 })
 
 global.rutaJadiBot = join(__dirname, `./${jadi}`)
-if (global.shadowJadibts) {
+if (global.yukiJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
 console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} se creó correctamente.`))
@@ -282,7 +281,7 @@ for (const gjbts of readRutaJadiBot) {
 const botPath = join(rutaJadiBot, gjbts)
 const readBotPath = readdirSync(botPath)
 if (readBotPath.includes(creds)) {
-shadowJadiBot({pathshadowJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
+yukiJadiBot({pathYukiJadiBot: botPath, m: null, conn, args: '', usedPrefix: '/', command: 'serbot'})
 }}}}
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
