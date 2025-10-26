@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
 try {
-let res = await fetch('https://api.github.com/repos/Yuji-XDev/Rin-Itoshi-Bot')
+let res = await fetch('https://api.github.com/carlos13ra/SANTAFLOW-BOT2.git')
 
 if (!res.ok) throw new Error('Error al obtener datos del repositorio')
 let json = await res.json()
@@ -39,7 +39,7 @@ import fetch from 'node-fetch';
 let handler = async (m, { conn }) => {
   try {
 
-    const res = await fetch('https://api.github.com/repos/Yuji-XDev/Rin-Itoshi-Bot');
+    const res = await fetch('https://api.github.com/carlos13ra/SANTAFLOW-BOT2.git');
     const data = await res.json();
 
     if (!data || !data.name) {
@@ -85,7 +85,7 @@ let handler = async (m, { conn }) => {
           externalAdReply: {
             title: packname,
             body: dev,
-            thumbnailUrl: 'https://files.catbox.moe/3bmdrm.jpg',
+            thumbnailUrl: 'https://i.postimg.cc/4N6ZQMfc/1760212222052.jpg',
             sourceUrl: redes,
             mediaType: 1,
             renderLargerThumbnail: true
