@@ -1,5 +1,5 @@
-// - VODIGO CREADO X CARLOS.R.V
-// - https://github.com/Carlos13ra/
+// - 𝙲𝙾𝙳𝙸𝙶𝙾 𝙲𝚁𝙴𝙰𝙳𝙾 𝚇 𝚂𝙷𝙰𝙳𝙾𝚆-𝙽𝙴𝚇 𝚇𝙳 👑
+// - https://github.com/Shadow-nex/
 // - 𝙽𝙾 𝙴𝙳𝙸𝚃𝙰𝚁 𝙴𝙻 𝙲𝙾𝙳𝙸𝙶𝙾 
 
 import fetch from 'node-fetch'
@@ -128,46 +128,23 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   let q = args.join(" ").trim()
   if (!q) {
     return conn.sendMessage(m.chat, {
-      text: `*\`🥭 ɪɴɢʀᴇsᴇ ᴇʟ ɴᴏᴍʙʀᴇ ᴅᴇʟ ᴀᴜᴅɪᴏ ᴀ ᴅᴇsᴄᴀʀɢᴀʀ.\`*`,
+      text: `*\`🍉 ɪɴɢʀᴇsᴇ ᴇʟ ɴᴏᴍʙʀᴇ ᴅᴇʟ ᴀᴜᴅɪᴏ ᴀ ᴅᴇsᴄᴀʀɢᴀʀ.\`*`,
       ...rcanal
     }, { quoted: m })
   }
 
-/*  await conn.sendMessage(m.chat, {
-    text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🎶 *¡𝙳𝙴𝚂𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾 𝚃𝚄 𝙰𝚄𝙳𝙸𝙾!*
-
-> ✅ єѕρєяє υи мσмєитσ, єѕтσ ρυє∂є тαя∂αя ∂єρє∂ιєи∂σ ∂єℓ ρєѕσ ∂єℓ αυ∂ισ 🎵
-
-˚₊·📽️ Progresito:  
-[▓▓▓▓▓░░░░░] 50%`
-  }, { quoted: fkontak })
-*/
   await conn.sendMessage(m.chat, {
-    text:  `૮₍｡˃ ᵕ ˂ ｡₎ა 🎶 *¡𝙳𝙴𝚂𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾 𝚃𝚄 𝙰𝚄𝙳𝙸𝙾!*
+    text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🎶 *¡𝙳𝙴𝚂𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾 𝚃𝚄 𝙰𝚄𝙳𝙸𝙾!*
+╰─────────────────────────────❀
 
-> ▶️ єѕρєяє υи мσмєитσ, єѕтσ ρυє∂є тαя∂αя ∂єρє∂ιєи∂σ ∂єℓ ρєѕσ ∂єℓ αυ∂ισ ❉
+> 🍓 *Por favor espera un momento...*
+> 🌙 *Esto puede tardar según el tamaño del archivo.*
 
-˚₊·📽️ Progresito:  
-[▓▓▓▓▓░░░░░] 50%` ,
-    mentions: [m.sender],
-    contextInfo: {
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: channelRD.id,
-        serverMessageId: '',
-        newsletterName: channelRD.name
-      },
-      externalAdReply: {
-        title: '🎬 𝗬𝗢𝗨𝗧𝗨𝗕𝗘 - 𝗠𝗣𝟯 ° 𝗗𝗢𝗖 🎵',
-        body: '',
-        thumbnailUrl: 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg',
-        sourceUrl: '',
-        mediaType: 1,
-        renderLargerThumbnail: true
-      },
-     mentionedJid: null
-    }
-  }, { quoted: m })
+˚₊· ͟͟͞͞➳❥ 📊 *Progreso:*  
+    [▓▓▓▓▓▓▓░░░] 70%
+
+🎧 *No te desesperes uwu, tu canción está casi lista...*`
+  }, { quoted: fkontak })
 
   try {
     // 🔍 Buscar en YT
@@ -182,24 +159,23 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     // 📥 Descargar con SAVETUBE
     let info = await savetube.download(vid.url)
     if (!info.status) {
-      return conn.sendMessage(m.chat, { text: `❉ No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: `🌿 No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
     }
 
     let { result } = info
 
     let caption = `
-◌⃘֟፝֯        *⏜⏜੭୧ֹ⏜⏜*
-  *( \`☄︎ 𝙔𝙊𝙐𝙏𝙐𝘽𝙀 𝙈𝙋𝟯 𝘿𝙊𝘾 ☄\` *)*
-          *⏝⏝୨୧⏝⏝*
-> ┌──
-> │ °  📌 *Titulo:* ${result.title}
-> │ °  ⏱️ *Duracion:* ${vid.duration}
-> │ °  👽 *Canal:* ${vid.author?.name || "Desconocido"}
-> │ °  🍧 *Calidad:* ${result.quality}P
-> │ °  🏔️ *Link:* ${vid.url}
-> └──
+╭─❖『 *🎧 𝚈𝙾𝚄𝚃𝚄𝙱𝙴 𝙼𝙿𝟹 𝙳𝙾𝙲* 』
+│ ° 📌 *Título:* ${result.title}
+│ ° ⏱️ *Duración:* ${vid.duration}
+│ ° 👽 *Canal:* ${vid.author?.name || "Desconocido"}
+│ ° 🍧 *Calidad:* ${result.quality}p
+│ ° 🏔️ *Link:* ${vid.url}
+╰───────────────⬣
 
-> ✿𝕊𝔸ℕ𝕋𝔸𝔽𝕃𝕆𝕎 𝔹𝕆𝕋 | ᴘᴏᴡᴇʀᴇᴅ ᴄᴀʀʟᴏs.ʀ.ᴠ`.trim()
+૮₍｡˃ ᵕ ˂ ｡₎ა 🚀 *¡Descarga Completa con exito!*
+
+> ☁️ яιи ιтσsнι вσт | 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝚂𝙷𝙰𝙳𝙾𝚆-𝚇𝚈𝚉`.trim()
 
     let thumb = null
     try {

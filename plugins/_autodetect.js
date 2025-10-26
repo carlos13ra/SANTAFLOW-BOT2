@@ -16,10 +16,10 @@ const chat = global.db.data.chats[m.chat]
 const users = m.messageStubParameters[0]
 const usuario = await resolveLidToRealJid(m?.sender, conn, m?.chat)
 const groupAdmins = participants.filter(p => p.admin)
-const rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363402079893698@newsletter', serverMessageId: '', newsletterName: '࿙ִ࿙ ͡ྌ᳝֟፝ྌ𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 - 𝐁𝐎𝐓ྌ᳝֟፝ྌ͡ ࿚ִ࿚' }, externalAdReply: { title: "𐔌 . ⋮ ᗩ ᐯ I Տ O .ᐟ ֹ ₊ ꒱", body: textbot, mediaUrl: null, description: null, previewType: "PHOTO", thumbnail: await (await fetch(icono)).buffer(), sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, mentionedJid: null }}
+const rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363401008003732@newsletter', serverMessageId: '', newsletterName: '࿙ִ࿙ ͡ྌ᳝֟፝ྌ🌾 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐁𝐨𝐭 🎋ྌ᳝֟፝ྌ͡ ࿚ִ࿚' }, externalAdReply: { title: "𐔌 . ⋮ ᗩ ᐯ I Տ O .ᐟ ֹ ₊ ꒱", body: textbot, mediaUrl: null, description: null, previewType: "PHOTO", thumbnail: await (await fetch('https://shadow-xyz.vercel.app/img/shadow10.jpg')).buffer(), sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, mentionedJid: null }}
 
   const getThumbnail = async () => {
-    const res = await axios.get("https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg", { responseType: "arraybuffer" })
+    const res = await axios.get("https://files.catbox.moe/3labkc.jpg", { responseType: "arraybuffer" })
     return Buffer.from(res.data, "binary")
   }
 
@@ -37,19 +37,19 @@ const rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInf
             mimetype: "image/jpeg",
             jpegThumbnail: thumbnail
           },
-          title: "🔥sᴀɴᴛᴀғʟᴏᴡ ʙᴏᴛ💫 ",
+          title: "🎋 ʀɪɴ ɪᴛᴏsʜɪ 🍏 ",
           description: dev,
           currencyCode: "USD",
           priceAmount1000: 5000,
-          retailerId: "Carlos.R.V",
+          retailerId: "ShadowCore",
           productImageCount: 1
         },
-        businessOwnerJid: "51984169553@s.whatsapp.net"
+        businessOwnerJid: "51919199620@s.whatsapp.net"
       }
     }
   }
   
-const pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || 'https://i.postimg.cc/pTm6Z0fw/1754253021526.jpg'
+const pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || 'https://files.catbox.moe/xr2m6u.jpg'
 const nombre = `> ❀ @${usuario.split('@')[0]} Ha cambiado el nombre del grupo.\n> ✦ Ahora el grupo se llama:\n> *${m.messageStubParameters[0]}*.`
 
 const foto = `> ❀ Se ha cambiado la imagen del grupo.\n> ✦ Acción hecha por:\n> » @${usuario.split('@')[0]}`

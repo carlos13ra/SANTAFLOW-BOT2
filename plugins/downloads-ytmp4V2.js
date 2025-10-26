@@ -5,10 +5,10 @@ import yts from "yt-search";
 
 let handler = async (m, { conn, text, args }) => {
   try {
-    if (!text) return conn.reply(m.chat, `🎶 *Por favor, ingresa la URL del vídeo de YouTube.*`, m);
+    if (!text) return conn.reply(m.chat, `🌷 *Por favor, ingresa la URL del vídeo de YouTube.*`, m);
 
     await conn.sendMessage(m.chat, {
-      text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🎶 *¡Descargando tu video!*`
+      text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🫛 *¡Descargando tu video!*`
     }, { quoted: m });
 
     if (!/^(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)/.test(args[0])) {
@@ -28,7 +28,7 @@ let handler = async (m, { conn, text, args }) => {
     const cleanTitle = title.replace(/[^\w\s]/gi, '').trim().replace(/\s+/g, '_');
     const fileName = `${cleanTitle}.mp4`;
 
-    const caption = `🎶 *ＹＯＵＴＵＢＥ • ＭＰ4*  🥭
+    const caption = `🎶 *ＹＯＵＴＵＢＥ • ＭＰ4*  🍎
 ────────────────────
 > °𓃉𐇽ܳ𓏸🎋ᮬᩬִּ〫᪲۟. 𝐓𝐈𝐓𝐔𝐋𝐎: *${meta.title || '-'}*
 > °𓃉𐇽ܳ𓏸🌿ᮬᩬִּ〫᪲۟. 𝐃𝐔𝐑𝐀𝐂𝐈𝐎𝐍: *${meta.duration?.timestamp || duration || '-'}*
@@ -55,7 +55,7 @@ let handler = async (m, { conn, text, args }) => {
         contextInfo: {
           externalAdReply: {
             title: meta.title,
-            body: '💦 ᥡ᥆ᥙ𝗍ᥙᑲᥱ ძ᥆ᥴ |  SANTAFLOW IA🎵',
+            body: '💦 ᥡ᥆ᥙ𝗍ᥙᑲᥱ ძ᥆ᥴ |  кαиєкι вσт ν2 🌾',
             mediaUrl: args[0],
             sourceUrl: args[0],
             thumbnailUrl: meta.image,
@@ -94,7 +94,7 @@ let handler = async (m, { conn, text, args }) => {
 };
 
 handler.help = ['ytmp4v2 *<url>*'];
-handler.tags = ['downloader'];
+handler.tags = ['download'];
 handler.command = ['ytmp4v2', 'playmp4'];
 handler.group = true;
 

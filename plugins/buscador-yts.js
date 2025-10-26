@@ -1,4 +1,4 @@
-// - codigo creado x ShadowCore 🎋
+// - código creado x ShadowCore 🎋
 
 import fetch from "node-fetch";
 import yts from "yt-search";
@@ -6,12 +6,12 @@ import axios from "axios";
 
 const videoCache = {};
 const cacheTimeout = 10 * 60 * 1000; // 10 minutos
-const MAX_FILE_SIZE_MB = 50;
+const MAX_FILE_SIZE_MB = 70;
 
 const shortenURL = async (url) => {
   try {
-    let response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
-    let shortUrl = await response.text();
+    const res = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
+    const shortUrl = await res.text();
     return shortUrl.includes("http") ? shortUrl : url;
   } catch {
     return url;
@@ -20,26 +20,27 @@ const shortenURL = async (url) => {
 
 const fetchAPI = async (url, type) => {
   try {
-    let endpoint =
+    const endpoint =
       type === "audio"
-        ? `https://api.zenzxz.my.id/downloader/ytmp3v2?url=${encodeURIComponent(url)}`
-        : `https://api.zenzxz.my.id/downloader/ytmp4v2?url=${encodeURIComponent(url)}`;
+        ? `https://api.stellarwa.xyz/dow/ytmp3?url=${encodeURIComponent(url)}&apikey=Shadow`
+        : `https://api.stellarwa.xyz/dow/ytmp4?url=${encodeURIComponent(url)}&apikey=Shadow`;
 
-    let response = await fetch(endpoint);
-    let data = await response.json();
+    const res = await fetch(endpoint);
+    const data = await res.json();
 
-    if (data?.status && data?.download_url) {
+    if (data?.status && data?.data?.dl) {
       return {
-        download: data.download_url,
-        title: data.title || "Desconocido",
-        duration: data.duration || 0,
-        thumbnail: data.thumbnail || null,
-        format: data.format || (type === "audio" ? "mp3" : "mp4")
+        download: data.data.dl,
+        title: data.data.title || "Desconocido",
+        author: data.data.author || "Desconocido",
+        thumbnail: `https://img.youtube.com/vi/${new URL(url).searchParams.get("v")}/0.jpg`,
+        format: type === "audio" ? "mp3" : "mp4"
       };
     }
-    throw new Error("API principal no respondió correctamente.");
-  } catch (error) {
-    console.log("Error en API:", error.message);
+
+    throw new Error("Error al obtener datos desde StellarWA");
+  } catch (e) {
+    console.log("Error en StellarWA:", e.message);
     return null;
   }
 };
@@ -95,13 +96,12 @@ const handler = async (m, { conn, text }) => {
 - \`AD <número>\` → Audio Doc
 - \`VD <número>\` → Video Doc`;
 
-  const thumbnail2 = results[0]?.thumbnail;
-  const thumb = thumbnail2 ? (await conn.getFile(thumbnail2))?.data : null;
+  const thumb = results[0]?.thumbnail ? (await conn.getFile(results[0].thumbnail))?.data : null;
 
   const fakertX = {
     contextInfo: {
       externalAdReply: {
-        title: "🥭 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 🎶 𝗦𝗲𝗮𝗿𝗰𝗵 🔥",
+        title: "🍓 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 🎶 𝗦𝗲𝗮𝗿𝗰𝗵 🌤️",
         body: "Resultados encontrados",
         mediaType: 1,
         previewType: 0,
@@ -120,7 +120,9 @@ handler.help = ["ytsearch <texto>"];
 handler.tags = ["buscador"];
 handler.command = ["ytsearch", "yts"];
 handler.group = true;
+handler.register = true;
 
+// 🪷 Descarga según respuesta del usuario
 handler.before = async (m, { conn }) => {
   if (!m.quoted || !m.quoted.text.includes("Resultados de la búsqueda")) return;
 
@@ -143,19 +145,19 @@ handler.before = async (m, { conn }) => {
   const urlVideo = videoData.url;
 
   try {
-    let mediaType = type.startsWith("A") ? "audio" : "video";
-    let asDocument = type.endsWith("D");
+    const mediaType = type.startsWith("A") ? "audio" : "video";
+    const asDocument = type.endsWith("D");
 
-    await conn.reply(m.chat, mediaType === "audio" ? "*🍂 Descargando audio...*" : "☁️ Descargando video...*", m);
+    await conn.reply(m.chat, mediaType === "audio" ? "🎧 Descargando audio..." : "🎬 Descargando video...", m);
 
-    let apiData = await fetchAPI(urlVideo, mediaType);
-    if (!apiData) return conn.reply(m.chat, "Error al obtener el enlace.", m);
+    const apiData = await fetchAPI(urlVideo, mediaType);
+    if (!apiData) return conn.reply(m.chat, "⚠️ Error al obtener el enlace desde StellarWA.", m);
 
-    let sizeBytes = await getSize(apiData.download);
-    let fileSizeMB = sizeBytes ? sizeBytes / (1024 * 1024) : null;
+    const sizeBytes = await getSize(apiData.download);
+    const fileSizeMB = sizeBytes ? sizeBytes / (1024 * 1024) : null;
 
     if (fileSizeMB && fileSizeMB > MAX_FILE_SIZE_MB) {
-      let shortUrl = await shortenURL(apiData.download);
+      const shortUrl = await shortenURL(apiData.download);
       return conn.reply(
         m.chat,
         `⚠️ El archivo pesa *${formatSize(sizeBytes)}* y excede el límite de ${MAX_FILE_SIZE_MB}MB.\n\n🔗 Descarga manual: ${shortUrl}`,
@@ -163,9 +165,9 @@ handler.before = async (m, { conn }) => {
       );
     }
 
-    let fileName = `${apiData.title}.${mediaType === "audio" ? "mp3" : "mp4"}`;
-    let infoMessage = `
+    const info = `
 > 🌱 *Título:* ${apiData.title}
+> 🎤 *Autor:* ${apiData.author}
 > ⏱ *Duración:* ${videoData.timestamp || "?"}
 > 💾 *Tamaño:* ${formatSize(sizeBytes)}
 > 🔗 *Descarga:* ${await shortenURL(apiData.download)}
@@ -176,9 +178,9 @@ handler.before = async (m, { conn }) => {
         m.chat,
         {
           document: { url: apiData.download },
-          fileName,
+          fileName: `${apiData.title}.${apiData.format}`,
           mimetype: mediaType === "audio" ? "audio/mpeg" : "video/mp4",
-          caption: infoMessage
+          caption: info
         },
         { quoted: m }
       );
@@ -187,13 +189,13 @@ handler.before = async (m, { conn }) => {
         m.chat,
         {
           audio: { url: apiData.download },
-          fileName,
+          fileName: `${apiData.title}.mp3`,
           mimetype: "audio/mpeg",
           ptt: false,
           contextInfo: {
             externalAdReply: {
               title: apiData.title,
-              body: `✐ Duración: ♪ [${videoData.timestamp || "?"}] • ☊ [${formatSize(sizeBytes)}]`,
+              body: `♪ ${apiData.author} • ${formatSize(sizeBytes)}`,
               thumbnail: apiData.thumbnail ? (await conn.getFile(apiData.thumbnail)).data : null,
               sourceUrl: urlVideo,
               mediaType: 1,
@@ -208,13 +210,13 @@ handler.before = async (m, { conn }) => {
         m.chat,
         {
           video: { url: apiData.download },
-          caption: infoMessage
+          caption: info
         },
         { quoted: m }
       );
     }
-  } catch (error) {
-    conn.reply(m.chat, `⚠︎ Error: ${error.message}`, m);
+  } catch (err) {
+    conn.reply(m.chat, `⚠︎ Error: ${err.message}`, m);
   }
 };
 

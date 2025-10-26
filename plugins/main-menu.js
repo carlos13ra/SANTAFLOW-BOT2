@@ -1,130 +1,150 @@
-import axios from 'axios'
-import moment from 'moment-timezone'
+import fetch from 'node-fetch'
+import { xpRange } from '../lib/levelling.js'
+import fs from 'fs'
+import PhoneNumber from 'awesome-phonenumber'
 
-let handler = async (m, { conn, usedPrefix }) => {
+let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
   try {
-    let userId = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-    let userData = global.db.data.users[userId] || {}
-    let exp = userData.exp || 0
-    let coin = userData.coin || 0
-    let level = userData.level || 0
-    let role = userData.role || 'Sin Rango'
-    let name = await conn.getName(userId)
+    await m.react('🍓')
 
-    let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
-    let totalreg = Object.keys(global.db.data.users).length
-    let totalCommands = Object.keys(global.plugins).length
+    const user = global.db.data.users[m.sender] || {}
+    const name = await conn.getName(m.sender)
+    const premium = user.premium ? '✅ Sí' : '❌ No'
+    const limit = user.limit || 0
+    const totalreg = Object.keys(global.db.data.users).length
+    const groupUserCount = m.isGroup ? participants.length : '-'
+    const groupsCount = Object.values(conn.chats).filter(v => v.id.endsWith('@g.us')).length
+    const uptime = clockString(process.uptime() * 1000)
+    const fecha = new Date(Date.now())
+    const locale = 'es-PE'
+    const dia = fecha.toLocaleDateString(locale, { weekday: 'long' })
+    const fechaTxt = fecha.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
+    const hora = fecha.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' })
+    const totalCommands = Object.keys(global.plugins).length
 
-    let fechaObj = new Date()
-    let hora = new Date().toLocaleTimeString('es-PE', { timeZone: 'America/Lima' })
-    let fecha = fechaObj.toLocaleDateString('es-PE', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'America/Lima' })
-    let dia = fechaObj.toLocaleDateString('es-PE', { weekday: 'long', timeZone: 'America/Lima' })
+    const userId = m.sender.split('@')[0]
+    const phone = PhoneNumber('+' + userId)
+    const pais = phone.getRegionCode() || 'Desconocido 🌐'
     
-    let videos = [
-        'https://files.catbox.moe/jgfdmn.mp4',
-        'https://files.catbox.moe/wc8wcz.mp4',
-        'https://files.catbox.moe/t9frnr.mp4',
-        'https://files.catbox.moe/j4aew2.mp4',
-        'https://files.catbox.moe/1b5zis.mp4',
-        'https://files.catbox.moe/leq8g0.mp4',
-        'https://files.catbox.moe/hvfmay.mp4',
-        'https://files.catbox.moe/x2tt5r.mp4'
-    ]
-    let video = videos[Math.floor(Math.random() * videos.length)]
+    const perfil = await conn.profilePictureUrl(conn.user.jid, 'image')
+      .catch(() => 'https://files.catbox.moe/9i5o9z.jpg')
 
-    const emojis = {
-      'main': '🦋', 'tools': '🛠️', 'audio': '🎧', 'group': '👥',
-      'owner': '👑', 'fun': '🎮', 'info': 'ℹ️', 'internet': '🌐',
-      'downloads': '⬇️', 'admin': '🧰', 'anime': '✨', 'nsfw': '🔞',
-      'search': '🔍', 'sticker': '🖼️', 'game': '🕹️', 'premium': '💎', 'bot': '🤖'
+    const channelRD = { 
+      id: '120363422142340004@newsletter', 
+      name: '𝖱in Itoshi : 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝖿𝗂𝖼𝗂𝖺𝗅'
     }
 
-    let grupos = {}
-    for (let plugin of Object.values(global.plugins || {})) {
-      if (!plugin.help || !plugin.tags) continue
-      for (let tag of plugin.tags) {
-        if (!grupos[tag]) grupos[tag] = []
-        for (let help of plugin.help) {
-          if (/^\$|^=>|^>/.test(help)) continue
-          grupos[tag].push(`${usedPrefix}${help}`)
+    const metaMsg = {
+      quoted: global.fakeMetaMsg,
+      contextInfo: {
+        mentionedJid: [m.sender],
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: channelRD.id,
+          serverMessageId: 100,
+          newsletterName: channelRD.name
+        },
+        externalAdReply: {
+          title: '🍒 Rin Itoshi-𝖬𝖣',
+          body: '✨ Dev: Shadow_xyz ☃️',
+          mediaUrl: null,
+          description: null,
+          previewType: "PHOTO",
+          thumbnailUrl: perfil,
+          mediaType: 1,
+          renderLargerThumbnail: true
         }
       }
     }
 
-    for (let tag in grupos) {
-      grupos[tag].sort((a, b) => a.localeCompare(b))
+    let tags = {
+      'main': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴍᴀɪɴ` 🍓 ᦡᦡ',
+      'fun': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ғᴜɴ` 🎭 ᦡᦡ',
+      'anime': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴀɴɪᴍᴇ` 🌸',
+      'descargas': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴅᴏᴡɴʟᴏᴀᴅ` 🎧 ᦡᦡ',
+      'grupo': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ɢʀᴜᴘᴏs` 🏮 ᦡᦡ',
+      'ia': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ɪᴀ` ☁️ ᦡᦡ',
+      'tools': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴛᴏᴏʟs` 🧩 ᦡᦡ',
+      'owner': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴏᴡɴᴇʀ` ⚙️ ᦡᦡ',
+      'jadibot': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴊᴀᴅɪ-ʙᴏᴛ` 🍰 ᦡᦡ',
+      'nsfw': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ɴsғᴡ` 🍑 ᦡᦡ',
     }
 
-    const secciones = Object.entries(grupos).map(([tag, cmds]) => {
-      const emoji = emojis[tag] || '⭐'
-      return `╭━━━〔 ${emoji} ${tag.toUpperCase()} 〕━━⬣\n` + cmds.map(cmd => `┃ ✦ ${cmd}`).join('\n') + `\n╰━━━〔 ✦ 〕━━⬣`
-    }).join('\n\n')
+    let commands = Object.values(global.plugins)
+      .filter(v => v.help && v.tags)
+      .map(v => {
+        return {
+          help: Array.isArray(v.help) ? v.help : [v.help],
+          tags: Array.isArray(v.tags) ? v.tags : [v.tags]
+        }
+      })
 
-    let menuText = `
-❉｡･:*˚:✧｡ 🎧 sᴀɴᴛᴀғʟᴏᴡ - ʙᴏᴛ 💫 ｡✧:˚*:･｡❉
-⊱ ────── {.⋅ ✯ ⋅.} ────── ⊰
+    let menuTexto = ''
+    for (let tag in tags) {
+      let comandos = commands
+        .filter(cmd => cmd.tags.includes(tag))
+        .map(cmd => cmd.help.map(e => `> ര ׄ 🍃 ׅ  ${usedPrefix}${e}`).join('\n'))
+        .join('\n')
+      if (comandos) {
+        menuTexto += `\n\n*${tags[tag]}*\n${comandos}`
+      }
+    }
 
-☁️ ${ucapan()} @${userId.split('@')[0]} ⚡
+    const infoUser = `
+ര ׄ ☃️ ׅ  Bienvenid@ a | Rin itoshi 
+─────────────────────
+🌿 *Usuario:* @${userId}
+🍉 *Premium:* ${premium}
+🌍 *País:* ${pais}
+🎲 *Límite:* ${limit}
+🎋 *Usuarios totales:* ${totalreg}
+☁️ *Grupos activos:* ${groupsCount}
+🚀 *Tiempo activo:* ${uptime}
+─────────────────────
+🌾 *Bot:* ${(conn.user.jid == global.conn.user.jid ? '🌟 `ʙᴏᴛ ᴏғɪᴄɪᴀʟ`' : '✨ `sᴜʙ ʙᴏᴛ`')}
+🕸️ *Comandos:* ${totalCommands}
+📡 *Fecha:* \`${hora}, ${dia}, ${fechaTxt}\`
+─────────────────────\n`.trim()
 
-  \`[ 𝗜 𝗡 𝗙 𝗢 - 𝗨 𝗦 𝗘 𝗥 ]\`
-  ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
-> ✩⚞ ᴜsᴇʀ: *${name}*
-> ✩⚞ ɴɪᴠᴇʟ: *${level}*
-> ✩⚞ ᴇxᴘ ᴛᴏᴛᴀʟ: *${exp}*
-> ✩⚞ ʀᴀɴɢᴏ: ${role}
-──────────────────────
+    const cuerpo = infoUser + `\n*🍡 Mᴇɴú ᴅɪsᴘᴏɴɪʙʟᴇ:*
 
-  \`[ 𝗜 𝗡 𝗙 𝗢 - 𝗕 𝗢 𝗧 ]\`
-  ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
-> ✧⚞ 👑 ᴏᴡɴᴇʀ: *wa.me/${suittag}*
-> ✧⚞ 🤖 ʙᴏᴛ: ${(conn.user.jid == global.conn.user.jid ? '🌟 ʙᴏᴛ ᴏғɪᴄɪᴀʟ' : '✨ sᴜʙ ʙᴏᴛ')}
-> ✧⚞ 📚 ᴄᴏᴍᴀɴᴅᴏs: *${totalCommands}*
-> ✧⚞ 🧑‍🤝‍🧑 ᴛᴏᴛᴀʟ ᴜsᴇʀs: *${totalreg}*
-> ✧⚞ ⏱️ ʀᴜɴᴛɪᴍᴇ: *${uptime}*
-──────────────────────
+${menuTexto}`.trim()
 
-   \`[ 𝗜 𝗡 𝗙 𝗢 - 𝗙 𝗘 𝗖 𝗛 𝗔 ]\`
-  ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
-> ✧⚞ ⚡ ʜᴏʀᴀ ᴘᴇʀᴜ: *${hora}*
-> ✧⚞ 🍩 ғᴇᴄʜᴀ: *${fecha}*
-> ✧⚞ ☘️ ᴅɪᴀ: *${dia}*
-──────────────────────
+    const vids = [
+      'https://files.catbox.moe/tc1zxx.mp4',
+      'https://files.catbox.moe/o3ggg8.mp4'
+    ]
+    let videoUrl = vids[Math.floor(Math.random() * vids.length)]
 
-${secciones}
-`.trim()
-
- await m.react('🎋')
-await conn.sendMessage(m.chat, { video: { url: video }, caption: menuText, contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: packname, body: dev, thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
-}, }, gifPlayback: true, gifAttribution: 0 }, { quoted: null })
+    await conn.sendMessage(m.chat, {
+      document: fs.readFileSync('./README.md'),
+      fileName: '🚀 ʙᴏᴛ ᴍᴅ | Mᴇɴᴜ 🌸',
+      mimetype: 'application/pdf',
+      caption: cuerpo,
+      gifPlayback: true,
+      mentions: [m.sender],
+      ...metaMsg
+    })
 
   } catch (e) {
     console.error(e)
-    await conn.sendMessage(m.chat, {
+    await conn.sendMessage(m.chat, { 
       text: `✘ Error al enviar el menú: ${e.message}`,
-      mentions: [m.sender]
-    }, { quoted: m })
+      mentions: [m.sender] 
+    })
   }
 }
 
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu', 'menú', 'help', 'allmenú', 'allmenu', 'menucompleto']
+handler.command = ['menu','help','menú','allmenu','menucompleto']
 handler.register = true
+
 export default handler
 
 function clockString(ms) {
-  let seconds = Math.floor((ms / 1000) % 60)
-  let minutes = Math.floor((ms / (1000 * 60)) % 60)
-  let hours = Math.floor((ms / (1000 * 60 * 60)) % 24)
-  return `${hours}h ${minutes}m ${seconds}s`
-}
-
-function ucapan() {
-  const time = moment.tz('America/Lima').format('HH')
-  let res = "ʙᴜᴇɴᴀs ɴᴏᴄʜᴇs 🌙"
-  if (time >= 5 && time < 12) res = "ʙᴜᴇɴᴏs ᴅɪᴀs ☀️"
-  else if (time >= 12 && time < 18) res = "ʙᴜᴇɴᴀs ᴛᴀʀᴅᴇs 🌤️"
-  else if (time >= 18) res = "ʙᴜᴇɴᴀs ɴᴏᴄʜᴇs 🌙"
-  return res
+  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
 }

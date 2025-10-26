@@ -18,7 +18,7 @@ let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
 let rtx = "*❀ SER BOT • MODE QR*\n\n✰ Con otro celular o en la PC escanea este QR para convertirte en un *Sub-Bot* Temporal.\n\n\`1\` » Haga clic en los tres puntos en la esquina superior derecha\n\n\`2\` » Toque dispositivos vinculados\n\n\`3\` » Escanee este codigo QR para iniciar sesion con el bot\n\n✧ ¡Este código QR expira en 45 segundos!."
-let rtx2 = "*❀ SER BOT • MODE CODE*\n\n✰ Usa este Código para convertirte en un *Sub-Bot* Temporal.\n\n\`1\` » Haga clic en los tres puntos en la esquina superior derecha\n\n\`2\` » Toque dispositivos vinculados\n\n\`3\` » Selecciona Vincular con el número de teléfono\n\n\`4\` » Escriba el Código para iniciar sesion con el bot\n\n✧ No es recomendable usar tu cuenta principal."
+let rtx2 = "*❀ SER BOT • MODE CODE*\n\n✰ Usa este Código para convertirte en un *Sub-Bot* Temporal.\n\n\`1\` » 𝘏𝘢𝘨𝘢 𝘤𝘭𝘪𝘤 𝘦𝘯 𝘭𝘰𝘴 𝘵𝘳𝘦𝘴 𝘱𝘶𝘯𝘵𝘰𝘴 𝘦𝘯 𝘭𝘢 𝘦𝘴𝘲𝘶𝘪𝘯𝘢 𝘴𝘶𝘱𝘦𝘳𝘪𝘰𝘳 𝘥𝘦𝘳𝘦𝘤𝘩𝘢\n\n\`2\` » 𝘛𝘰𝘲𝘶𝘦 𝘥𝘪𝘴𝘱𝘰𝘴𝘪𝘵𝘪𝘷𝘰𝘴 𝘷𝘪𝘯𝘤𝘶𝘭𝘢𝘥𝘰𝘴\n\n\`3\` » 𝘚𝘦𝘭𝘦𝘤𝘤𝘪𝘰𝘯𝘢 𝘝𝘪𝘯𝘤𝘶𝘭𝘢𝘳 𝘤𝘰𝘯 𝘦𝘭 𝘯ú𝘮𝘦𝘳𝘰 𝘥𝘦 𝘵𝘦𝘭é𝘧𝘰𝘯𝘰\n\n\`4\` » 𝘌𝘴𝘤𝘳𝘪𝘣𝘢 𝘦𝘭 𝘊ó𝘥𝘪𝘨𝘰 𝘱𝘢𝘳𝘢 𝘪𝘯𝘪𝘤𝘪𝘢𝘳 𝘴𝘦𝘴𝘪𝘰𝘯 𝘤𝘰𝘯 𝘦𝘭 𝘣𝘰𝘵\n\n> ✧ No es recomendable usar tu cuenta principal."
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const shadowJBOptions = {}
@@ -124,9 +124,8 @@ if (qr && mcode) {
 let secret = await sock.requestPairingCode((m.sender.split`@`[0]))
 secret = secret.match(/.{1,4}/g)?.join("-")
 
-//txtCode = await conn.sendMessage(m.chat, {text : rtx2}, { quoted: m })
     let txtCode = await conn.sendMessage(m.chat, {
-      image: { url: 'https://i.postimg.cc/mZqG44Dy/1760212243057.jpg' },
+      image: { url: 'https://i.pinimg.com/originals/ab/e7/e4/abe7e489d32433fc81b866fe162548d6.jpg' },
       caption: rtx2,
       contextInfo: {
         mentionedJid: [m.sender],
@@ -138,22 +137,63 @@ secret = secret.match(/.{1,4}/g)?.join("-")
          },
         isForwarded: true
       }
-    }, { quoted: fkontak });
+    }, { quoted: m });
 
-codeBot = await conn.reply(m.chat, `${secret}*`, fkontak);
-//codeBot = await m.reply(secret)
-/*txtCode = await conn.sendMessage(
-  m.chat,
-  {
-    video: { url: "https://files.catbox.moe/z09oz9.mp4" },
-    gifPlayback: true,
-    caption: rtx2,
-    ...rcanal
-  },
-  { quoted: m }
-)
+codeBot = await conn.reply(m.chat, `*${secret}*`, fkontak);
 
-codeBot = await conn.reply(m.chat, `*${secret}*`, m, fake);*/
+/*
+
+let rtx2 = `
+👾 *ＢＯＴ • Ｖ 3* ☃️
+
+✨ Usa este código para ser un *Sub-Bot Temporal*
+🔐 \`ᴄᴏᴅɪɢᴏ ᴅᴇ ᴠɪɴᴄᴜʟᴀᴄɪᴏ́ɴ:\` *${secret}*
+
+🌿 \`ᴘᴀsᴏs:\`
+1️⃣ Abre los tres puntos ⠇ arriba a la derecha  
+2️⃣ Entra en *Dispositivos vinculados*  
+3️⃣ Toca *Vincular con número de teléfono*  
+4️⃣ Escribe el código y ¡listo!* 💫`;
+
+const img = 'https://i.pinimg.com/originals/ab/e7/e4/abe7e489d32433fc81b866fe162548d6.jpg'
+
+const msg = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+  viewOnceMessage: {
+    message: {
+      interactiveMessage: {
+        header: {
+          title: "🌐 Sub-Bot Temporal",
+          hasMediaAttachment: true,
+          imageMessage: (await conn.prepareMessageMedia({ image: { url: img } }, { upload: conn.waUploadToServer })).imageMessage
+        },
+        body: { text: rtx2 },
+        footer: { text: '           ⚠︎  𝐀 𝐕 𝐈 𝐒 𝐎  ⚠︎ \n✧ No es recomendable usar tu cuenta principal.' },
+        nativeFlowMessage: {
+          buttons: [
+            {
+              name: "cta_copy",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 ᴄ ᴏ ᴘ ɪ ᴀ ʀ ° ᴄ ᴏ ᴅ ɪ ɢ ᴏ",
+                id: "copy_code",
+                copy_code: `${secret}`
+              })
+            },
+            {
+              name: "cta_url",
+              buttonParamsJson: JSON.stringify({
+                display_text: "ᴛᴏᴄᴀ \ ᴀǫᴜɪ",
+                url: "https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U"
+              })
+            }
+          ]
+        }
+      }
+    }
+  }
+}), { quoted: m })
+
+await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })*/
+
 console.log(secret)
 }
 if (txtCode && txtCode.key) {
@@ -223,7 +263,7 @@ userJid = sock.authState.creds.me.jid || `${path.basename(pathshadowJadiBot)}@s.
 console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• SUB-BOT •】⸺⸺⸺⸺❒\n│\n│ ❍ ${userName} (+${path.basename(pathshadowJadiBot)}) conectado exitosamente.\n│\n❒⸺⸺⸺【• CONECTADO •】⸺⸺⸺❒`))
 sock.isInit = true
 global.conns.push(sock)
-m?.chat ? await conn.sendMessage(m.chat, { text: isSubBotConnected(m.sender) ? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...` : `❀ Has registrado un nuevo *Sub-Bot!* [@${m.sender.split('@')[0]}]\n\n> Puedes ver la información del bot usando el comando *#infobot*`, mentions: [m.sender] }, { quoted: fkontak }) : ''
+m?.chat ? await conn.sendMessage(m.chat, { text: isSubBotConnected(m.sender) ? `@${m.sender.split('@')[0]}, ya estás conectado, leyendo mensajes entrantes...` : `❀ Has registrado un nuevo *Sub-Bot!* [@${m.sender.split('@')[0]}]\n\n> Puedes ver la información del bot usando el comando *#infobot*`, mentions: [m.sender] }, { quoted: m }) : ''
 }}
 setInterval(async () => {
 if (!sock.user) {

@@ -30,7 +30,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       text: caption,
       contextInfo: {
         externalAdReply: {
-          title: '🥭 ✧ s⍴᥆𝗍і𝖿ᥡ • mᥙsіᥴ ✧☘️',
+          title: '🕸️ ✧ s⍴᥆𝗍і𝖿ᥡ • mᥙsіᥴ ✧ 🌿',
           body: artist,
           thumbnailUrl: image,
           sourceUrl: spotifyUrl,
@@ -86,17 +86,16 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         ptt: false,
         contextInfo: {
           externalAdReply: {
-            title: "🎵 s⍴᥆𝗍і𝖿ᥡ • mᥙsіᥴ 👻",
-            body: "ᴅɪsғʀᴜᴛᴀ ᴛᴜ ᴍᴜsɪᴄᴀ ғᴀᴠᴏʀɪᴛᴀ 🔥",
+            title: "✎ 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙖.",
+            body: `✿ 𝙎𝙚𝙧𝙫𝙞𝙙𝙤𝙧: ${serverUsed}`,
             thumbnailUrl: image,
             sourceUrl: spotifyUrl,
             mediaType: 1,
-            renderLargerThumbnail: true
+            renderLargerThumbnail: false
           }
         }
       }, { quoted: fkontak })
 
-      await conn.reply(m.chat, `> ✎ *Descarga completa.*\n> ✿ \`Servidor:\` *${serverUsed}*`, m)
     } else {
       conn.reply(m.chat, `No se encontró un link de descarga válido para esta canción.`, m)
     }
@@ -111,5 +110,6 @@ handler.help = ["spotify"]
 handler.tags = ["download"]
 handler.command = ["spotify", "splay"]
 handler.group = true
+handler.register = true
 
 export default handler

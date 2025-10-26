@@ -9,7 +9,7 @@ const gokuAPI = "https://gokublack.xyz/download/ytmp4";
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text || !text.trim()) {
-      return conn.reply(m.chat, `debes poner el comando más un enlace de YouTube▶️\n\nEjemplo:\n*${usedPrefix + command} https://youtu.be/xxxx*`, m, rcanal);
+      return conn.reply(m.chat, `🌸 Onichan~ debes poner el comando más un enlace de YouTube uwu 💕\n\nEjemplo:\n*${usedPrefix + command} https://youtu.be/xxxx*`, m, rcanal);
     }
 
     const search = await yts(text);
@@ -23,13 +23,13 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const rinurl = global.logo || "https://files.catbox.moe/g2of9q.jpg";
     const thumb = (await conn.getFile(thumbnail || rinurl))?.data;
 
-    const infoMessage = `╭─❍DATOS▶️ ⃟  
+    const infoMessage = `╭─❍⃟🌸 𝐎𝐧𝐢𝐜𝐡𝐚𝐚𝐧~ 💗  
 ┃ 🎶 *Título:* ${title}  
 ┃ 👁️ *Vistas:* ${formatViews(views)}  
 ┃ 🔗 *Enlace:* ${url}  
 ┃  
-┃ ⏳ Estoy preparando tu descarga nya~ 🔥  
-╰─⟦ 🥭 Espera un momento⟧`;
+┃ ⏳ Estoy preparando tu descarga nya~ 💖  
+╰─⟦ 🌈 Espera un momentito uwu ⟧`;
 
     await conn.sendFile(m.chat, thumb, 'rin.jpg', infoMessage, m);
 

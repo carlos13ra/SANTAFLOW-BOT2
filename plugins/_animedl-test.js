@@ -42,15 +42,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     ], m);*/
 
     const caption = `
-╭─═☆彡〔 SANTAFLOW 彡〕☆═─╮
+╭─═☆彡〔 Rin Itoshi 彡〕☆═─╮
 │  (•̀ᴗ•́)و💥 ¡Anime listo para ti!
 │━━━━━━━━━━━━━━━━━━━━━━━
 │🎬 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐚: AnimeFLV 🌐
 │📁 𝐓í𝐭𝐮𝐥𝐨: ${animeId} Ep. ${episode}
 │📦 𝐓𝐚𝐦𝐚ñ𝐨: ${formatBytes(file.size)}
 │
-│💫 Disfruta tu episodio, ¡Santaflow te cubre la maratón! ▶️✨
-╰─═☆彡〔 Santaflow Anime DL 〕☆═─╯
+│💫 Disfruta tu episodio, ¡Rin Itoshi te cubre la maratón! 🍿✨
+╰─═☆彡〔 Rin Itoshi Anime DL 〕☆═─╯
 `;
 
     const dataBuffer = await file.downloadBuffer();

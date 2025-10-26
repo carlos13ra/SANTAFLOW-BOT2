@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) return m.reply(`${emojis} Ingresa un texto. Ejemplo: .pinterest anime`)
   await m.react('🕓')
   await conn.sendMessage(m.chat, {
-    text: `🍉 ʙᴜsᴄᴀɴᴅᴏ ʀᴇsᴜʟᴛᴀᴅᴏs ૮₍｡˃ ᵕ ˂ ｡₎ა 🍐`,
+    text: `🍉 ʙᴜsᴄᴀɴᴅᴏ ʀᴇsᴜʟᴛᴀᴅᴏs ૮₍｡˃ ᵕ ˂ ｡₎ა 🫛`,
     ...rcanal
   }, { quoted: m })
 
@@ -111,6 +111,7 @@ handler.help = ['pinterest <texto>']
 handler.tags = ['buscador']
 handler.command = ['pinterest', 'pin']
 handler.register = true
+handler.coin = 4
 
 export default handler
 

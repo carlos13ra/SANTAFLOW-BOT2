@@ -18,10 +18,10 @@ let handler = async (m, { conn, command }) => {
     let randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
     
     let footers = [
-      `🔥 disfruta ${randomNick} 🌸`,
-      `☘️ Ara Ara~ ${randomNick} 💖`,
-      `▶️ Senpai notice me~ ${randomNick} ✨`,
-      `🥭 Onii-chan~ ${randomNick} 🐾`,
+      `🌸 UwU, disfruta ${randomNick} 🌸`,
+      `💖 Ara Ara~ ${randomNick} 💖`,
+      `✨ Senpai notice me~ ${randomNick} ✨`,
+      `🐾 Onii-chan~ ${randomNick} 🐾`,
       `🎀 Kawaii mode activated ${randomNick} 🎀`
     ]
     let randomFooter = footers[Math.floor(Math.random() * footers.length)]

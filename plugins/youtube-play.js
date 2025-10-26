@@ -1,8 +1,8 @@
-import yts from 'yt-search';
+/*import yts from 'yt-search';
 import fetch from 'node-fetch';
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) return conn.reply(m.chat, `*🍧 Ingresa un título para buscar en YouTube.*`, m);
+    if (!args[0]) return conn.reply(m.chat, `*🍧 Ingresa un título para buscar en YouTube.*`, m, fake);
 
     await m.react('🕓');
     try {
@@ -33,22 +33,22 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
             buttons: [
                 {
                     buttonId: `${usedPrefix}ytmp3doc ${video.url}`,
-                    buttonText: { displayText: '🎧 𝗔𝗨𝗗𝗜𝗢 𝗗𝗢𝗖' },
+                    buttonText: { displayText: '𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘔𝘗3 𝘋𝘖𝘊' },
                     type: 1,
                 },
                 {
                     buttonId: `${usedPrefix}ytmp4doc ${video.url}`,
-                    buttonText: { displayText: '🎬 𝗩𝗜𝗗𝗘𝗢 𝗗𝗢𝗖' },
+                    buttonText: { displayText: '𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘔𝘗4 𝘋𝘖𝘊' },
                     type: 1,
                 },
                 {
                     buttonId: `${usedPrefix}yta ${video.url}`,
-                    buttonText: { displayText: '🎶 𝗔 𝗨 𝗗 𝗜 𝗢' },
+                    buttonText: { displayText: '𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘔𝘗3' },
                     type: 1,
                 },
                 {
                     buttonId: `${usedPrefix}ytmp4 ${video.url}`,
-                    buttonText: { displayText: '📹 𝗩 𝗜 𝗗 𝗘 𝗢' },
+                    buttonText: { displayText: '𝘠𝘖𝘜𝘛𝘜𝘉𝘌 𝘔𝘗4' },
                     type: 1,
                 }
             ],
@@ -56,11 +56,11 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
             viewOnce: true
         }, { quoted: m });
 
-        await m.react('✅');
+        await m.react('✔️');
     } catch (e) {
         console.error(e);
         await m.react('✖️');
-        conn.reply(m.chat, '*✖️ Video no encontrado en Youtube.*', m);
+        conn.reply(m.chat, '*Video no encontrado en Youtube.*', m);
     }
 };
 
@@ -85,4 +85,4 @@ async function searchVideos(query) {
         console.error('*Error en yt-search:*', error.message);
         return [];
     }
-}
+}*/

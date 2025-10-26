@@ -15,63 +15,66 @@ global.botNumber = ''
 
 global.owner = 
 // <-- Número @s.whatsapp.net -->
-  ['51900922660', '🜲 Propietario 🎃', true],
-  ['51919199620', 'shadow', true],
-  ['51900922660'],
-  
-  
-global.suittag = ['51900922660'] 
+  ['51919199620', '🜲 Propietario 🎃', true],
+  ['51969214380', 'shadow', true],
+  ['51934053286', ':v', true ],
+  ['51965763942', 'Shadow-xyz ⚡', true],
+  ['50231458537', 'BrayanX330', true],
+  ['51946200884'],
+  ['51927303598'],
+
+//✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
+
+global.suittag = ['51919199620'] 
 global.prems = []
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.17' 
-global.vs = '2.2.5'
-global.nameqr = '✦⃟⚡Santaflow•Bot⚡⃟✦'
-global.namebot = '⸸ 𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖•𝐁𝐎𝐓 ⸸'
+global.vs = '3.0.0'
+global.nameqr = '⋆｡°✩🍂 Rin Itoshi Bot ⚡✩°｡⋆'
+global.namebot = '✿⋆｡° Rin Itoshi Bot MD °｡⋆✿'
 global.sessions = 'Sessions'
 global.jadi = 'JadiBots' 
 global.shadowJadibts = true
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.packname = '🏆 ⌬ 𝐒𝐚𝐧𝐭𝐚𝐟𝐥𝐨𝐰 𝑩𝒐𝒕 ⌬ 💥'
-global.botname = '☘️ 𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓'
-global.wm = '◈𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖 𝐁𝐎𝐓◈'
-global.author = '⩇⃟🔋 𝑴𝒂𝒅𝒆 𝒃𝒚 𝐜𝐚𝐫𝐥𝐨𝐬.𝐫𝐯 ⩇⃟⚡'
-global.dev = '☘️ ミ💨 》𝑪𝑨𝑹𝑳𝑶𝑺.𝑹𝑽《 💥ミ 🌀'
-global.bot = '𝑺𝒂𝒏𝒕𝒂𝒇𝒍𝒐𝒘 𝒃𝒐𝒕'
-global.club = '🌱 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 carlos•Core 𝖢𝗅𝗎𝖻 ⚡'
-global.textbot = 'ɢᴏᴊᴏ ʙᴏᴛ✦ 𝕊ℍ𝔸𝔻𝕆𝕎•ℂ𝕆ℝ𝔼'
+global.packname = '⸙͎۪۫🌾 𝙍𝙞𝙣 𝙄𝙩𝙤𝙨𝙝𝙞 𝘽𝙤𝙩 ⌗ 𝙎𝙖𝙙𝙤𝙬.𝙭𝙮 ☃️͎'
+global.botname = 'な 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 な౼⋆·˚ ☾︎ 𝐱𝐃 ᰍ'
+global.wm = '◈ 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐁𝐨𝐭 ◈'
+global.author = '🌿 𝑴𝒂𝒅𝒆 𝒃𝒚 𝑺𝒉𝒂𝒅𝒐𝒘𝒄𝒐𝒓𝒆'
+global.dev = '✧ 𖦹 ᴘᴏᴡʀᴇᴅ ʙʏ sʜᴀᴅᴏᴡ.xʏᴢ  ✧'
+global.bot = '𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 𝑩𝒐𝒕'
+global.club = dev
+global.textbot = '𓏲⍣⃝🍧꙰꙳ 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 𝑴𝑫 | xD'
 global.etiqueta = '@sʜᴀᴅᴏᴡ°ᴄᴏʀᴇ'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.moneda = 'ᴇᴜʀᴏs💶'
-global.welcom1 = '💤 Bienvenido/a al grupo⚡\n❍ Edita con el comando *setwelcome*'
-global.welcom2 = '🔥 un miembro ha salido del Grupo🔥\n❍ Edita con el comando *setbye*'
-global.banner = 'https://files.catbox.moe/ixknbf.jpg'
-global.avatar = 'https://files.catbox.moe/e4f34u.jpg'
-global.logo = 'https://files.catbox.moe/0w0wmc.jpg'
+global.moneda = '¥enes'
+global.banner = 'https://files.catbox.moe/fft2hr.jpg'
+global.avatar = 'https://files.catbox.moe/js2plu.jpg'
+global.logo = 'https://files.catbox.moe/fft2hr.jpg'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.gp1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
-global.comunidad1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
-global.channel = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
-global.channel2 = 'httpom/channel/0029VbAtbPA84OmJSLiHis2U'
-global.md = 'https://github.com/carlos13ra/SANTAFLOW-BOT2'
-global.correo = 'carlosramirezvillanueva30@gmail.com'
+global.gp1 = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+global.comunidad1 = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+global.channel = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+global.channel2 = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+global.md = 'https://github.com/Shadow-nex/Rin-Itoshi-Bot'
+global.correo = 'shadowcore.xyz@gmail.com'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 global.ch = {
-ch1: '120363401008003732@newsletter',
-ch2: "120363401008003732@newsletter",
-ch3: "120363401008003732@newsletter"
+ch1: "120363422142340004@newsletter",
+ch2: "120363422142340004@newsletter",
+ch3: "120363422142340004@newsletter"
 }
 global.multiplier = 60
 

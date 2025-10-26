@@ -42,9 +42,9 @@ _*📝 Ejemplo:*_  \`.antilink on\``;
     text,
     contextInfo: {
       externalAdReply: {
-        title: '⚙️ Configuración Santaflow',
+        title: '⚙️ Configuración Rin Itoshi',
         body: 'Gestión Avanzada del Reino',
-        thumbnailUrl: 'https://i.postimg.cc/Y2JJXwyb/1754525693627.jpg',
+        thumbnailUrl: 'https://files.catbox.moe/4dple4.jpg',
         mediaType: 1,
         showAdAttribution: true,
         renderLargerThumbnail: true

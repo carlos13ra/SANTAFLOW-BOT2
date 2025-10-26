@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let respuesta = `💬 *Respuesta de WebPilot AI:*\n${data.result.chat}\n\n`;
 
     if (data.result.source?.length) {
-      respuesta += `💫 *Fuentes relacionadas:*\n`;
+      respuesta += `🍧 *Fuentes relacionadas:*\n`;
       data.result.source.forEach((src, i) => {
         respuesta += `\n${i + 1}. ${src.title}\n🔗 ${src.link}\n`;
       });

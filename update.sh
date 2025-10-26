@@ -1,8 +1,8 @@
 # Código desarrollado por @gata_dios 
 
 #!/data/data/com.termux/files/usr/bin/bash 
-BOT_DIR="Santaflow-Bot"  
-BOT_REPO="https://github.com/carlos13ra/$BOT_DIR"
+BOT_DIR="Rin-Itoshi-Bot"  
+BOT_REPO="https://github.com/Yuji-XDev/$BOT_DIR"
 DB_FILE="datos.json"
 
 GREEN='\033[32m'

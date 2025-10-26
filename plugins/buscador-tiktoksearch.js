@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text)
     return conn.reply(
       m.chat,
-      `🥭 *Ingresa un texto para buscar en TikTok.*\n\n📌 Ejemplo:\n> ${usedPrefix + command} edits de Kaiser`,
+      `🌿 *Ingresa un texto para buscar en TikTok.*\n\n📌 Ejemplo:\n> ${usedPrefix + command} edits de Kaiser`,
       m,
       rcanal
     );
@@ -65,7 +65,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({ text: info }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
-          text: "🎧Fuente: ᴄᴀʀʟᴏs.ʀ.ᴠ",
+          text: "🌸 Fuente: 𝚂𝙷𝙰𝙳𝙾𝚆-𝙽𝙴𝚇",
         }),
         header: proto.Message.InteractiveMessage.Header.fromObject({
           title: v.title || "Video TikTok",
@@ -78,15 +78,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
               {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                  display_text: "💫 𝘝𝘌𝘙 𝘌𝘕 𝘛𝘐𝘒𝘛𝘖𝘒",
+                  display_text: "🍉 𝘝𝘌𝘙 𝘌𝘕 𝘛𝘐𝘒𝘛𝘖𝘒",
                   url: v.url || v.nowm,
                 }),
               },
               {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                  display_text: "🥭 𝘊𝘏𝘈𝘕𝘕𝘌𝘓 - 𝘖𝘍𝘊",
-                  url: 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39',
+                  display_text: "🕸️ 𝘊𝘏𝘈𝘕𝘕𝘌𝘓 - 𝘖𝘍𝘊",
+                  url: 'https://whatsapp.com/channel/0029VbBPa8EFsn0aLfyZl23j',
                 }),
               },
             ],
@@ -106,10 +106,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
             interactiveMessage: proto.Message.InteractiveMessage.fromObject({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `▶️ *Resultados de TikTok para:* ${text}`,
+                text: `🌺 *Resultados de TikTok para:* ${text}`,
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "🔥 Santaflow Bot ✨",
+                text: "🌿 Rin Itoshi Bot ✨",
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 hasMediaAttachment: false,
@@ -141,5 +141,6 @@ handler.tags = ["buscador"];
 handler.command = ["tiktoksearch", "ttsearch", "tiktoks"];
 handler.register = true;
 handler.group = true;
+handler.coin = 2
 
 export default handler;

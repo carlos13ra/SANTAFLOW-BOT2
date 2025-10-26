@@ -30,7 +30,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let result = json.slice(0, 5); // Limitar a 5 resultados
 
-    let textMsg = `🍏 *Resultados de Apple Music* 🥭\n\n`;
+    let textMsg = `🍏 *Resultados de Apple Music* 🍄\n\n`;
     result.forEach((item, i) => {
       textMsg += `*${i + 1}.*\n> 👾 *Título:* ${item.title}
 > 👤 *Artista:* ${item.artists}
@@ -52,5 +52,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ["applemusicsearch <canción>"];
 handler.tags = ["buscadores"];
 handler.command = ['applemusicsearch'];
+handler.register = true;
+handler.group = true;
 
 export default handler;

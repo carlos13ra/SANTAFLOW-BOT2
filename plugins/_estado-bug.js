@@ -3,14 +3,14 @@ import fs from 'fs'
 let solicitudes = {}
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`💫 Ingresa el número de la persona.\n\nEjemplo:\n*${usedPrefix + command} 51987XXXX*`)
+  if (!text) return m.reply(`🌸 Ingresa el número de la persona.\n\nEjemplo:\n*${usedPrefix + command} 51987XXXX*`)
 
   let number = text.replace(/\D/g, '') + '@s.whatsapp.net'
 
   solicitudes[number] = m.chat
 
   await conn.sendMessage(number, {
-    text: `💥 *Hola!* Alguien quiere descargar tus *estados de WhatsApp*.\n\n¿Deseas compartirlos?`,
+    text: `🌷 *Hola!* Alguien quiere descargar tus *estados de WhatsApp*.\n\n¿Deseas compartirlos?`,
     buttons: [
       { buttonId: "estado_si", buttonText: { displayText: "✅ Sí, permitir" }, type: 1 },
       { buttonId: "estado_no", buttonText: { displayText: "❌ No, rechazar" }, type: 1 }
