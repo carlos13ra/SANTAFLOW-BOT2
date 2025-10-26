@@ -29,26 +29,27 @@ global.suittag = ['51919199620']
 global.prems = []
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
+/storage/emulated/0/SANTAFLOW-BOT2/
 
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.17' 
 global.vs = '3.0.0'
-global.nameqr = '⋆｡°✩🍂 Rin Itoshi Bot ⚡✩°｡⋆'
-global.namebot = '✿⋆｡° Rin Itoshi Bot MD °｡⋆✿'
+global.nameqr = '⋆｡°✩🍂 SANTAFLOW Bot MD ⚡✩°｡⋆'
+global.namebot = '✿⋆｡° SANTAFLOW - MD °｡⋆✿'
 global.sessions = 'Sessions'
 global.jadi = 'JadiBots' 
 global.shadowJadibts = true
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.packname = '⸙͎۪۫🌾 𝙍𝙞𝙣 𝙄𝙩𝙤𝙨𝙝𝙞 𝘽𝙤𝙩 ⌗ 𝙎𝙖𝙙𝙤𝙬.𝙭𝙮 ☃️͎'
-global.botname = 'な 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 な౼⋆·˚ ☾︎ 𝐱𝐃 ᰍ'
-global.wm = '◈ 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐁𝐨𝐭 ◈'
-global.author = '🌿 𝑴𝒂𝒅𝒆 𝒃𝒚 𝑺𝒉𝒂𝒅𝒐𝒘𝒄𝒐𝒓𝒆'
-global.dev = '✧ 𖦹 ᴘᴏᴡʀᴇᴅ ʙʏ sʜᴀᴅᴏᴡ.xʏᴢ  ✧'
-global.bot = '𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 𝑩𝒐𝒕'
-global.club = dev
-global.textbot = '𓏲⍣⃝🍧꙰꙳ 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 𝑴𝑫 | xD'
+global.packname = '🏆 ⌬ 𝐒𝐚𝐧𝐭𝐚𝐟𝐥𝐨𝐰 𝑩𝒐𝒕 𝑴𝑫 ⌬ ⚽'
+global.botname = '☘️ 𝐒𝐀𝐍𝐓𝐀𝐅𝐋𝐎𝐖⚽'
+global.wm = '◈SANTAFLOW 𝐁𝐨𝐭◈'
+global.author = '⩇⃟🔋 𝑴𝒂𝒅𝒆 𝒃𝒚 𝐜𝐚𝐫𝐥𝐨𝐬.𝐫𝐯 ⩇⃟⚡'
+global.dev = '☘️ ミ💨 》𝑪𝑨𝑹𝑳𝑶𝑺.𝑹𝑽《 💥ミ 🌀'
+global.bot = '𝑺𝒂𝒏𝒕𝒂𝒇𝒍𝒐𝒘 𝒃𝒐𝒕'
+global.club = '🌱 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 carlos•Core 𝖢𝗅𝗎𝖻 ⚡'
+global.textbot = '𝐬𝐚𝐧𝐭𝐚𝐟𝐥𝐨𝐰 𝙱𝙾𝚃 ✦ 𝕊ℍ𝔸𝔻𝕆𝕎•ℂ𝕆ℝ𝔼'
 global.etiqueta = '@sʜᴀᴅᴏᴡ°ᴄᴏʀᴇ'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
