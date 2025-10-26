@@ -15,17 +15,14 @@ global.botNumber = ''
 
 global.owner = 
 // <-- Número @s.whatsapp.net -->
-  ['51919199620', '🜲 Propietario 🎃', true],
-  ['51969214380', 'shadow', true],
-  ['51934053286', ':v', true ],
-  ['51965763942', 'Shadow-xyz ⚡', true],
-  ['50231458537', 'BrayanX330', true],
-  ['51946200884'],
-  ['51927303598'],
+  ['51900922660', '🜲 Propietario 🎃', true],
+  ['51900922660', 'shadow', true],
+  ['51984169553', ':v', true ],
+  ['51919199620', 'Shadow-xyz ⚡', true]
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.suittag = ['51919199620'] 
+global.suittag = ['51919199620', '51900922660'] 
 global.prems = []
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
@@ -54,18 +51,18 @@ global.etiqueta = '@sʜᴀᴅᴏᴡ°ᴄᴏʀᴇ'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.moneda = '¥enes'
-global.banner = 'https://files.catbox.moe/fft2hr.jpg'
-global.avatar = 'https://files.catbox.moe/js2plu.jpg'
-global.logo = 'https://files.catbox.moe/fft2hr.jpg'
+global.moneda = '¥enes💴'
+global.banner = 'https://files.catbox.moe/ixknbf.jpg', 'https://files.catbox.moe/iokrvl.jpg'
+global.avatar = 'https://files.catbox.moe/i2klfl.jpg', 'https://files.catbox.moe/e4f34u.jpg'
+global.logo = 'https://files.catbox.moe/0w0wmc.jpg', 'https://files.catbox.moe/7tpaiu.jpg'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.gp1 = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-global.comunidad1 = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-global.channel = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-global.channel2 = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-global.md = 'https://github.com/Shadow-nex/Rin-Itoshi-Bot'
+global.gp1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
+global.comunidad1 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
+global.channel = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
+global.channel2 = 'https://whatsapp.com/channel/0029Vb6iXGDISTkKY8fxUa39'
+global.md = 'https://github.com/Carlos13ra/SANTAFLOW-BOT2'
 global.correo = 'shadowcore.xyz@gmail.com'
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
@@ -73,9 +70,9 @@ global.correo = 'shadowcore.xyz@gmail.com'
 global.catalogo = fs.readFileSync('./src/catalogo.jpg');
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: packname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 global.ch = {
-ch1: "120363422142340004@newsletter",
-ch2: "120363422142340004@newsletter",
-ch3: "120363422142340004@newsletter"
+ch1: "120363402079893698@newsletter",
+ch2: "120363402079893698@newsletter",
+ch3: "120363402079893698@newsletter"
 }
 global.multiplier = 60
 
