@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=FF00FF,00FFFF,FFFF00,FF0000,00FF00&center=true&vCenter=true&width=700&lines=🍂+SANTAFLOW+BOT+%7C+BY+CARLOS+RAMÍREZ+💫" alt="sᴀɴᴛᴀғʟᴏᴡ • ʙʏ ᴄᴀʀʟᴏs ʀᴀᴍɪʀᴇᴢ 🍂"/>
+    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=FF00FF,00FFFF,FFFF00,FF0000,00FF00&center=true&vCenter=true&width=700&lines=🍂+SANTAFLOW+%7C+BY+CARLOS+💫" alt="sᴀɴᴛᴀғʟᴏᴡ • ʙʏ ᴄᴀʀʟᴏs ʀᴀᴍɪʀᴇᴢ 🍂"/>
   </a>
 </p>
 
