@@ -13,12 +13,13 @@ global.botNumber = ''
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
-global.owner = 
+global.owner = [
 // <-- Número @s.whatsapp.net -->
   ['51900922660', '🜲 Propietario 🎃', true],
   ['51900922660', 'shadow', true],
   ['51984169553', ':v', true ],
   ['51919199620', 'Shadow-xyz ⚡', true]
+];
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 
@@ -26,7 +27,6 @@ global.suittag = ['51919199620', '51900922660']
 global.prems = []
 
 //✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
-/storage/emulated/0/SANTAFLOW-BOT2/
 
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.17' 

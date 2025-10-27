@@ -1,13 +1,16 @@
-
 import ws from "ws"
 
 let handler = async (m, { conn, command }) => {
-  const chat = global.db.data.chats[m.chat]
+  if (!global.db || !global.db.data) throw new Error("global.db no inicializado")
+  global.db.data.chats = global.db.data.chats || {}
+  const chat = global.db.data.chats[m.chat] || (global.db.data.chats[m.chat] = {})
+
   const allConns = global.conns || []
+
   const activeBots = [
     ...new Set(
       allConns
-        .filter(c => c.user && c.ws.socket && c.ws.socket.readyState !== ws.CLOSED)
+        .filter(c => c.user && c.ws?.socket && c.ws.socket.readyState !== ws.CLOSED)
         .map(c => c.user.jid)
     ),
   ]
