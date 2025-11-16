@@ -38,7 +38,7 @@ const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
-/*
+
 console.log(chalk.bold.redBright(`\n▨────────────────────────▨`))
 console.log(chalk.magentaBright('\n🌱 Iniciando bot...'))
 console.log(chalk.bold.redBright(`\n▨────────────────────────▨`))
@@ -48,120 +48,11 @@ font: 'simple',
 align: 'left',
 gradient: ['green', 'white']
 })
-say('Made with By Carlos', {
+say('Made with By Carlos.rv', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
-})*/
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-async function showBanner() {
-    const title = `
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░
-░░░░░░░░▄▀░░░░░░░░░░░░▄░░░░░░░▀▄░░░░░░░
-░░░░░░░░█░░▄░░░░▄░░░░░░░░░░░░░░█░░░░░░░
-░░░░░░░░█░░░░░░░░░░░░▄█▄▄░░▄░░░█░▄▄▄░░░
-░▄▄▄▄▄░░█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██░░
-░██▄▀██▄█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██░░
-░░▀██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██░
-░░░░▀████░▀░░░░▄░░░██░░░▄█░░░░▄░▄█░░██░
-░░░░░░░▀█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██░
-░░░░░░░▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀░░
-░░░░░░█▀▀█████████▀▀▀▀████████████▀░░░░
-░░░░░░████▀░░███▀░░░░░░▀███░░▀██▀░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-    `.split('\n').map(line => chalk.hex('#00f7ff').bold(line)).join('\n')
-
-    const subtitle = chalk.hex('#ff3366').bold('✦ SANTAFLOW BOT ✦').padStart(50)
-    const poweredMsg = chalk.hex('#ffcc00').italic('🥭 powered by Carlos.R.V')
-    const aiMsg = chalk.hex('#00f7ff').bold('──────────────────────────────────────────────────────')
-    const tips = [
-        chalk.hex('#ffcc00')('⌬ Tip: Usa /menu para ver todas las funciones.'),
-        chalk.hex('#00f7ff')('✧ Sígueme en GitHub para ver updates.'),
-        chalk.hex('#ff3366')('⬡ Disfruta del poder de Santaflow Bot.')
-    ]
-    const loadingFrames = [
-        chalk.cyanBright('⠋ Inicializando módulos...'),
-        chalk.cyanBright('⠙ Inicializando módulos...'),
-        chalk.cyanBright('⠹ Inicializando módulos...'),
-        chalk.cyanBright('⠸ Inicializando módulos...'),
-        chalk.cyanBright('⠼ Inicializando módulos...'),
-        chalk.cyanBright('⠴ Inicializando módulos...'),
-        chalk.cyanBright('⠦ Inicializando módulos...'),
-        chalk.cyanBright('⠧ Inicializando módulos...'),
-        chalk.cyanBright('⠇ Inicializando módulos...'),
-        chalk.cyanBright('⠏ Inicializando módulos...')
-    ]
-
-    console.clear()
-   
-    console.log(
-        boxen(
-            title + '\n' + subtitle,
-            {
-                padding: 1,
-                margin: 1,
-                borderStyle: 'classic',
-                borderColor: 'cyanBright',
-                backgroundColor: 'black',
-                title: 'Rin Itoshi Bot',
-                titleAlignment: 'center'
-            }
-        )
-    )
-
-    say('Santaflow', {
-        font: 'block',
-        align: 'center',
-        colors: ['cyan', 'blue'],
-        background: 'transparent',
-        letterSpacing: 1,
-        lineHeight: 1
-    })
-    say('🍁 by Carlos', {
-        font: 'console',
-        align: 'center',
-        colors: ['yellow'],
-        background: 'transparent'
-    })
-    console.log('\n' + aiMsg + '\n')
-
-    for (let i = 0; i < 20; i++) {
-        process.stdout.write('\r' + loadingFrames[i % loadingFrames.length])
-        await sleep(80)
-    }
-    process.stdout.write('\r' + ' '.repeat(40) + '\r') 
-
-    console.log(
-        chalk.bold.blueBright(
-            boxen(
-                chalk.bold('¡Bienvenido a Santaflow Bot!\n') +
-                chalk.hex('#00f7ff')('El bot está arrancando, espera un momento...') +
-                '\n\n' +
-                tips.join('\n'),
-                {
-                    padding: 1,
-                    margin: 1,
-                    borderStyle: 'round',
-                    borderColor: 'magenta'
-                }
-            )
-        )
-    )
-
-    const symbols = [
-        chalk.hex('#ff3366')('✧'), chalk.hex('#00f7ff')('⌬'), chalk.hex('#ffcc00')('⬡'),
-        chalk.hex('#00f7ff')('✧'), chalk.hex('#ff3366')('⌬'), chalk.hex('#ffcc00')('⬡')
-    ]
-    let line = ''
-    for (let i = 0; i < 40; i++) {
-        line += symbols[i % symbols.length]
-    }
-    console.log('\n' + line + '\n')
-}
-await showBanner()
-
+})
 protoType()
 serialize()
 
@@ -410,7 +301,6 @@ console.log(chalk.green.bold(`[ ✿ ]  Escanea este código QR`))}
 if (connection === "open") {
 const userJid = jidNormalizedUser(conn.user.id)
 const userName = conn.user.name || conn.user.verifiedName || "Desconocido"
-await joinChannels(conn)
 console.log(chalk.green.bold(`[ ✿ ]  Conectado a: ${userName}`))
 }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
@@ -505,4 +395,163 @@ shadowJadiBot({pathshadowJadiBot: botPath, m: null, conn, args: '', usedPrefix: 
 }}}}
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
-const pluginFilter = (f)
+const pluginFilter = (filename) => /\.js$/.test(filename)
+global.plugins = {}
+async function filesInit() {
+for (const filename of readdirSync(pluginFolder).filter(pluginFilter)) {
+try {
+const file = global.__filename(join(pluginFolder, filename))
+const module = await import(file)
+global.plugins[filename] = module.default || module
+} catch (e) {
+conn.logger.error(e)
+delete global.plugins[filename]
+}}}
+filesInit().then((_) => Object.keys(global.plugins)).catch(console.error)
+
+global.reload = async (_ev, filename) => {
+if (pluginFilter(filename)) {
+const dir = global.__filename(join(pluginFolder, filename), true);
+if (filename in global.plugins) {
+if (existsSync(dir)) conn.logger.info(` updated plugin - '${filename}'`)
+else {
+conn.logger.warn(`deleted plugin - '${filename}'`)
+return delete global.plugins[filename]
+}} else conn.logger.info(`new plugin - '${filename}'`)
+const err = syntaxerror(readFileSync(dir), filename, {
+sourceType: 'module',
+allowAwaitOutsideFunction: true,
+});
+if (err) conn.logger.error(`syntax error while loading '${filename}'\n${format(err)}`)
+else {
+try {
+const module = (await import(`${global.__filename(dir)}?update=${Date.now()}`));
+global.plugins[filename] = module.default || module;
+} catch (e) {
+conn.logger.error(`error require plugin '${filename}\n${format(e)}'`)
+} finally {
+global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)))
+}}}}
+Object.freeze(global.reload)
+watch(pluginFolder, global.reload)
+await global.reloadHandler()
+async function _quickTest() {
+const test = await Promise.all([
+spawn('ffmpeg'),
+spawn('ffprobe'),
+spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
+spawn('convert'),
+spawn('magick'),
+spawn('gm'),
+spawn('find', ['--version']),
+].map((p) => {
+return Promise.race([
+new Promise((resolve) => {
+p.on('close', (code) => {
+resolve(code !== 127);
+});
+}),
+new Promise((resolve) => {
+p.on('error', (_) => resolve(false))
+})])
+}))
+const [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test;
+const s = global.support = {ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find};
+Object.freeze(global.support);
+}
+function clearTmp() {
+const tmpDir = join(__dirname, 'tmp')
+const filenames = readdirSync(tmpDir)
+filenames.forEach(file => {
+const filePath = join(tmpDir, file)
+unlinkSync(filePath)})
+}
+
+function purgeSession() {
+let prekey = []
+let directorio = readdirSync(`./${sessions}`)
+let filesFolderPreKeys = directorio.filter(file => {
+return file.startsWith('pre-key-')
+})
+prekey = [...prekey, ...filesFolderPreKeys]
+filesFolderPreKeys.forEach(files => {
+unlinkSync(`./${sessions}/${files}`)
+})
+} 
+
+function purgeSessionSB() {
+try {
+const listaDirectorios = readdirSync(`./${jadi}/`);
+let SBprekey = [];
+listaDirectorios.forEach(directorio => {
+if (statSync(`./${jadi}/${directorio}`).isDirectory()) {
+const DSBPreKeys = readdirSync(`./${jadi}/${directorio}`).filter(fileInDir => {
+return fileInDir.startsWith('pre-key-')
+})
+SBprekey = [...SBprekey, ...DSBPreKeys];
+DSBPreKeys.forEach(fileInDir => {
+if (fileInDir !== 'creds.json') {
+unlinkSync(`./${jadi}/${directorio}/${fileInDir}`)
+}})
+}})
+if (SBprekey.length === 0) {
+console.log(chalk.bold.green(`\nꕥ No hay archivos en ${jadi} para eliminar.`))
+} else {
+console.log(chalk.bold.cyanBright(`\n⌦ Archivos de la carpeta ${jadi} han sido eliminados correctamente.`))
+}} catch (err) {
+console.log(chalk.bold.red(`\n⚠︎ Error para eliminar archivos de la carpeta ${jadi}.\n` + err))
+}}
+
+function purgeOldFiles() {
+const directories = [`./${sessions}/`, `./${jadi}/`]
+directories.forEach(dir => {
+readdirSync(dir, (err, files) => {
+if (err) throw err
+files.forEach(file => {
+if (file !== 'creds.json') {
+const filePath = path.join(dir, file);
+unlinkSync(filePath, err => {
+if (err) {
+console.log(chalk.bold.red(`\n⚠︎ El archivo ${file} no se logró borrar.\n` + err))
+} else {
+console.log(chalk.bold.green(`\n⌦ El archivo ${file} se ha borrado correctamente.`))
+} }) }
+}) }) }) }
+function redefineConsoleMethod(methodName, filterStrings) {
+const originalConsoleMethod = console[methodName]
+console[methodName] = function() {
+const message = arguments[0]
+if (typeof message === 'string' && filterStrings.some(filterString => message.includes(atob(filterString)))) {
+arguments[0] = ""
+}
+originalConsoleMethod.apply(console, arguments)
+}}
+setInterval(async () => {
+if (stopped === 'close' || !conn || !conn.user) return
+await clearTmp()
+console.log(chalk.bold.cyanBright(`\n⌦ Archivos de la carpeta TMP no necesarios han sido eliminados del servidor.`))}, 1000 * 60 * 4)
+setInterval(async () => {
+if (stopped === 'close' || !conn || !conn.user) return
+await purgeSession()
+console.log(chalk.bold.cyanBright(`\n⌦ Archivos de la carpeta ${global.sessions} no necesario han sido eliminados del servidor.`))}, 1000 * 60 * 10)
+setInterval(async () => {
+if (stopped === 'close' || !conn || !conn.user) return
+await purgeSessionSB()}, 1000 * 60 * 10) 
+setInterval(async () => {
+if (stopped === 'close' || !conn || !conn.user) return
+await purgeOldFiles()
+console.log(chalk.bold.cyanBright(`\n⌦ Archivos no necesario han sido eliminados del servidor.`))}, 1000 * 60 * 10)
+_quickTest().catch(console.error)
+async function isValidPhoneNumber(number) {
+try {
+number = number.replace(/\s+/g, '')
+if (number.startsWith('+521')) {
+number = number.replace('+521', '+52');
+} else if (number.startsWith('+52') && number[4] === '1') {
+number = number.replace('+52 1', '+52');
+}
+const parsedNumber = phoneUtil.parseAndKeepRawInput(number)
+return phoneUtil.isValidNumber(parsedNumber)
+} catch (error) {
+return false
+}}
