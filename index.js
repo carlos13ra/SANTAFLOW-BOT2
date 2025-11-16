@@ -505,4 +505,4 @@ shadowJadiBot({pathshadowJadiBot: botPath, m: null, conn, args: '', usedPrefix: 
 }}}}
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
-const pluginFilter = (f
+const pluginFilter = (f)
